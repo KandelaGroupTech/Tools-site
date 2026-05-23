@@ -1,6 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import { MENU_DATA } from './menu_data';
-import { Calendar, Utensils, Carrot, CheckCircle2 } from 'lucide-react';
+import { Calendar, Utensils, Carrot, CheckCircle2, ChevronRight } from 'lucide-react';
 
 interface Block {
     name: string;
@@ -150,15 +150,19 @@ const TwoBirdsMenu: React.FC = () => {
                     if (filterCheese && /cheese/i.test(text)) hasCheese = true;
                     
                     if (filterButter) {
-                        formattedName = formattedName.replace(/(butter)/gi, '<span class="bg-yellow-200 px-1 rounded text-yellow-900">$1</span>');
-                        ingredientsText = ingredientsText.replace(/(butter)/gi, '<span class="bg-yellow-200 px-1 rounded text-yellow-900">$1</span>');
+                        formattedName = formattedName.replace(/(butter)/gi, '<span class="bg-amber-200 px-1 rounded text-amber-900 font-medium">$1</span>');
+                        ingredientsText = ingredientsText.replace(/(butter)/gi, '<span class="bg-amber-200 px-1 rounded text-amber-900 font-medium">$1</span>');
                     }
                     if (filterCheese) {
-                        formattedName = formattedName.replace(/(cheese)/gi, '<span class="bg-orange-200 px-1 rounded text-orange-900">$1</span>');
-                        ingredientsText = ingredientsText.replace(/(cheese)/gi, '<span class="bg-orange-200 px-1 rounded text-orange-900">$1</span>');
+                        formattedName = formattedName.replace(/(cheese)/gi, '<span class="bg-orange-200 px-1 rounded text-orange-900 font-medium">$1</span>');
+                        ingredientsText = ingredientsText.replace(/(cheese)/gi, '<span class="bg-orange-200 px-1 rounded text-orange-900 font-medium">$1</span>');
                     }
 
-                    let formattedBlock = `<div class="mb-4 pb-4 border-b border-slate-100 last:border-0 last:pb-0 last:mb-0"><strong class="text-teal-800 block mb-1">${formattedName}</strong><p class="text-sm text-slate-600 leading-relaxed">${ingredientsText.replace(/\n/g, '<br/>')}</p></div>`;
+                    let formattedBlock = `
+                    <div class="bg-white border border-slate-100 rounded-2xl p-5 shadow-sm hover:shadow-md transition-shadow">
+                        <strong class="text-slate-900 block mb-2 font-serif text-lg">${formattedName}</strong>
+                        <p class="text-sm text-slate-600 leading-relaxed font-light">${ingredientsText.replace(/\n/g, '<br/>')}</p>
+                    </div>`;
                     matchedChunks.push(formattedBlock);
                 }
             }
@@ -172,9 +176,9 @@ const TwoBirdsMenu: React.FC = () => {
         let ingredientsHtml = '';
         if (matchedChunks.length > 0) {
             matchedChunks = [...new Set(matchedChunks)]; // unique
-            ingredientsHtml = matchedChunks.join('');
+            ingredientsHtml = `<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">${matchedChunks.join('')}</div>`;
         } else {
-            ingredientsHtml = '<p class="text-sm text-slate-400 italic">No specific ingredient data found for these items.</p>';
+            ingredientsHtml = '<div class="bg-slate-50 border border-slate-100 rounded-2xl p-6 text-center text-slate-500 italic font-light">No specific ingredient data found for these items.</div>';
         }
         
         return { updatedItems, ingredientsHtml };
@@ -207,25 +211,25 @@ const TwoBirdsMenu: React.FC = () => {
     }, [currentDate]);
 
     return (
-        <div className="min-h-screen bg-slate-50 font-sans selection:bg-teal-600 selection:text-white">
-            <header className="bg-white border-b border-slate-200 sticky top-0 z-10">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 flex items-center gap-3">
-                    <div className="w-10 h-10 bg-teal-600 rounded flex items-center justify-center shadow-inner text-white">
-                        <Utensils size={20} />
+        <div className="min-h-screen bg-[#FDFBF7] font-sans selection:bg-rose-500 selection:text-white">
+            <header className="bg-slate-900 border-b border-slate-800 sticky top-0 z-20">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center gap-4">
+                    <div className="w-12 h-12 bg-rose-500 rounded-2xl flex items-center justify-center shadow-lg text-white transform rotate-3">
+                        <Utensils size={24} />
                     </div>
                     <div>
-                        <h1 className="font-serif text-slate-900 text-xl font-bold leading-tight">Two Birds Menu</h1>
-                        <p className="text-xs text-teal-700 tracking-wide uppercase font-semibold">Daycare Meal Planner</p>
+                        <h1 className="font-serif text-white text-2xl font-bold leading-tight tracking-wide">Two Birds</h1>
+                        <p className="text-xs text-rose-300 tracking-[0.2em] uppercase font-bold">Meal Planner</p>
                     </div>
                 </div>
             </header>
 
-            <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex flex-col lg:flex-row gap-8">
+            <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 flex flex-col lg:flex-row gap-10">
                 {/* Sidebar Controls */}
                 <aside className="w-full lg:w-80 shrink-0 space-y-6">
-                    <div className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm">
-                        <h2 className="text-sm font-bold text-slate-800 uppercase tracking-wider mb-4 flex items-center gap-2">
-                            <Calendar size={16} className="text-teal-600" />
+                    <div className="bg-white border border-slate-100 rounded-3xl p-6 shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
+                        <h2 className="text-sm font-bold text-slate-400 uppercase tracking-widest mb-5 flex items-center gap-2">
+                            <Calendar size={18} className="text-slate-900" />
                             Select Date
                         </h2>
                         <input 
@@ -234,121 +238,153 @@ const TwoBirdsMenu: React.FC = () => {
                             onChange={(e) => setCurrentDate(e.target.value)}
                             min="2025-10-01" 
                             max="2026-08-31"
-                            className="w-full border border-slate-300 rounded-lg px-4 py-2 text-slate-800 focus:outline-none focus:border-teal-500 focus:ring-1 focus:ring-teal-500"
+                            className="w-full border-2 border-slate-100 rounded-2xl px-4 py-3 text-slate-800 font-medium focus:outline-none focus:border-slate-900 focus:ring-4 focus:ring-slate-900/10 transition-all hover:border-slate-200 cursor-pointer"
                         />
                     </div>
 
-                    <div className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm">
-                        <h2 className="text-sm font-bold text-slate-800 uppercase tracking-wider mb-4">
+                    <div className="bg-white border border-slate-100 rounded-3xl p-6 shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
+                        <h2 className="text-sm font-bold text-slate-400 uppercase tracking-widest mb-5">
                             Allergen Filters
                         </h2>
-                        <div className="space-y-3">
-                            <label className="flex items-center gap-3 cursor-pointer group">
-                                <input 
-                                    type="checkbox" 
-                                    checked={filterButter}
-                                    onChange={(e) => setFilterButter(e.target.checked)}
-                                    className="w-5 h-5 rounded border-slate-300 text-teal-600 focus:ring-teal-500"
-                                />
-                                <span className="text-slate-700 group-hover:text-slate-900 transition-colors flex items-center gap-2">
-                                    Highlight Butter <span className="text-xl">🧈</span>
+                        <div className="space-y-4">
+                            <label className="flex items-center justify-between cursor-pointer group">
+                                <span className="text-slate-600 font-medium group-hover:text-slate-900 transition-colors flex items-center gap-2">
+                                    Highlight Butter <span className="text-2xl drop-shadow-sm">🧈</span>
                                 </span>
+                                <div className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors ${filterButter ? 'bg-amber-400' : 'bg-slate-200'}`}>
+                                    <input type="checkbox" checked={filterButter} onChange={(e) => setFilterButter(e.target.checked)} className="sr-only" />
+                                    <span className={`inline-block h-4 w-4 transform rounded-full bg-white transition-transform ${filterButter ? 'translate-x-6' : 'translate-x-1'}`} />
+                                </div>
                             </label>
-                            <label className="flex items-center gap-3 cursor-pointer group">
-                                <input 
-                                    type="checkbox" 
-                                    checked={filterCheese}
-                                    onChange={(e) => setFilterCheese(e.target.checked)}
-                                    className="w-5 h-5 rounded border-slate-300 text-teal-600 focus:ring-teal-500"
-                                />
-                                <span className="text-slate-700 group-hover:text-slate-900 transition-colors flex items-center gap-2">
-                                    Highlight Cheese <span className="text-xl">🧀</span>
+                            
+                            <div className="h-px bg-slate-100 w-full" />
+
+                            <label className="flex items-center justify-between cursor-pointer group">
+                                <span className="text-slate-600 font-medium group-hover:text-slate-900 transition-colors flex items-center gap-2">
+                                    Highlight Cheese <span className="text-2xl drop-shadow-sm">🧀</span>
                                 </span>
+                                <div className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors ${filterCheese ? 'bg-orange-400' : 'bg-slate-200'}`}>
+                                    <input type="checkbox" checked={filterCheese} onChange={(e) => setFilterCheese(e.target.checked)} className="sr-only" />
+                                    <span className={`inline-block h-4 w-4 transform rounded-full bg-white transition-transform ${filterCheese ? 'translate-x-6' : 'translate-x-1'}`} />
+                                </div>
                             </label>
                         </div>
                     </div>
                 </aside>
 
                 {/* Main Content */}
-                <div className="flex-1 space-y-8">
-                    <div className="bg-teal-800 rounded-2xl p-8 text-white shadow-lg relative overflow-hidden">
-                        <div className="absolute top-0 right-0 w-64 h-64 bg-teal-700 rounded-full blur-3xl opacity-50 -translate-y-1/2 translate-x-1/3"></div>
-                        <h2 className="text-3xl md:text-4xl font-serif font-bold relative z-10">{displayDate}</h2>
+                <div className="flex-1 space-y-10 min-w-0">
+                    <div className="bg-slate-900 rounded-[2rem] p-8 md:p-12 text-white shadow-[0_20px_50px_rgb(15,23,42,0.15)] relative overflow-hidden">
+                        {/* Decorative background circles */}
+                        <div className="absolute -top-24 -right-24 w-96 h-96 bg-rose-500 rounded-full mix-blend-multiply filter blur-3xl opacity-40 animate-blob"></div>
+                        <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-emerald-500 rounded-full mix-blend-multiply filter blur-3xl opacity-40 animate-blob animation-delay-2000"></div>
+                        
+                        <h2 className="text-3xl md:text-5xl lg:text-6xl font-serif font-bold relative z-10 leading-tight break-words pr-4">
+                            {displayDate}
+                        </h2>
                     </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                         {/* Breakfast */}
-                        <div className="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm flex flex-col">
-                            <div className="bg-amber-50 px-6 py-4 border-b border-amber-100 flex items-center justify-between">
-                                <h3 className="font-bold text-amber-900 text-lg">Breakfast & Snack</h3>
-                                <span className="text-2xl">🍳</span>
+                        <div className="bg-white border border-rose-100 rounded-3xl overflow-hidden shadow-[0_8px_30px_rgb(225,29,72,0.06)] flex flex-col transform transition-transform hover:-translate-y-1 duration-300">
+                            <div className="bg-rose-50 px-8 py-6 border-b border-rose-100 flex items-center justify-between">
+                                <div>
+                                    <h3 className="font-serif font-bold text-rose-900 text-2xl mb-1">Breakfast & Snack</h3>
+                                    <p className="text-xs font-bold text-rose-400 tracking-wider uppercase">Morning Fuel</p>
+                                </div>
+                                <span className="text-4xl drop-shadow-md">🍳</span>
                             </div>
-                            <div className="p-6 flex-1">
+                            <div className="p-8 flex-1">
                                 {breakfastItems.length > 0 ? (
-                                    <ul className="space-y-3">
+                                    <ul className="space-y-4">
                                         {breakfastItems.map((item, idx) => (
-                                            <li key={idx} className="flex items-start gap-3">
-                                                <CheckCircle2 size={20} className="text-amber-500 shrink-0 mt-0.5" />
-                                                <span className="text-slate-700 font-medium">
+                                            <li key={idx} className="flex items-start gap-4">
+                                                <div className="w-6 h-6 rounded-full bg-rose-100 flex items-center justify-center shrink-0 mt-0.5">
+                                                    <ChevronRight size={14} className="text-rose-600" />
+                                                </div>
+                                                <span className="text-slate-700 font-medium text-lg leading-snug">
                                                     {item.name} 
-                                                    {item.icons.map((icon, i) => <span key={i} className="ml-1.5">{icon}</span>)}
+                                                    {item.icons.map((icon, i) => <span key={i} className="ml-2 text-xl inline-block">{icon}</span>)}
                                                 </span>
                                             </li>
                                         ))}
                                     </ul>
                                 ) : (
-                                    <p className="text-slate-400 italic">No breakfast/snack menu available.</p>
+                                    <div className="h-full flex flex-col items-center justify-center text-center space-y-3 py-8">
+                                        <div className="w-16 h-16 bg-slate-50 rounded-full flex items-center justify-center">
+                                            <span className="text-2xl opacity-50">🍽️</span>
+                                        </div>
+                                        <p className="text-slate-400 font-medium">No breakfast menu found</p>
+                                    </div>
                                 )}
                             </div>
                         </div>
 
                         {/* Lunch */}
-                        <div className="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm flex flex-col">
-                            <div className="bg-emerald-50 px-6 py-4 border-b border-emerald-100 flex items-center justify-between">
-                                <h3 className="font-bold text-emerald-900 text-lg">Lunch</h3>
-                                <span className="text-2xl">🥗</span>
+                        <div className="bg-white border border-emerald-100 rounded-3xl overflow-hidden shadow-[0_8px_30px_rgb(16,185,129,0.06)] flex flex-col transform transition-transform hover:-translate-y-1 duration-300">
+                            <div className="bg-emerald-50 px-8 py-6 border-b border-emerald-100 flex items-center justify-between">
+                                <div>
+                                    <h3 className="font-serif font-bold text-emerald-900 text-2xl mb-1">Lunch</h3>
+                                    <p className="text-xs font-bold text-emerald-500 tracking-wider uppercase">Mid-day Meal</p>
+                                </div>
+                                <span className="text-4xl drop-shadow-md">🥗</span>
                             </div>
-                            <div className="p-6 flex-1">
+                            <div className="p-8 flex-1">
                                 {lunchItems.length > 0 ? (
-                                    <ul className="space-y-3">
+                                    <ul className="space-y-4">
                                         {lunchItems.map((item, idx) => (
-                                            <li key={idx} className="flex items-start gap-3">
-                                                <CheckCircle2 size={20} className="text-emerald-500 shrink-0 mt-0.5" />
-                                                <span className="text-slate-700 font-medium">
+                                            <li key={idx} className="flex items-start gap-4">
+                                                <div className="w-6 h-6 rounded-full bg-emerald-100 flex items-center justify-center shrink-0 mt-0.5">
+                                                    <ChevronRight size={14} className="text-emerald-600" />
+                                                </div>
+                                                <span className="text-slate-700 font-medium text-lg leading-snug">
                                                     {item.name}
-                                                    {item.icons.map((icon, i) => <span key={i} className="ml-1.5">{icon}</span>)}
+                                                    {item.icons.map((icon, i) => <span key={i} className="ml-2 text-xl inline-block">{icon}</span>)}
                                                 </span>
                                             </li>
                                         ))}
                                     </ul>
                                 ) : (
-                                    <p className="text-slate-400 italic">No lunch menu available.</p>
+                                    <div className="h-full flex flex-col items-center justify-center text-center space-y-3 py-8">
+                                        <div className="w-16 h-16 bg-slate-50 rounded-full flex items-center justify-center">
+                                            <span className="text-2xl opacity-50">🍽️</span>
+                                        </div>
+                                        <p className="text-slate-400 font-medium">No lunch menu found</p>
+                                    </div>
                                 )}
                             </div>
                         </div>
                     </div>
 
                     {/* Ingredients Section */}
-                    <div className="bg-white border border-slate-200 rounded-2xl shadow-sm p-6 lg:p-8 mt-8">
-                        <div className="flex items-center gap-3 mb-6">
-                            <Carrot size={24} className="text-teal-600" />
-                            <h3 className="text-2xl font-serif font-bold text-slate-800">Ingredients Dictionary</h3>
-                        </div>
-                        
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
-                            <div>
-                                <h4 className="font-bold text-slate-500 uppercase tracking-wider text-sm mb-4 border-b border-slate-100 pb-2">Breakfast Ingredients</h4>
-                                <div 
-                                    className="prose prose-sm max-w-none text-slate-600"
-                                    dangerouslySetInnerHTML={{ __html: breakfastIngredientsHtml }} 
-                                />
+                    <div className="pt-12 pb-8 border-t border-slate-200">
+                        <div className="flex items-center gap-4 mb-10">
+                            <div className="w-12 h-12 bg-slate-100 rounded-full flex items-center justify-center">
+                                <Carrot size={24} className="text-slate-700" />
                             </div>
                             <div>
-                                <h4 className="font-bold text-slate-500 uppercase tracking-wider text-sm mb-4 border-b border-slate-100 pb-2">Lunch Ingredients</h4>
-                                <div 
-                                    className="prose prose-sm max-w-none text-slate-600"
-                                    dangerouslySetInnerHTML={{ __html: lunchIngredientsHtml }} 
-                                />
+                                <h3 className="text-3xl font-serif font-bold text-slate-900">Ingredients Dictionary</h3>
+                                <p className="text-slate-500 font-light mt-1">Detailed breakdown of the meals above</p>
+                            </div>
+                        </div>
+                        
+                        <div className="space-y-12">
+                            {/* Breakfast Ingredients */}
+                            <div>
+                                <div className="flex items-center gap-3 mb-6">
+                                    <div className="w-2 h-6 bg-rose-400 rounded-full"></div>
+                                    <h4 className="font-bold text-slate-800 tracking-wide text-xl font-serif">Breakfast Ingredients</h4>
+                                </div>
+                                <div dangerouslySetInnerHTML={{ __html: breakfastIngredientsHtml }} />
+                            </div>
+                            
+                            {/* Lunch Ingredients */}
+                            <div>
+                                <div className="flex items-center gap-3 mb-6">
+                                    <div className="w-2 h-6 bg-emerald-400 rounded-full"></div>
+                                    <h4 className="font-bold text-slate-800 tracking-wide text-xl font-serif">Lunch Ingredients</h4>
+                                </div>
+                                <div dangerouslySetInnerHTML={{ __html: lunchIngredientsHtml }} />
                             </div>
                         </div>
                     </div>
