@@ -7,9 +7,24 @@ interface Block {
     text: string;
 }
 
+const getNextWeekday = () => {
+    const today = new Date();
+    const day = today.getDay(); // 0 is Sunday, 6 is Saturday
+    
+    if (day === 6) { // Saturday
+        today.setDate(today.getDate() + 2);
+    } else if (day === 0) { // Sunday
+        today.setDate(today.getDate() + 1);
+    }
+    
+    const year = today.getFullYear();
+    const month = String(today.getMonth() + 1).padStart(2, '0');
+    const date = String(today.getDate()).padStart(2, '0');
+    return `${year}-${month}-${date}`;
+};
+
 const TwoBirdsMenu: React.FC = () => {
-    // We default to the first day of the dataset if today isn't in it, but let's try today's date first
-    const [currentDate, setCurrentDate] = useState<string>('2025-10-01');
+    const [currentDate, setCurrentDate] = useState<string>(getNextWeekday());
     const [filterButter, setFilterButter] = useState(false);
     const [filterCheese, setFilterCheese] = useState(false);
 
