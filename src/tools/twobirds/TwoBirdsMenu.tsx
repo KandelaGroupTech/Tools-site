@@ -27,6 +27,7 @@ const TwoBirdsMenu: React.FC = () => {
     const [currentDate, setCurrentDate] = useState<string>(getNextWeekday());
     const [filterButter, setFilterButter] = useState(false);
     const [filterCheese, setFilterCheese] = useState(false);
+    const [filterMilk, setFilterMilk] = useState(false);
 
     const formatMenuItems = (text: string) => {
         let cleanText = text.replace(/~+/g, ' ').trim();
@@ -121,6 +122,7 @@ const TwoBirdsMenu: React.FC = () => {
                                  
             let hasButter = false;
             let hasCheese = false;
+            let hasMilk = false;
 
             if (!searchItem || searchItem.length < 3) {
                 updatedItems.push({ name: item, icons: [] });
@@ -148,6 +150,7 @@ const TwoBirdsMenu: React.FC = () => {
 
                     if (filterButter && /butter/i.test(text)) hasButter = true;
                     if (filterCheese && /cheese/i.test(text)) hasCheese = true;
+                    if (filterMilk && /milk/i.test(text)) hasMilk = true;
                     
                     if (filterButter) {
                         formattedName = formattedName.replace(/(butter)/gi, '<span class="bg-amber-200 px-1 rounded text-amber-900 font-medium">$1</span>');
@@ -156,6 +159,10 @@ const TwoBirdsMenu: React.FC = () => {
                     if (filterCheese) {
                         formattedName = formattedName.replace(/(cheese)/gi, '<span class="bg-orange-200 px-1 rounded text-orange-900 font-medium">$1</span>');
                         ingredientsText = ingredientsText.replace(/(cheese)/gi, '<span class="bg-orange-200 px-1 rounded text-orange-900 font-medium">$1</span>');
+                    }
+                    if (filterMilk) {
+                        formattedName = formattedName.replace(/(milk)/gi, '<span class="bg-blue-200 px-1 rounded text-blue-900 font-medium">$1</span>');
+                        ingredientsText = ingredientsText.replace(/(milk)/gi, '<span class="bg-blue-200 px-1 rounded text-blue-900 font-medium">$1</span>');
                     }
 
                     let formattedBlock = `
@@ -170,6 +177,7 @@ const TwoBirdsMenu: React.FC = () => {
             let icons = [];
             if (hasButter) icons.push('🧈');
             if (hasCheese) icons.push('🧀');
+            if (hasMilk) icons.push('🥛');
             updatedItems.push({ name: item, icons });
         }
         
@@ -194,13 +202,13 @@ const TwoBirdsMenu: React.FC = () => {
         if (!breakfastMenuRaw) return { updatedItems: [], ingredientsHtml: '' };
         const items = formatMenuItems(breakfastMenuRaw);
         return processIngredients(breakfastBlocks, items);
-    }, [breakfastMenuRaw, breakfastBlocks, filterButter, filterCheese]);
+    }, [breakfastMenuRaw, breakfastBlocks, filterButter, filterCheese, filterMilk]);
 
     const { updatedItems: lunchItems, ingredientsHtml: lunchIngredientsHtml } = useMemo(() => {
         if (!lunchMenuRaw) return { updatedItems: [], ingredientsHtml: '' };
         const items = formatMenuItems(lunchMenuRaw);
         return processIngredients(lunchBlocks, items);
-    }, [lunchMenuRaw, lunchBlocks, filterButter, filterCheese]);
+    }, [lunchMenuRaw, lunchBlocks, filterButter, filterCheese, filterMilk]);
 
     // Format date for display
     const displayDate = useMemo(() => {
@@ -266,6 +274,17 @@ const TwoBirdsMenu: React.FC = () => {
                                 <div className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors ${filterCheese ? 'bg-orange-400' : 'bg-slate-200'}`}>
                                     <input type="checkbox" checked={filterCheese} onChange={(e) => setFilterCheese(e.target.checked)} className="sr-only" />
                                     <span className={`inline-block h-4 w-4 transform rounded-full bg-white transition-transform ${filterCheese ? 'translate-x-6' : 'translate-x-1'}`} />
+                                </div>
+                            </label>
+                            <div className="h-px bg-slate-100 w-full" />
+
+                            <label className="flex items-center justify-between cursor-pointer group">
+                                <span className="text-slate-600 font-medium group-hover:text-slate-900 transition-colors flex items-center gap-2">
+                                    Highlight Milk <span className="text-2xl drop-shadow-sm">🥛</span>
+                                </span>
+                                <div className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors ${filterMilk ? 'bg-blue-400' : 'bg-slate-200'}`}>
+                                    <input type="checkbox" checked={filterMilk} onChange={(e) => setFilterMilk(e.target.checked)} className="sr-only" />
+                                    <span className={`inline-block h-4 w-4 transform rounded-full bg-white transition-transform ${filterMilk ? 'translate-x-6' : 'translate-x-1'}`} />
                                 </div>
                             </label>
                         </div>
