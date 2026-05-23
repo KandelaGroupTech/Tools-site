@@ -213,21 +213,21 @@ const TwoBirdsMenu: React.FC = () => {
     return (
         <div className="min-h-screen bg-[#FDFBF7] font-sans selection:bg-rose-500 selection:text-white">
             <header className="bg-slate-900 border-b border-slate-800 sticky top-0 z-20">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center gap-4">
-                    <div className="w-12 h-12 bg-rose-500 rounded-2xl flex items-center justify-center shadow-lg text-white transform rotate-3">
-                        <Utensils size={24} />
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 md:py-4 flex items-center gap-3 md:gap-4">
+                    <div className="w-10 h-10 md:w-12 md:h-12 bg-rose-500 rounded-xl md:rounded-2xl flex items-center justify-center shadow-lg text-white transform rotate-3">
+                        <Utensils size={20} className="md:w-6 md:h-6" />
                     </div>
                     <div>
-                        <h1 className="font-serif text-white text-2xl font-bold leading-tight tracking-wide">Two Birds</h1>
-                        <p className="text-xs text-rose-300 tracking-[0.2em] uppercase font-bold">Meal Planner</p>
+                        <h1 className="font-serif text-white text-xl md:text-2xl font-bold leading-tight tracking-wide">Two Birds</h1>
+                        <p className="text-[10px] md:text-xs text-rose-300 tracking-[0.2em] uppercase font-bold">Meal Planner</p>
                     </div>
                 </div>
             </header>
 
-            <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 flex flex-col lg:flex-row gap-10">
+            <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 lg:py-10 flex flex-col lg:flex-row gap-6 lg:gap-10">
                 {/* Sidebar Controls */}
-                <aside className="w-full lg:w-80 shrink-0 space-y-6">
-                    <div className="bg-white border border-slate-100 rounded-3xl p-6 shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
+                <aside className="w-full lg:w-80 shrink-0 space-y-4 lg:space-y-6">
+                    <div className="bg-white border border-slate-100 rounded-2xl md:rounded-3xl p-5 md:p-6 shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
                         <h2 className="text-sm font-bold text-slate-400 uppercase tracking-widest mb-5 flex items-center gap-2">
                             <Calendar size={18} className="text-slate-900" />
                             Select Date
@@ -242,8 +242,8 @@ const TwoBirdsMenu: React.FC = () => {
                         />
                     </div>
 
-                    <div className="bg-white border border-slate-100 rounded-3xl p-6 shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
-                        <h2 className="text-sm font-bold text-slate-400 uppercase tracking-widest mb-5">
+                    <div className="bg-white border border-slate-100 rounded-2xl md:rounded-3xl p-5 md:p-6 shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
+                        <h2 className="text-xs md:text-sm font-bold text-slate-400 uppercase tracking-widest mb-4 md:mb-5">
                             Allergen Filters
                         </h2>
                         <div className="space-y-4">
@@ -273,28 +273,28 @@ const TwoBirdsMenu: React.FC = () => {
                 </aside>
 
                 {/* Main Content */}
-                <div className="flex-1 space-y-10 min-w-0">
-                    <div className="bg-slate-900 rounded-[2rem] p-8 md:p-12 text-white shadow-[0_20px_50px_rgb(15,23,42,0.15)] relative overflow-hidden">
+                <div className="flex-1 space-y-6 lg:space-y-10 min-w-0">
+                    <div className="bg-slate-900 rounded-[1.5rem] md:rounded-[2rem] p-6 md:p-12 text-white shadow-[0_20px_50px_rgb(15,23,42,0.15)] relative overflow-hidden">
                         {/* Decorative background circles */}
-                        <div className="absolute -top-24 -right-24 w-96 h-96 bg-rose-500 rounded-full mix-blend-multiply filter blur-3xl opacity-40 animate-blob"></div>
-                        <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-emerald-500 rounded-full mix-blend-multiply filter blur-3xl opacity-40 animate-blob animation-delay-2000"></div>
+                        <div className="absolute -top-24 -right-24 w-64 h-64 md:w-96 md:h-96 bg-rose-500 rounded-full mix-blend-multiply filter blur-3xl opacity-40 animate-blob"></div>
+                        <div className="absolute -bottom-24 -left-24 w-64 h-64 md:w-96 md:h-96 bg-emerald-500 rounded-full mix-blend-multiply filter blur-3xl opacity-40 animate-blob animation-delay-2000"></div>
                         
                         <h2 className="text-3xl md:text-5xl lg:text-6xl font-serif font-bold relative z-10 leading-tight break-words pr-4">
                             {displayDate}
                         </h2>
                     </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
                         {/* Breakfast */}
-                        <div className="bg-white border border-rose-100 rounded-3xl overflow-hidden shadow-[0_8px_30px_rgb(225,29,72,0.06)] flex flex-col transform transition-transform hover:-translate-y-1 duration-300">
-                            <div className="bg-rose-50 px-8 py-6 border-b border-rose-100 flex items-center justify-between">
+                        <div className="bg-white border border-rose-100 rounded-2xl md:rounded-3xl overflow-hidden shadow-[0_8px_30px_rgb(225,29,72,0.06)] flex flex-col transform transition-transform md:hover:-translate-y-1 duration-300">
+                            <div className="bg-rose-50 px-5 py-4 md:px-8 md:py-6 border-b border-rose-100 flex items-center justify-between">
                                 <div>
-                                    <h3 className="font-serif font-bold text-rose-900 text-2xl mb-1">Breakfast & Snack</h3>
-                                    <p className="text-xs font-bold text-rose-400 tracking-wider uppercase">Morning Fuel</p>
+                                    <h3 className="font-serif font-bold text-rose-900 text-xl md:text-2xl mb-1">Breakfast & Snack</h3>
+                                    <p className="text-[10px] md:text-xs font-bold text-rose-400 tracking-wider uppercase">Morning Fuel</p>
                                 </div>
-                                <span className="text-4xl drop-shadow-md">🍳</span>
+                                <span className="text-3xl md:text-4xl drop-shadow-md">🍳</span>
                             </div>
-                            <div className="p-8 flex-1">
+                            <div className="p-5 md:p-8 flex-1">
                                 {breakfastItems.length > 0 ? (
                                     <ul className="space-y-4">
                                         {breakfastItems.map((item, idx) => (
@@ -321,15 +321,15 @@ const TwoBirdsMenu: React.FC = () => {
                         </div>
 
                         {/* Lunch */}
-                        <div className="bg-white border border-emerald-100 rounded-3xl overflow-hidden shadow-[0_8px_30px_rgb(16,185,129,0.06)] flex flex-col transform transition-transform hover:-translate-y-1 duration-300">
-                            <div className="bg-emerald-50 px-8 py-6 border-b border-emerald-100 flex items-center justify-between">
+                        <div className="bg-white border border-emerald-100 rounded-2xl md:rounded-3xl overflow-hidden shadow-[0_8px_30px_rgb(16,185,129,0.06)] flex flex-col transform transition-transform md:hover:-translate-y-1 duration-300">
+                            <div className="bg-emerald-50 px-5 py-4 md:px-8 md:py-6 border-b border-emerald-100 flex items-center justify-between">
                                 <div>
-                                    <h3 className="font-serif font-bold text-emerald-900 text-2xl mb-1">Lunch</h3>
-                                    <p className="text-xs font-bold text-emerald-500 tracking-wider uppercase">Mid-day Meal</p>
+                                    <h3 className="font-serif font-bold text-emerald-900 text-xl md:text-2xl mb-1">Lunch</h3>
+                                    <p className="text-[10px] md:text-xs font-bold text-emerald-500 tracking-wider uppercase">Mid-day Meal</p>
                                 </div>
-                                <span className="text-4xl drop-shadow-md">🥗</span>
+                                <span className="text-3xl md:text-4xl drop-shadow-md">🥗</span>
                             </div>
-                            <div className="p-8 flex-1">
+                            <div className="p-5 md:p-8 flex-1">
                                 {lunchItems.length > 0 ? (
                                     <ul className="space-y-4">
                                         {lunchItems.map((item, idx) => (
@@ -357,18 +357,18 @@ const TwoBirdsMenu: React.FC = () => {
                     </div>
 
                     {/* Ingredients Section */}
-                    <div className="pt-12 pb-8 border-t border-slate-200">
-                        <div className="flex items-center gap-4 mb-10">
-                            <div className="w-12 h-12 bg-slate-100 rounded-full flex items-center justify-center">
-                                <Carrot size={24} className="text-slate-700" />
+                    <div className="pt-8 md:pt-12 pb-8 border-t border-slate-200">
+                        <div className="flex items-center gap-3 md:gap-4 mb-6 md:mb-10">
+                            <div className="w-10 h-10 md:w-12 md:h-12 bg-slate-100 rounded-full flex items-center justify-center">
+                                <Carrot size={20} className="md:w-6 md:h-6 text-slate-700" />
                             </div>
                             <div>
-                                <h3 className="text-3xl font-serif font-bold text-slate-900">Ingredients Dictionary</h3>
-                                <p className="text-slate-500 font-light mt-1">Detailed breakdown of the meals above</p>
+                                <h3 className="text-2xl md:text-3xl font-serif font-bold text-slate-900">Ingredients Dictionary</h3>
+                                <p className="text-sm md:text-base text-slate-500 font-light mt-1">Detailed breakdown of the meals above</p>
                             </div>
                         </div>
                         
-                        <div className="space-y-12">
+                        <div className="space-y-8 md:space-y-12">
                             {/* Breakfast Ingredients */}
                             <div>
                                 <div className="flex items-center gap-3 mb-6">
