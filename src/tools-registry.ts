@@ -1,4 +1,4 @@
-import { Gamepad2, FileSearch, ShieldCheck, Target, FileText, LineChart, QrCode } from 'lucide-react';
+import { Gamepad2, FileSearch, ShieldCheck, Target, FileText, LineChart, QrCode, Utensils } from 'lucide-react';
 
 export type ToolStatus = 'live' | 'coming-soon' | 'beta';
 
@@ -21,6 +21,15 @@ export const toolsRegistry: ToolDefinition[] = [
         route: '/games',
         status: 'live',
         color: 'bg-emerald-50 text-emerald-600 border-emerald-200'
+    },
+    {
+        id: 'two-birds-menu',
+        name: 'Two Birds Menu',
+        description: 'Plan daycare meals and easily search for ingredient and allergen information.',
+        icon: Utensils,
+        route: '/two-birds-menu',
+        status: 'live',
+        color: 'bg-teal-50 text-teal-600 border-teal-200'
     },
     {
         id: 'cim-analyzer',

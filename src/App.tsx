@@ -4,6 +4,7 @@ import { auth } from './lib/firebase';
 import { onAuthStateChanged, type User } from 'firebase/auth';
 import LandingPage from './pages/LandingPage';
 import GamesHub from './tools/games/GamesHub';
+import TwoBirdsMenu from './tools/twobirds/TwoBirdsMenu';
 
 const App: React.FC = () => {
   const [user, setUser] = useState<User | null>(null);
@@ -41,6 +42,7 @@ const App: React.FC = () => {
         
         {/* Public Tools */}
         <Route path="/games" element={<GamesHub />} />
+        <Route path="/two-birds-menu" element={<TwoBirdsMenu />} />
 
         {/* Protected Tools */}
         <Route path="/cim-analyzer" element={<ProtectedRoute><div>CIM Analyzer (WIP)</div></ProtectedRoute>} />
