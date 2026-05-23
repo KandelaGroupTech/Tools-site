@@ -1,6 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import { MENU_DATA } from './menu_data';
-import { Calendar, Utensils, Carrot, CheckCircle2, ChevronRight } from 'lucide-react';
+import { Calendar, Utensils, Carrot, ChevronRight } from 'lucide-react';
 
 interface Block {
     name: string;
