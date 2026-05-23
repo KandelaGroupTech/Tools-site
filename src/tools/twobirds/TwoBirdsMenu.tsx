@@ -1,4 +1,4 @@
-import React, { useState, useMemo, useEffect } from 'react';
+import React, { useState, useMemo } from 'react';
 import { MENU_DATA } from './menu_data';
 import { Calendar, Utensils, Carrot, CheckCircle2 } from 'lucide-react';
 
@@ -12,7 +12,6 @@ const TwoBirdsMenu: React.FC = () => {
     const [currentDate, setCurrentDate] = useState<string>('2025-10-01');
     const [filterButter, setFilterButter] = useState(false);
     const [filterCheese, setFilterCheese] = useState(false);
-    const [ingredientSearch, setIngredientSearch] = useState('');
 
     const formatMenuItems = (text: string) => {
         let cleanText = text.replace(/~+/g, ' ').trim();
