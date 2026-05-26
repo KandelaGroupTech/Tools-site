@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import { MENU_DATA } from './menu_data';
 import { Calendar, Utensils, Carrot, ChevronRight } from 'lucide-react';
 
@@ -7,27 +7,60 @@ interface Block {
     text: string;
 }
 
-const getNextWeekday = () => {
+const getTargetMenuDate = () => {
     const today = new Date();
+    const currentHour = today.getHours();
+    const currentMinute = today.getMinutes();
+    const isPastRollover = currentHour > 9 || (currentHour === 9 && currentMinute >= 15);
+    
+    const targetDate = new Date(today);
     const day = today.getDay(); // 0 is Sunday, 6 is Saturday
     
-    if (day === 6) { // Saturday
-        today.setDate(today.getDate() + 2);
-    } else if (day === 0) { // Sunday
-        today.setDate(today.getDate() + 1);
+    // If it's a weekday and past 9:15 AM, target tomorrow
+    if (day >= 1 && day <= 5) {
+        if (isPastRollover) {
+            targetDate.setDate(targetDate.getDate() + 1);
+        }
     }
     
-    const year = today.getFullYear();
-    const month = String(today.getMonth() + 1).padStart(2, '0');
-    const date = String(today.getDate()).padStart(2, '0');
+    // If the target date lands on a weekend, push it to Monday
+    const targetDay = targetDate.getDay();
+    if (targetDay === 6) { // Saturday
+        targetDate.setDate(targetDate.getDate() + 2);
+    } else if (targetDay === 0) { // Sunday
+        targetDate.setDate(targetDate.getDate() + 1);
+    }
+    
+    const year = targetDate.getFullYear();
+    const month = String(targetDate.getMonth() + 1).padStart(2, '0');
+    const date = String(targetDate.getDate()).padStart(2, '0');
     return `${year}-${month}-${date}`;
 };
 
 const TwoBirdsMenu: React.FC = () => {
-    const [currentDate, setCurrentDate] = useState<string>(getNextWeekday());
+    const [currentDate, setCurrentDate] = useState<string>(getTargetMenuDate());
     const [filterButter, setFilterButter] = useState(false);
     const [filterCheese, setFilterCheese] = useState(false);
     const [filterMilk, setFilterMilk] = useState(false);
+
+    useEffect(() => {
+        const checkTimeAndRefresh = () => {
+            const newDate = getTargetMenuDate();
+            setCurrentDate(prev => {
+                if (prev !== newDate) {
+                    return newDate;
+                }
+                return prev;
+            });
+        };
+
+        // Initial check on mount
+        checkTimeAndRefresh();
+
+        // Check every minute if the date should roll over
+        const intervalId = setInterval(checkTimeAndRefresh, 60000);
+        return () => clearInterval(intervalId);
+    }, []);
 
     const formatMenuItems = (text: string) => {
         let cleanText = text.replace(/~+/g, ' ').trim();
