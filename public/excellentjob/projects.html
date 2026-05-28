@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - Journey Office Builders</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Outfit:wght@600;700&display=swap" rel="stylesheet">
+    <!-- Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <img src="images/logo.png" alt="Journey Office Builders" style="height: 86px; width: auto;">
+            </a>
+            <button class="mobile-menu-btn"><i data-lucide="menu"></i></button>
+            <nav class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="services.html">Services</a>
+                <a href="projects.html" class="active">Projects</a>
+                <a href="reviews.html">Reviews</a>
+            </nav>
+            <div class="nav-cta">
+                <a href="contact.html" class="btn btn-primary">703-748-4600</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="section" style="background-color: var(--bg-tertiary); padding-top: 150px; padding-bottom: 80px; text-align: center;">
+        <div class="container reveal">
+            <h1 style="margin-bottom: var(--spacing-sm);">Our Portfolio</h1>
+            <p style="font-size: 1.25rem; color: var(--text-secondary); max-width: 600px; margin-inline: auto;">Showcasing Our Commitment to Excellence</p>
+        </div>
+    </section>
+
+    <!-- Project Gallery -->
+    <section class="section">
+        <div class="container">
+            <!-- Filter Bar Placeholder -->
+            <div class="reveal" style="display: flex; justify-content: center; gap: var(--spacing-sm); margin-bottom: var(--spacing-2xl); flex-wrap: wrap;">
+                <button class="btn btn-primary" style="padding: 0.5rem 1rem; border-radius: 20px;">All</button>
+                <button class="btn btn-outline" style="padding: 0.5rem 1rem; border-radius: 20px;">Office Space</button>
+                <button class="btn btn-outline" style="padding: 0.5rem 1rem; border-radius: 20px;">Retail</button>
+                <button class="btn btn-outline" style="padding: 0.5rem 1rem; border-radius: 20px;">Lobby</button>
+            </div>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: var(--spacing-xl);">
+                <!-- Project 1 -->
+                <div class="glass reveal" style="border-radius: var(--radius-lg); overflow: hidden; position: relative; group">
+                    <img src="images/hero-office.png" alt="Office Renovation" style="width: 100%; height: 250px; object-fit: cover; transition: transform var(--transition-normal);" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                    <div style="padding: var(--spacing-md); background: var(--bg-primary);">
+                        <h3 style="margin-bottom: 4px; font-size: 1.25rem;">Tysons Corner Tech Hub</h3>
+                        <p style="color: var(--text-muted); font-size: 0.9rem;">Interior Buildout</p>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="glass reveal" style="border-radius: var(--radius-lg); overflow: hidden; position: relative;">
+                    <img src="images/hero-construction.png" alt="Building Exterior" style="width: 100%; height: 250px; object-fit: cover; transition: transform var(--transition-normal);" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                    <div style="padding: var(--spacing-md); background: var(--bg-primary);">
+                        <h3 style="margin-bottom: 4px; font-size: 1.25rem;">Monument Realty Plaza</h3>
+                        <p style="color: var(--text-muted); font-size: 0.9rem;">Exterior Renovation</p>
+                    </div>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="glass reveal" style="border-radius: var(--radius-lg); overflow: hidden; position: relative;">
+                    <div style="width: 100%; height: 250px; background-color: var(--border); display: flex; align-items: center; justify-content: center;">
+                        <i data-lucide="image" style="color: var(--text-muted); width: 40px; height: 40px;"></i>
+                    </div>
+                    <div style="padding: var(--spacing-md); background: var(--bg-primary);">
+                        <h3 style="margin-bottom: 4px; font-size: 1.25rem;">Corporate Headquarters</h3>
+                        <p style="color: var(--text-muted); font-size: 0.9rem;">Total Renovation</p>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="glass reveal" style="border-radius: var(--radius-lg); overflow: hidden; position: relative;">
+                    <div style="width: 100%; height: 250px; background-color: var(--border); display: flex; align-items: center; justify-content: center;">
+                        <i data-lucide="image" style="color: var(--text-muted); width: 40px; height: 40px;"></i>
+                    </div>
+                    <div style="padding: var(--spacing-md); background: var(--bg-primary);">
+                        <h3 style="margin-bottom: 4px; font-size: 1.25rem;">Law Firm Suite</h3>
+                        <p style="color: var(--text-muted); font-size: 0.9rem;">Custom Buildout</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Client Logo Marquee -->
+    <section class="section" style="overflow: hidden; background-color: var(--bg-tertiary);">
+        <!-- Reused from index.html -->
+        <div class="container reveal" style="text-align: center; margin-bottom: var(--spacing-2xl);">
+            <h2>Trusted By Industry Leaders</h2>
+        </div>
+        <div style="display: flex; width: 200%; overflow: hidden;">
+            <style>
+                @keyframes marquee {
+                    0% { transform: translateX(0); }
+                    100% { transform: translateX(-50%); }
+                }
+                .marquee-content {
+                    display: flex;
+                    animation: marquee 20s linear infinite;
+                }
+                .client-logo {
+                    font-size: 1.5rem;
+                    font-family: var(--font-heading);
+                    font-weight: 700;
+                    color: var(--text-muted);
+                    padding: 0 var(--spacing-2xl);
+                    white-space: nowrap;
+                    transition: color var(--transition-fast);
+                }
+                .client-logo:hover {
+                    color: var(--text-primary);
+                }
+            </style>
+            <div class="marquee-content">
+                <div class="client-logo">Carr Properties</div>
+                <div class="client-logo">CBRE</div>
+                <div class="client-logo">Cushman & Wakefield</div>
+                <div class="client-logo">Jones Lang LaSalle</div>
+                <div class="client-logo">Lincoln Property Company</div>
+                <div class="client-logo">Monument Realty</div>
+                <div class="client-logo">Prologis</div>
+                <div class="client-logo">Steuart Industrial Management</div>
+                <div class="client-logo">Tysons Corner Center</div>
+                <!-- Duplicate for seamless scroll -->
+                <div class="client-logo">Carr Properties</div>
+                <div class="client-logo">CBRE</div>
+                <div class="client-logo">Cushman & Wakefield</div>
+                <div class="client-logo">Jones Lang LaSalle</div>
+                <div class="client-logo">Lincoln Property Company</div>
+                <div class="client-logo">Monument Realty</div>
+                <div class="client-logo">Prologis</div>
+                <div class="client-logo">Steuart Industrial Management</div>
+                <div class="client-logo">Tysons Corner Center</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="index.html" class="logo" style="margin-bottom: var(--spacing-md);">
+                        <img src="images/logo.png" alt="Journey Office Builders" style="height: 100px; width: auto;">
+                    </a>
+                    <p style="color: var(--text-muted); margin-bottom: var(--spacing-md);">Journey Office Builders, Inc. is a full service construction firm providing owners, architects and tenants with quality turn-key construction and renovation.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="reviews.html">Client Reviews</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul class="footer-links">
+                        <li style="display: flex; gap: 8px;"><i data-lucide="map-pin" style="width: 20px; color: var(--accent);"></i> 8455-Y Tyco Road, Vienna, VA 22182</li>
+                        <li style="display: flex; gap: 8px;"><i data-lucide="phone" style="width: 20px; color: var(--accent);"></i> 703-748-4600</li>
+                        <li style="display: flex; gap: 8px;"><i data-lucide="mail" style="width: 20px; color: var(--accent);"></i> info@excellentjob.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2026 Journey Office Builders, Inc. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/interactive-bg.js"></script>
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+    </script>
+</body>
+</html>

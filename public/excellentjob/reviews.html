@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reviews - Journey Office Builders</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Outfit:wght@600;700&display=swap" rel="stylesheet">
+    <!-- Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .star-rating i {
+            color: var(--text-muted);
+            cursor: pointer;
+            transition: color var(--transition-fast);
+        }
+        .star-rating i.active, .star-rating i:hover, .star-rating i:hover ~ i {
+            color: #fbbf24; /* Yellow/Gold for stars */
+            fill: #fbbf24;
+        }
+        .star-rating i:hover ~ i {
+            color: var(--text-muted);
+            fill: none;
+        }
+        .review-card-stars i {
+            color: #fbbf24;
+            fill: #fbbf24;
+        }
+        
+        .form-group {
+            margin-bottom: var(--spacing-md);
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: var(--spacing-xs);
+            font-weight: 500;
+            color: var(--text-primary);
+        }
+        .form-control {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            font-family: var(--font-body);
+            font-size: 1rem;
+            background-color: var(--bg-primary);
+            transition: border-color var(--transition-fast);
+        }
+        .form-control:focus {
+            outline: none;
+            border-color: var(--accent);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <img src="images/logo.png" alt="Journey Office Builders" style="height: 86px; width: auto;">
+            </a>
+            <button class="mobile-menu-btn"><i data-lucide="menu"></i></button>
+            <nav class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="services.html">Services</a>
+                <a href="projects.html">Projects</a>
+                <a href="reviews.html" class="active">Reviews</a>
+            </nav>
+            <div class="nav-cta">
+                <a href="contact.html" class="btn btn-primary">703-748-4600</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="section" style="background-color: var(--bg-tertiary); padding-top: 150px; padding-bottom: 80px; text-align: center;">
+        <div class="container reveal">
+            <h1 style="margin-bottom: var(--spacing-sm);">Client Reviews</h1>
+            <p style="font-size: 1.25rem; color: var(--text-secondary); max-width: 600px; margin-inline: auto;">See what our partners say about working with us.</p>
+        </div>
+    </section>
+
+    <!-- Reviews Content -->
+    <section class="section">
+        <div class="container">
+            <div style="display: grid; grid-template-columns: 1fr; gap: var(--spacing-2xl); @media(min-width: 992px){ grid-template-columns: 2fr 1fr; }">
+                
+                <!-- Reviews List -->
+                <div id="reviews-container">
+                    <!-- Reviews will be loaded here via JS -->
+                    <h2 style="margin-bottom: var(--spacing-lg);">Recent Feedback</h2>
+                    <div id="reviews-list" style="display: grid; gap: var(--spacing-lg);">
+                        <!-- Placeholder Review -->
+                        <div class="glass" style="padding: var(--spacing-lg); border-radius: var(--radius-lg);">
+                            <div class="review-card-stars" style="display: flex; gap: 4px; margin-bottom: var(--spacing-sm);">
+                                <i data-lucide="star" style="width: 20px; height: 20px;"></i>
+                                <i data-lucide="star" style="width: 20px; height: 20px;"></i>
+                                <i data-lucide="star" style="width: 20px; height: 20px;"></i>
+                                <i data-lucide="star" style="width: 20px; height: 20px;"></i>
+                                <i data-lucide="star" style="width: 20px; height: 20px;"></i>
+                            </div>
+                            <p style="font-size: 1.1rem; color: var(--text-primary); font-style: italic; margin-bottom: var(--spacing-md);">"Journey Office Builders delivered exceptional quality on our lobby renovation. They were on time, professional, and their attention to detail was outstanding."</p>
+                            <div>
+                                <strong style="display: block; color: var(--text-primary);">Sarah Jenkins</strong>
+                                <span style="color: var(--text-muted); font-size: 0.9rem;">Property Manager, Monument Realty</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review Form Sidebar -->
+                <div class="glass" style="padding: var(--spacing-xl); border-radius: var(--radius-lg); align-self: start; position: sticky; top: 100px;">
+                    <h3 style="margin-bottom: var(--spacing-md);">Leave a Review</h3>
+                    <p style="color: var(--text-secondary); margin-bottom: var(--spacing-lg);">We value your feedback. Let us know how we did on your recent project.</p>
+                    
+                    <form id="review-form">
+                        <div class="form-group">
+                            <label>Rating</label>
+                            <div class="star-rating" id="star-rating-input" style="display: flex; gap: 8px;">
+                                <i data-lucide="star" data-value="1"></i>
+                                <i data-lucide="star" data-value="2"></i>
+                                <i data-lucide="star" data-value="3"></i>
+                                <i data-lucide="star" data-value="4"></i>
+                                <i data-lucide="star" data-value="5"></i>
+                            </div>
+                            <input type="hidden" id="rating-value" value="0" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="reviewer-name">Name</label>
+                            <input type="text" id="reviewer-name" class="form-control" required placeholder="John Doe">
+                        </div>
+                        <div class="form-group">
+                            <label for="reviewer-company">Company</label>
+                            <input type="text" id="reviewer-company" class="form-control" placeholder="Acme Corp">
+                        </div>
+                        <div class="form-group">
+                            <label for="review-text">Review</label>
+                            <textarea id="review-text" class="form-control" rows="4" required placeholder="Tell us about your experience..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Submit Review</button>
+                    </form>
+                    <div id="review-success" style="display: none; color: var(--text-primary); background-color: rgba(74, 222, 128, 0.2); padding: 1rem; border-radius: var(--radius-sm); margin-top: 1rem; border: 1px solid #4ade80;">
+                        Thank you for your review!
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="index.html" class="logo" style="margin-bottom: var(--spacing-md);">
+                        <img src="images/logo.png" alt="Journey Office Builders" style="height: 100px; width: auto;">
+                    </a>
+                    <p style="color: var(--text-muted); margin-bottom: var(--spacing-md);">Journey Office Builders, Inc. is a full service construction firm providing owners, architects and tenants with quality turn-key construction and renovation.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="reviews.html">Client Reviews</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul class="footer-links">
+                        <li style="display: flex; gap: 8px;"><i data-lucide="map-pin" style="width: 20px; color: var(--accent);"></i> 8455-Y Tyco Road, Vienna, VA 22182</li>
+                        <li style="display: flex; gap: 8px;"><i data-lucide="phone" style="width: 20px; color: var(--accent);"></i> 703-748-4600</li>
+                        <li style="display: flex; gap: 8px;"><i data-lucide="mail" style="width: 20px; color: var(--accent);"></i> info@excellentjob.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2026 Journey Office Builders, Inc. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/interactive-bg.js"></script>
+    <script src="js/reviews.js"></script>
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+    </script>
+</body>
+</html>

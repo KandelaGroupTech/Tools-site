@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Journey Office Builders</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Outfit:wght@600;700&display=swap" rel="stylesheet">
+    <!-- Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <img src="images/logo.png" alt="Journey Office Builders" style="height: 86px; width: auto;">
+            </a>
+            <button class="mobile-menu-btn"><i data-lucide="menu"></i></button>
+            <nav class="nav-links">
+                <a href="index.html" class="active">Home</a>
+                <a href="about.html">About</a>
+                <a href="services.html">Services</a>
+                <a href="projects.html">Projects</a>
+                <a href="reviews.html">Reviews</a>
+            </nav>
+            <div class="nav-cta">
+                <a href="contact.html" class="btn btn-primary">703-748-4600</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero section">
+        <div class="container hero-container" style="display: flex; align-items: center; min-height: 80vh; padding-top: 100px;">
+            <div class="hero-content reveal" style="flex: 1; max-width: 600px; z-index: 10;">
+                <h1 style="font-size: clamp(2.5rem, 5vw, 4.5rem); margin-bottom: var(--spacing-md);">Building Tomorrow's Workspaces, Today</h1>
+                <p style="font-size: 1.25rem; color: var(--text-secondary); margin-bottom: var(--spacing-xl);">Northern Virginia's premier commercial construction partner since 1989.</p>
+                <div style="display: flex; gap: var(--spacing-md);">
+                    <a href="projects.html" class="btn btn-primary">View Our Projects</a>
+                    <a href="contact.html" class="btn btn-outline">Get in Touch</a>
+                </div>
+            </div>
+            <div class="hero-image reveal" style="flex: 1; display: flex; justify-content: flex-end;">
+                <!-- Decorative glass panel behind image -->
+                <div style="position: relative; width: 100%; max-width: 500px;">
+                    <div class="glass" style="position: absolute; inset: -20px -20px 20px 20px; z-index: 1; border-radius: var(--radius-lg);"></div>
+                    <img src="images/hero-office.png" alt="Modern Office Interior" style="border-radius: var(--radius-lg); position: relative; z-index: 2; box-shadow: var(--shadow-lg);">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="section" style="background-color: var(--bg-secondary); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+        <div class="container">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--spacing-xl); text-align: center;">
+                <div class="reveal">
+                    <div style="font-size: 3rem; font-family: var(--font-heading); color: var(--text-primary); font-weight: 700;">
+                        <span class="counter" data-target="35">0</span>+
+                    </div>
+                    <div style="color: var(--text-secondary); font-weight: 500;">Years Experience</div>
+                </div>
+                <div class="reveal">
+                    <div style="font-size: 3rem; font-family: var(--font-heading); color: var(--text-primary); font-weight: 700;">
+                        <span class="counter" data-target="500">0</span>+
+                    </div>
+                    <div style="color: var(--text-secondary); font-weight: 500;">Projects Completed</div>
+                </div>
+                <div class="reveal">
+                    <div style="font-size: 3rem; font-family: var(--font-heading); color: var(--text-primary); font-weight: 700;">
+                        <span class="counter" data-target="100">0</span>%
+                    </div>
+                    <div style="color: var(--text-secondary); font-weight: 500;">Bonded & Insured</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Overview -->
+    <section class="section">
+        <div class="container">
+            <div class="reveal" style="text-align: center; margin-bottom: var(--spacing-3xl);">
+                <h2 style="margin-bottom: var(--spacing-sm);">What We Do</h2>
+                <div style="width: 60px; height: 4px; background-color: var(--accent); margin: 0 auto;"></div>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--spacing-xl);">
+                <!-- Service Card 1 -->
+                <div class="glass reveal" style="padding: var(--spacing-xl); border-radius: var(--radius-lg); transition: transform var(--transition-normal); cursor: pointer;" onmouseover="this.style.transform='translateY(-10px)'" onmouseout="this.style.transform='translateY(0)'">
+                    <div style="background-color: rgba(211,47,47,0.1); width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: var(--spacing-md);">
+                        <i data-lucide="hammer" style="color: var(--accent);"></i>
+                    </div>
+                    <h3 style="margin-bottom: var(--spacing-sm);">Interior Construction</h3>
+                    <p style="color: var(--text-secondary); margin-bottom: var(--spacing-md);">General office modifications, SCIF areas, server rooms, and total renovations.</p>
+                    <a href="services.html" style="font-weight: 500; display: inline-flex; align-items: center; gap: 4px;">Learn more <i data-lucide="arrow-right" style="width: 16px; height: 16px;"></i></a>
+                </div>
+
+                <!-- Service Card 2 -->
+                <div class="glass reveal" style="padding: var(--spacing-xl); border-radius: var(--radius-lg); transition: transform var(--transition-normal); cursor: pointer;" onmouseover="this.style.transform='translateY(-10px)'" onmouseout="this.style.transform='translateY(0)'">
+                    <div style="background-color: rgba(211,47,47,0.1); width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: var(--spacing-md);">
+                        <i data-lucide="paint-roller" style="color: var(--accent);"></i>
+                    </div>
+                    <h3 style="margin-bottom: var(--spacing-sm);">Commercial Painting</h3>
+                    <p style="color: var(--text-secondary); margin-bottom: var(--spacing-md);">Textured coatings, dry erase coatings, wood treatments, and exterior painting.</p>
+                    <a href="services.html" style="font-weight: 500; display: inline-flex; align-items: center; gap: 4px;">Learn more <i data-lucide="arrow-right" style="width: 16px; height: 16px;"></i></a>
+                </div>
+
+                <!-- Service Card 3 -->
+                <div class="glass reveal" style="padding: var(--spacing-xl); border-radius: var(--radius-lg); transition: transform var(--transition-normal); cursor: pointer;" onmouseover="this.style.transform='translateY(-10px)'" onmouseout="this.style.transform='translateY(0)'">
+                    <div style="background-color: rgba(211,47,47,0.1); width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: var(--spacing-md);">
+                        <i data-lucide="wrench" style="color: var(--accent);"></i>
+                    </div>
+                    <h3 style="margin-bottom: var(--spacing-sm);">Tenant Services</h3>
+                    <p style="color: var(--text-secondary); margin-bottom: var(--spacing-md);">Appliance installation, door hardware, flooring, and whiteboard installation.</p>
+                    <a href="services.html" style="font-weight: 500; display: inline-flex; align-items: center; gap: 4px;">Learn more <i data-lucide="arrow-right" style="width: 16px; height: 16px;"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Client Logo Marquee -->
+    <section class="section" style="overflow: hidden; background-color: var(--bg-tertiary);">
+        <div class="container reveal" style="text-align: center; margin-bottom: var(--spacing-2xl);">
+            <h2>Trusted By Industry Leaders</h2>
+        </div>
+        <div style="display: flex; width: 200%; overflow: hidden;">
+            <style>
+                @keyframes marquee {
+                    0% { transform: translateX(0); }
+                    100% { transform: translateX(-50%); }
+                }
+                .marquee-content {
+                    display: flex;
+                    animation: marquee 20s linear infinite;
+                }
+                .client-logo {
+                    font-size: 1.5rem;
+                    font-family: var(--font-heading);
+                    font-weight: 700;
+                    color: var(--text-muted);
+                    padding: 0 var(--spacing-2xl);
+                    white-space: nowrap;
+                    transition: color var(--transition-fast);
+                }
+                .client-logo:hover {
+                    color: var(--text-primary);
+                }
+            </style>
+            <div class="marquee-content">
+                <div class="client-logo">Carr Properties</div>
+                <div class="client-logo">CBRE</div>
+                <div class="client-logo">Cushman & Wakefield</div>
+                <div class="client-logo">Jones Lang LaSalle</div>
+                <div class="client-logo">Lincoln Property Company</div>
+                <div class="client-logo">Monument Realty</div>
+                <div class="client-logo">Prologis</div>
+                <div class="client-logo">Steuart Industrial Management</div>
+                <div class="client-logo">Tysons Corner Center</div>
+                <!-- Duplicate for seamless scroll -->
+                <div class="client-logo">Carr Properties</div>
+                <div class="client-logo">CBRE</div>
+                <div class="client-logo">Cushman & Wakefield</div>
+                <div class="client-logo">Jones Lang LaSalle</div>
+                <div class="client-logo">Lincoln Property Company</div>
+                <div class="client-logo">Monument Realty</div>
+                <div class="client-logo">Prologis</div>
+                <div class="client-logo">Steuart Industrial Management</div>
+                <div class="client-logo">Tysons Corner Center</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="section" style="text-align: center;">
+        <div class="container reveal">
+            <h2 style="font-size: clamp(2rem, 4vw, 3rem); margin-bottom: var(--spacing-lg);">Ready to Transform Your Space?</h2>
+            <p style="font-size: 1.1rem; margin-bottom: var(--spacing-xl); max-width: 600px; margin-inline: auto;">Contact us today to discuss your next commercial construction or renovation project.</p>
+            <a href="contact.html" class="btn btn-primary" style="font-size: 1.1rem; padding: 1rem 2rem;">Request a Quote</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="index.html" class="logo" style="margin-bottom: var(--spacing-md);">
+                        <img src="images/logo.png" alt="Journey Office Builders" style="height: 100px; width: auto;">
+                    </a>
+                    <p style="color: var(--text-muted); margin-bottom: var(--spacing-md);">Journey Office Builders, Inc. is a full service construction firm providing owners, architects and tenants with quality turn-key construction and renovation.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="reviews.html">Client Reviews</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul class="footer-links">
+                        <li style="display: flex; gap: 8px;"><i data-lucide="map-pin" style="width: 20px; color: var(--accent);"></i> 8455-Y Tyco Road, Vienna, VA 22182</li>
+                        <li style="display: flex; gap: 8px;"><i data-lucide="phone" style="width: 20px; color: var(--accent);"></i> 703-748-4600</li>
+                        <li style="display: flex; gap: 8px;"><i data-lucide="mail" style="width: 20px; color: var(--accent);"></i> info@excellentjob.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2026 Journey Office Builders, Inc. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/interactive-bg.js"></script>
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+    </script>
+</body>
+</html>
