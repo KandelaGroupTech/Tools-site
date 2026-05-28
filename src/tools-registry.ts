@@ -1,4 +1,4 @@
-import { Gamepad2, FileSearch, ShieldCheck, Target, FileText, LineChart, QrCode, Utensils } from 'lucide-react';
+﻿import { Gamepad2, FileSearch, ShieldCheck, Target, FileText, LineChart, QrCode, Utensils, Globe } from 'lucide-react';
 
 export type ToolStatus = 'live' | 'coming-soon' | 'beta';
 
@@ -84,5 +84,14 @@ export const toolsRegistry: ToolDefinition[] = [
         route: '/qrcode-studio',
         status: 'coming-soon',
         color: 'bg-teal-50 text-teal-600 border-teal-200'
+    },
+    {
+        id: 'website-demo',
+        name: 'Website Demos',
+        description: 'View live demos of websites currently in development.',
+        icon: Globe,
+        route: '/website-demo',
+        status: 'live',
+        color: 'bg-purple-50 text-purple-600 border-purple-200'
     }
 ];
