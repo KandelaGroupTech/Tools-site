@@ -1,5 +1,5 @@
-import React from 'react';
-import { ArrowLeft, ExternalLink, Monitor, Smartphone } from 'lucide-react';
+﻿import React from 'react';
+import { ArrowLeft, ExternalLink, Monitor } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const websites = [
