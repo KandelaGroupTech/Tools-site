@@ -140,38 +140,42 @@
                     animation: marquee 20s linear infinite;
                 }
                 .client-logo {
-                    font-size: 1.5rem;
-                    font-family: var(--font-heading);
-                    font-weight: 700;
-                    color: var(--text-muted);
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
                     padding: 0 var(--spacing-2xl);
-                    white-space: nowrap;
-                    transition: color var(--transition-fast);
                 }
-                .client-logo:hover {
-                    color: var(--text-primary);
+                .client-logo img {
+                    height: 50px;
+                    width: auto;
+                    filter: grayscale(100%) opacity(60%);
+                    transition: filter var(--transition-fast), opacity var(--transition-fast);
+                    object-fit: contain;
+                }
+                .client-logo:hover img {
+                    filter: grayscale(0%) opacity(100%);
                 }
             </style>
             <div class="marquee-content">
-                <div class="client-logo">Carr Properties</div>
-                <div class="client-logo">CBRE</div>
-                <div class="client-logo">Cushman & Wakefield</div>
-                <div class="client-logo">Jones Lang LaSalle</div>
-                <div class="client-logo">Lincoln Property Company</div>
-                <div class="client-logo">Monument Realty</div>
-                <div class="client-logo">Prologis</div>
-                <div class="client-logo">Steuart Industrial Management</div>
-                <div class="client-logo">Tysons Corner Center</div>
+                <div class="client-logo"><img src="https://logo.clearbit.com/carrprop.com" alt="Carr Properties" onerror="this.src='https://ui-avatars.com/api/?name=Carr+Properties&background=fff&color=333&bold=true'"></div>
+                <div class="client-logo"><img src="https://logo.clearbit.com/cbre.com" alt="CBRE" onerror="this.src='https://ui-avatars.com/api/?name=CBRE&background=fff&color=333&bold=true'"></div>
+                <div class="client-logo"><img src="https://logo.clearbit.com/cushmanwakefield.com" alt="Cushman & Wakefield" onerror="this.src='https://ui-avatars.com/api/?name=Cushman+Wakefield&background=fff&color=333&bold=true'"></div>
+                <div class="client-logo"><img src="https://logo.clearbit.com/jll.com" alt="Jones Lang LaSalle" onerror="this.src='https://ui-avatars.com/api/?name=JLL&background=fff&color=333&bold=true'"></div>
+                <div class="client-logo"><img src="https://logo.clearbit.com/lpc.com" alt="Lincoln Property Company" onerror="this.src='https://ui-avatars.com/api/?name=Lincoln+Property&background=fff&color=333&bold=true'"></div>
+                <div class="client-logo"><img src="https://logo.clearbit.com/monumentrealty.com" alt="Monument Realty" onerror="this.src='https://ui-avatars.com/api/?name=Monument+Realty&background=fff&color=333&bold=true'"></div>
+                <div class="client-logo"><img src="https://logo.clearbit.com/prologis.com" alt="Prologis" onerror="this.src='https://ui-avatars.com/api/?name=Prologis&background=fff&color=333&bold=true'"></div>
+                <div class="client-logo"><img src="https://ui-avatars.com/api/?name=Steuart+Industrial&background=fff&color=333&bold=true" alt="Steuart Industrial Management"></div>
+                <div class="client-logo"><img src="https://logo.clearbit.com/tysonscornercenter.com" alt="Tysons Corner Center" onerror="this.src='https://ui-avatars.com/api/?name=Tysons+Corner&background=fff&color=333&bold=true'"></div>
                 <!-- Duplicate for seamless scroll -->
-                <div class="client-logo">Carr Properties</div>
-                <div class="client-logo">CBRE</div>
-                <div class="client-logo">Cushman & Wakefield</div>
-                <div class="client-logo">Jones Lang LaSalle</div>
-                <div class="client-logo">Lincoln Property Company</div>
-                <div class="client-logo">Monument Realty</div>
-                <div class="client-logo">Prologis</div>
-                <div class="client-logo">Steuart Industrial Management</div>
-                <div class="client-logo">Tysons Corner Center</div>
+                <div class="client-logo"><img src="https://logo.clearbit.com/carrprop.com" alt="Carr Properties" onerror="this.src='https://ui-avatars.com/api/?name=Carr+Properties&background=fff&color=333&bold=true'"></div>
+                <div class="client-logo"><img src="https://logo.clearbit.com/cbre.com" alt="CBRE" onerror="this.src='https://ui-avatars.com/api/?name=CBRE&background=fff&color=333&bold=true'"></div>
+                <div class="client-logo"><img src="https://logo.clearbit.com/cushmanwakefield.com" alt="Cushman & Wakefield" onerror="this.src='https://ui-avatars.com/api/?name=Cushman+Wakefield&background=fff&color=333&bold=true'"></div>
+                <div class="client-logo"><img src="https://logo.clearbit.com/jll.com" alt="Jones Lang LaSalle" onerror="this.src='https://ui-avatars.com/api/?name=JLL&background=fff&color=333&bold=true'"></div>
+                <div class="client-logo"><img src="https://logo.clearbit.com/lpc.com" alt="Lincoln Property Company" onerror="this.src='https://ui-avatars.com/api/?name=Lincoln+Property&background=fff&color=333&bold=true'"></div>
+                <div class="client-logo"><img src="https://logo.clearbit.com/monumentrealty.com" alt="Monument Realty" onerror="this.src='https://ui-avatars.com/api/?name=Monument+Realty&background=fff&color=333&bold=true'"></div>
+                <div class="client-logo"><img src="https://logo.clearbit.com/prologis.com" alt="Prologis" onerror="this.src='https://ui-avatars.com/api/?name=Prologis&background=fff&color=333&bold=true'"></div>
+                <div class="client-logo"><img src="https://ui-avatars.com/api/?name=Steuart+Industrial&background=fff&color=333&bold=true" alt="Steuart Industrial Management"></div>
+                <div class="client-logo"><img src="https://logo.clearbit.com/tysonscornercenter.com" alt="Tysons Corner Center" onerror="this.src='https://ui-avatars.com/api/?name=Tysons+Corner&background=fff&color=333&bold=true'"></div>
             </div>
         </div>
     </section>
