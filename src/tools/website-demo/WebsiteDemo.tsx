@@ -7,7 +7,7 @@ const websites = [
     id: 'excellentjob',
     name: 'ExcellentJOB Website',
     description: 'The new ExcellentJOB website currently under development.',
-    url: 'http://localhost:5174', // Placeholder, user might update this
+    url: '/excellentjob/index.html', // Point to the static index explicitly to avoid SPA rewrite
     status: 'In Development'
   }
 ];
