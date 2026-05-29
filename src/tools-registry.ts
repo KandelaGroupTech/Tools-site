@@ -93,5 +93,14 @@ export const toolsRegistry: ToolDefinition[] = [
         route: '/website-demo',
         status: 'live',
         color: 'bg-purple-50 text-purple-600 border-purple-200'
+    },
+    {
+        id: 'pdf-tools',
+        name: 'PDF Tools',
+        description: 'Edit, merge, compress, and convert PDF files online.',
+        icon: Globe,
+        route: 'https://tinywowtools.com/',
+        status: 'live',
+        color: 'bg-red-50 text-red-600 border-red-200'
     }
 ];
