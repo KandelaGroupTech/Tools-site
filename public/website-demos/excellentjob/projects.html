@@ -200,6 +200,24 @@
                     </div>
                 </div>
 
+                <!-- Project 9 - Flooring -->
+                <div class="glass reveal project-card" data-category="office" style="border-radius: var(--radius-lg); overflow: hidden;">
+                    <div class="split-slider">
+                        <img src="images/proj9_flooring_before.jpg" alt="Before" class="split-slider-before">
+                        <img src="images/proj9_flooring_after.jpg" alt="After" class="split-slider-after" id="after-img-9">
+                        <div class="split-label split-label-after">After</div>
+                        <div class="split-label split-label-before">Before</div>
+                        <div class="split-slider-handle" id="slider-handle-9">
+                            <div class="split-slider-handle-btn"><i data-lucide="chevrons-left-right"></i></div>
+                        </div>
+                        <input type="range" min="0" max="100" value="50" class="split-slider-range" oninput="document.getElementById('after-img-9').style.clipPath = `polygon(0 0, ${this.value}% 0, ${this.value}% 100%, 0 100%)`; document.getElementById('slider-handle-9').style.left = `${this.value}%`;">
+                    </div>
+                    <div style="padding: var(--spacing-md); background: var(--bg-primary);">
+                        <h3 style="margin-bottom: 4px; font-size: 1.25rem;">Office Flooring Renovation</h3>
+                        <p style="color: var(--text-muted); font-size: 0.9rem;">Hardwood to Carpet Conversion</p>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
