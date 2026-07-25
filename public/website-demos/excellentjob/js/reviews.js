@@ -38,11 +38,46 @@ document.addEventListener('DOMContentLoaded', () => {
             rating: 5,
             text: "Journey Office Builders delivered exceptional quality on our lobby renovation. They were on time, professional, and their attention to detail was outstanding.",
             date: new Date().toISOString()
+        },
+        {
+            name: "David Chen",
+            company: "TechFlow Inc.",
+            rating: 5,
+            text: "The entire process was seamless. Journey Office Builders completed our multi-floor tenant fit-out a week ahead of schedule, with impeccable craftsmanship.",
+            date: new Date().toISOString()
+        },
+        {
+            name: "Marcus Webb",
+            company: "Apex Defense Solutions",
+            rating: 5,
+            text: "Their team handled the complex SCIF construction for our new government contract space perfectly. Professional, discreet, and deeply knowledgeable about the stringent requirements.",
+            date: new Date().toISOString()
+        },
+        {
+            name: "Elena Rodriguez",
+            company: "Urban Market",
+            rating: 5,
+            text: "We've partnered with Journey Office Builders for three different retail expansions now. Their communication is top-notch and they always mitigate disruptions to our active storefronts.",
+            date: new Date().toISOString()
+        },
+        {
+            name: "James Lipton",
+            company: "Global Financial",
+            rating: 5,
+            text: "Transforming our outdated 90s cafeteria into a modern, vibrant corporate dining space was no small feat. The Journey team delivered beyond our expectations.",
+            date: new Date().toISOString()
+        },
+        {
+            name: "Amanda Foster",
+            company: "Foster & Associates Architecture",
+            rating: 5,
+            text: "What impressed me most was their proactive approach to problem-solving. When structural surprises arose during our renovation, they already had cost-effective solutions ready to present.",
+            date: new Date().toISOString()
         }
     ];
 
     function loadReviews() {
-        const stored = localStorage.getItem('job_reviews');
+        const stored = localStorage.getItem('job_reviews_v2');
         let reviews = stored ? JSON.parse(stored) : defaultReviews;
         
         if (reviewsList) {
@@ -109,11 +144,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 date: new Date().toISOString()
             };
             
-            const stored = localStorage.getItem('job_reviews');
+            const stored = localStorage.getItem('job_reviews_v2');
             let reviews = stored ? JSON.parse(stored) : defaultReviews;
             
             reviews.push(newReview);
-            localStorage.setItem('job_reviews', JSON.stringify(reviews));
+            localStorage.setItem('job_reviews_v2', JSON.stringify(reviews));
             
             // Show success, reset form
             reviewForm.reset();
