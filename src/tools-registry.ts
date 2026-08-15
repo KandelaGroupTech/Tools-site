@@ -1,4 +1,4 @@
-import { Gamepad2, FileSearch, ShieldCheck, Target, FileText, LineChart, QrCode, Utensils, Globe } from 'lucide-react';
+import { Gamepad2, FileSearch, ShieldCheck, Target, FileText, LineChart, QrCode, Utensils, Globe, Mic } from 'lucide-react';
 
 export type ToolStatus = 'live' | 'coming-soon' | 'beta';
 
@@ -93,6 +93,15 @@ export const toolsRegistry: ToolDefinition[] = [
         route: '/website-demo',
         status: 'live',
         color: 'bg-purple-50 text-purple-600 border-purple-200'
+    },
+    {
+        id: 'speech-coach',
+        name: 'Speech Coach',
+        description: 'Practice public speaking and improve enunciation with real-time feedback.',
+        icon: Mic,
+        route: '/speech-coach',
+        status: 'live',
+        color: 'bg-indigo-50 text-indigo-600 border-indigo-200'
     }
 ];
 

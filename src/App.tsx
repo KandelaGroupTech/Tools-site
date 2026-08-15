@@ -1,4 +1,4 @@
-﻿import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { auth } from './lib/firebase';
 import { onAuthStateChanged, type User } from 'firebase/auth';
@@ -6,6 +6,8 @@ import LandingPage from './pages/LandingPage';
 import GamesHub from './tools/games/GamesHub';
 import TwoBirdsMenu from './tools/twobirds/TwoBirdsMenu';
 import WebsiteDemo from './tools/website-demo/WebsiteDemo';
+import SpeechCoach from './tools/speech-coach/SpeechCoach';
+import SpeechCoachSession from './tools/speech-coach/SpeechCoachSession';
 
 const App: React.FC = () => {
   const [user, setUser] = useState<User | null>(null);
@@ -45,6 +47,8 @@ const App: React.FC = () => {
         <Route path="/games" element={<GamesHub />} />
         <Route path="/two-birds-menu" element={<TwoBirdsMenu />} />
         <Route path="/website-demo" element={<WebsiteDemo />} />
+        <Route path="/speech-coach" element={<SpeechCoach />} />
+        <Route path="/speech-coach/session" element={<SpeechCoachSession />} />
 
         {/* Protected Tools */}
         <Route path="/cim-analyzer" element={<ProtectedRoute><div>CIM Analyzer (WIP)</div></ProtectedRoute>} />
