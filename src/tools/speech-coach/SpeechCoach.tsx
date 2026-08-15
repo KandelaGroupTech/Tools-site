@@ -1,6 +1,5 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
-import { Mic, Activity, LineChart } from 'lucide-react';
+import { Mic, LineChart } from 'lucide-react';
 
 export default function SpeechCoach() {
   return (
