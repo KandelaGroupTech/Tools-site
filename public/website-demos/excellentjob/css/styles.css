@@ -198,7 +198,7 @@ img {
 .nav-links a {
   color: var(--text-primary);
   font-weight: 500;
-  font-size: 0.95rem;
+  font-size: 1.2rem;
 }
 
 .nav-links a:hover, .nav-links a.active {
