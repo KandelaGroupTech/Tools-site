@@ -517,3 +517,25 @@ img {
 .carousel-dot:hover, .carousel-dot:focus-visible {
     background-color: rgba(255, 255, 255, 0.8);
 }
+
+/* Nav link base styling for pills */
+.nav-links a {
+    padding: 0.5rem 1rem;
+    border-radius: 2rem;
+    transition: all 0.2s ease;
+}
+.nav-links a.active {
+    background: rgba(145, 0, 0, 0.08);
+}
+
+/* Home Page specific nav styling over dark carousel */
+.hero-nav:not(.scrolled) .nav-links a {
+    color: #ffffff;
+}
+.hero-nav:not(.scrolled) .nav-links a.active {
+    background: rgba(255, 255, 255, 0.85);
+    color: var(--accent);
+}
+.hero-nav:not(.scrolled) .mobile-menu-btn {
+    color: #ffffff;
+}
