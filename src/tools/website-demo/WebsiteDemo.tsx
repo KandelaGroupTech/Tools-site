@@ -1,4 +1,4 @@
-﻿import React from 'react';
+import React from 'react';
 import { ArrowLeft, ExternalLink, Monitor } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
@@ -7,8 +7,15 @@ const websites = [
     id: 'excellentjob',
     name: 'ExcellentJOB Website',
     description: 'The new ExcellentJOB website currently under development.',
-    url: '/website-demos/excellentjob/index.html', // Point to the static index explicitly to avoid SPA rewrite
+    url: '/website-demos/excellentjob/index.html',
     status: 'In Development'
+  },
+  {
+    id: 'job-estimates',
+    name: 'JOB Estimate Review Dashboard',
+    description: 'A private, hosted web dashboard that mirrors an Excel estimate workbook, backed by Airtable.',
+    url: 'http://localhost:3000',
+    status: 'Ready for Review'
   }
 ];
 

@@ -1,0 +1,16 @@
+{
+  "/_global-error/page": "app/_global-error/page.js",
+  "/_not-found/page": "app/_not-found/page.js",
+  "/api/auth/route": "app/api/auth/route.js",
+  "/api/exclusions/route": "app/api/exclusions/route.js",
+  "/api/line-items/[id]/route": "app/api/line-items/[id]/route.js",
+  "/api/sync/route": "app/api/sync/route.js",
+  "/favicon.ico/route": "app/favicon.ico/route.js",
+  "/login/page": "app/login/page.js",
+  "/page": "app/page.js",
+  "/project/[projectNumber]/@modal/(.)line/[costCode]/page": "app/project/[projectNumber]/@modal/(.)line/[costCode]/page.js",
+  "/project/[projectNumber]/audit/page": "app/project/[projectNumber]/audit/page.js",
+  "/project/[projectNumber]/exclusions/page": "app/project/[projectNumber]/exclusions/page.js",
+  "/project/[projectNumber]/page": "app/project/[projectNumber]/page.js",
+  "/sync/page": "app/sync/page.js"
+}

@@ -1,0 +1,3 @@
+{
+  "/project/[projectNumber]/@modal/(.)line/[costCode]/page": "app/project/[projectNumber]/@modal/(.)line/[costCode]/page.js"
+}

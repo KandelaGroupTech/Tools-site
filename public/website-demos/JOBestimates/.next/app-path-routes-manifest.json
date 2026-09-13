@@ -1,0 +1,16 @@
+{
+  "/_global-error/page": "/_global-error",
+  "/_not-found/page": "/_not-found",
+  "/api/auth/route": "/api/auth",
+  "/api/exclusions/route": "/api/exclusions",
+  "/api/line-items/[id]/route": "/api/line-items/[id]",
+  "/api/sync/route": "/api/sync",
+  "/favicon.ico/route": "/favicon.ico",
+  "/login/page": "/login",
+  "/page": "/",
+  "/project/[projectNumber]/@modal/(.)line/[costCode]/page": "/project/[projectNumber]/(.)line/[costCode]",
+  "/project/[projectNumber]/audit/page": "/project/[projectNumber]/audit",
+  "/project/[projectNumber]/exclusions/page": "/project/[projectNumber]/exclusions",
+  "/project/[projectNumber]/page": "/project/[projectNumber]",
+  "/sync/page": "/sync"
+}

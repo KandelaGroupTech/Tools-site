@@ -1,0 +1,1 @@
+{"version":3,"sources":["../../../../../../../public/website-demos/JOBestimates/app/project/%5BprojectNumber%5D/%40modal/default.tsx"],"sourcesContent":["export default function DefaultModal() {\n  return null;\n}\n"],"names":["DefaultModal"],"mappings":"uDAAe,SAASA,EACtB,OAAO,IACT"}
