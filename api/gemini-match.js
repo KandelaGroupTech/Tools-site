@@ -83,7 +83,7 @@ If nothing is a reasonable match, return an empty array. Do not force a match.`;
     };
 
     const response = await ai.models.generateContent({
-        model: 'gemini-2.5-flash',
+        model: 'gemini-3.6-flash',
         contents: fullPrompt,
         config: {
             systemInstruction: systemInstruction,
