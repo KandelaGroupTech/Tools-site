@@ -9,11 +9,11 @@ export default async function handler(req, res) {
 
   try {
     if (getApps().length === 0) {
-      if (!process.env.FIREBASE_PROJECT_ID && !process.env.VITE_FIREBASE_PROJECT_ID) {
+      if (!process.env.FIREBASE_PROJECT_ID) {
         throw new Error('FIREBASE_PROJECT_ID is not set in Vercel environment variables.');
       }
       initializeApp({
-        projectId: process.env.VITE_FIREBASE_PROJECT_ID || process.env.FIREBASE_PROJECT_ID
+        projectId: process.env.FIREBASE_PROJECT_ID
       });
     }
   } catch (e) {
