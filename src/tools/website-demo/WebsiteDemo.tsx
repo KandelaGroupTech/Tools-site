@@ -16,6 +16,13 @@ const websites = [
     description: 'A private, hosted web dashboard that mirrors an Excel estimate workbook, backed by Airtable.',
     url: 'http://localhost:3000',
     status: 'Ready for Review'
+  },
+  {
+    id: 'excellentestimator',
+    name: 'JOB TI Estimating Tool',
+    description: 'An AI-powered tool for mapping plain-English scope to the JOB cost catalog, backed by Gemini.',
+    url: '/website-demos/excellentestimator/',
+    status: 'Live'
   }
 ];
 
