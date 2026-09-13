@@ -2,23 +2,30 @@ import { getApps, initializeApp } from 'firebase-admin/app';
 import { getAuth } from 'firebase-admin/auth';
 import { GoogleGenAI, Type, Schema } from '@google/genai';
 
-// Initialize Firebase Admin for token verification
-// This only requires projectId to fetch public keys, no service account needed for verifyIdToken.
-if (getApps().length === 0) {
-  initializeApp({
-    projectId: process.env.VITE_FIREBASE_PROJECT_ID || process.env.FIREBASE_PROJECT_ID
-  });
-}
-
-const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
-
-// The allowlist should be set via environment variable
-const ALLOWED_EMAIL = process.env.CLIENT_EMAIL;
-
 export default async function handler(req, res) {
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method Not Allowed' });
   }
+
+  try {
+    if (getApps().length === 0) {
+      if (!process.env.FIREBASE_PROJECT_ID && !process.env.VITE_FIREBASE_PROJECT_ID) {
+        throw new Error('FIREBASE_PROJECT_ID is not set in Vercel environment variables.');
+      }
+      initializeApp({
+        projectId: process.env.VITE_FIREBASE_PROJECT_ID || process.env.FIREBASE_PROJECT_ID
+      });
+    }
+  } catch (e) {
+    return res.status(500).json({ error: 'Firebase Init Error', message: e.message });
+  }
+
+  if (!process.env.GEMINI_API_KEY) {
+    return res.status(500).json({ error: 'GEMINI_API_KEY is not set in Vercel environment variables.' });
+  }
+  
+  const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
+  const ALLOWED_EMAIL = process.env.CLIENT_EMAIL;
 
   const { idToken, prompt, catalogContext } = req.body;
 
