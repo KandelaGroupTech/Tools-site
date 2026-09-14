@@ -106,6 +106,6 @@ If nothing is a reasonable match, return an empty array. Do not force a match.`;
 
   } catch (error) {
     console.error('Error in gemini-match function:', error);
-    return res.status(500).json({ error: 'Internal Server Error', message: error.message });
+    return res.status(500).json({ error: error.message || 'Internal Server Error', stack: error.stack });
   }
 }
