@@ -1,5 +1,13 @@
 {
   "rewrites": [
+    { 
+      "source": "/website-demos/excellentzohocrm", 
+      "destination": "https://excellentzohocrmwrap.vercel.app/website-demos/excellentzohocrm" 
+    },
+    { 
+      "source": "/website-demos/excellentzohocrm/(.*)", 
+      "destination": "https://excellentzohocrmwrap.vercel.app/website-demos/excellentzohocrm/$1" 
+    },
     { "source": "/(.*)", "destination": "/index.html" }
   ]
 }
