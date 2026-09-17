@@ -23,6 +23,13 @@ const websites = [
     description: 'An AI-powered tool for mapping plain-English scope to the JOB cost catalog, backed by Gemini.',
     url: '/website-demos/excellentestimator/',
     status: 'Live'
+  },
+  {
+    id: 'excellentzohocrm',
+    name: 'Excellent CRM Demo',
+    description: 'The team CRM application integrated with Zoho.',
+    url: '/website-demos/excellentzohocrm',
+    status: 'Live'
   }
 ];
 
