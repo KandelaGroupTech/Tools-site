@@ -69,20 +69,17 @@ document.addEventListener('DOMContentLoaded', () => {
     
     if (mobileMenuBtn && navLinks) {
         mobileMenuBtn.addEventListener('click', () => {
-            // Very basic toggle, you can expand this with a slide-in drawer
-            if (navLinks.style.display === 'flex') {
-                navLinks.style.display = 'none';
-            } else {
-                navLinks.style.display = 'flex';
-                navLinks.style.flexDirection = 'column';
-                navLinks.style.position = 'absolute';
-                navLinks.style.top = '100%';
-                navLinks.style.left = '0';
-                navLinks.style.width = '100%';
-                navLinks.style.background = 'var(--bg-primary)';
-                navLinks.style.padding = 'var(--spacing-md)';
-                navLinks.style.boxShadow = 'var(--shadow-md)';
-            }
+            navLinks.classList.toggle('active');
+            // reset inline styles that might have been applied before
+            navLinks.style = ''; 
+        });
+        
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth <= 768) {
+                    navLinks.classList.remove('active');
+                }
+            });
         });
     }
 });
