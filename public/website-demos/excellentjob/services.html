@@ -41,6 +41,78 @@
 
     <!-- Theme color for browser chrome / Android task switcher -->
     <meta name="theme-color" content="#910000">
+
+    <style>
+        .phase-card {
+            background: #ffffff;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            padding: var(--spacing-2xl);
+            margin-bottom: var(--spacing-3xl);
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-xl);
+            border-left: 6px solid var(--accent);
+        }
+        
+        .phase-header {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-md);
+        }
+        
+        .phase-number {
+            background-color: var(--accent);
+            color: #ffffff;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        @media(min-width: 992px) {
+            .phase-content-grid {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: var(--spacing-2xl);
+                align-items: center;
+            }
+            .phase-content-grid.reverse {
+                direction: rtl;
+            }
+            .phase-content-grid.reverse > * {
+                direction: ltr;
+            }
+        }
+        
+        .phase-img {
+            width: 100%;
+            border-radius: var(--radius-lg);
+            height: 300px;
+            object-fit: cover;
+        }
+
+        .construction-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: var(--spacing-xl);
+            margin-top: var(--spacing-xl);
+        }
+
+        .construction-card {
+            background: var(--bg-tertiary);
+            border-radius: var(--radius-md);
+            padding: var(--spacing-lg);
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-md);
+        }
+    </style>
 </head>
 <body>
 
@@ -64,135 +136,146 @@
         </div>
     </header>
 
-    <!-- Architectural Hero -->
-    <section style="margin-top: 104px; width: 100%;">
-        <img src="images/services_hero.jpg" alt="Modern office interior" style="width: 100%; height: 500px; object-fit: cover; display: block; box-shadow: 0 4px 20px rgba(0,0,0,0.1);">
+    <!-- Page Header -->
+    <section class="section" style="background-color: var(--bg-tertiary); padding-top: 150px; padding-bottom: 80px; text-align: center;">
+        <div class="container reveal">
+            <h1 style="margin-bottom: var(--spacing-sm);">Commercial Interior Construction Services</h1>
+            <p style="font-size: 1.25rem; color: var(--text-secondary); max-width: 800px; margin-inline: auto; line-height: 1.6;">
+                Comprehensive construction services for property managers, building owners, architects, and tenants across the DMV. From white-box spec suites to complex occupied-space renovations and secure facility buildouts, we serve Class A office, retail, industrial, and secure government facilities.
+            </p>
+            <div style="margin-top: var(--spacing-xl);">
+                <a href="contact.html" class="btn btn-primary">Request a Quote</a>
+            </div>
+        </div>
     </section>
 
-    <!-- Services Grid -->
-    <section class="section" style="padding-top: 80px; padding-bottom: 120px; background-color: transparent; position: relative; z-index: 10;">
+    <!-- How We Work Sequence -->
+    <section class="section" style="background-color: var(--bg-secondary);">
         <div class="container">
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; max-width: 1200px; margin: 0 auto;">
-                
-                <!-- Card 1 -->
-                <div class="reveal" id="tenant-improvements" style="background: #ffffff; border-radius: 20px; padding: 48px; box-shadow: 0 30px 60px rgba(0,0,0,0.06), 0 10px 20px rgba(0,0,0,0.03); display: flex; flex-direction: column; gap: 24px; transition: transform var(--transition-normal);" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
-                    <div style="background-color: rgba(145,0,0,0.06); width: 64px; height: 64px; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
-                        <i data-lucide="hammer" style="color: var(--accent); width: 28px; height: 28px;"></i>
-                    </div>
-                    <h2 style="font-size: 1.6rem; line-height: 1.3; margin: 0;">Tenant Improvements & Fit-Outs</h2>
-                    <ul style="color: var(--text-secondary); line-height: 2; padding-left: 20px; font-size: 1.1rem; margin: 0;">
-                        <li>Build-outs and renovations</li>
-                        <li>White-box/spec suite construction</li>
-                        <li>Occupied spaces</li>
-                        <li>Leasing-ready spaces</li>
-                    </ul>
-                </div>
-
-                <!-- Card 2 -->
-                <div class="reveal" id="building-renovations" style="background: #ffffff; border-radius: 20px; padding: 48px; box-shadow: 0 30px 60px rgba(0,0,0,0.06), 0 10px 20px rgba(0,0,0,0.03); display: flex; flex-direction: column; gap: 24px; transition: transform var(--transition-normal);" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
-                    <div style="background-color: rgba(145,0,0,0.06); width: 64px; height: 64px; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
-                        <i data-lucide="building" style="color: var(--accent); width: 28px; height: 28px;"></i>
-                    </div>
-                    <h2 style="font-size: 1.6rem; line-height: 1.3; margin: 0;">Building Renovations & Capital Improvements</h2>
-                    <ul style="color: var(--text-secondary); line-height: 2; padding-left: 20px; font-size: 1.1rem; margin: 0;">
-                        <li>Full interior overhauls</li>
-                        <li>Full exterior overhauls</li>
-                        <li>Amenity spaces</li>
-                        <li>Exterior work</li>
-                    </ul>
-                </div>
-
-                <!-- Card 3 -->
-                <div class="reveal" id="demolition" style="background: #ffffff; border-radius: 20px; padding: 48px; box-shadow: 0 30px 60px rgba(0,0,0,0.06), 0 10px 20px rgba(0,0,0,0.03); display: flex; flex-direction: column; gap: 24px; transition: transform var(--transition-normal);" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
-                    <div style="background-color: rgba(145,0,0,0.06); width: 64px; height: 64px; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
-                        <i data-lucide="trash-2" style="color: var(--accent); width: 28px; height: 28px;"></i>
-                    </div>
-                    <h2 style="font-size: 1.6rem; line-height: 1.3; margin: 0;">Demolition</h2>
-                    <ul style="color: var(--text-secondary); line-height: 2; padding-left: 20px; font-size: 1.1rem; margin: 0;">
-                        <li>Selective demolition</li>
-                        <li>Full-scale demolition</li>
-                    </ul>
-                </div>
-
-
-                <!-- Card 4 -->
-                <div class="reveal" id="flooring-painting" style="background: #ffffff; border-radius: 20px; padding: 48px; box-shadow: 0 30px 60px rgba(0,0,0,0.06), 0 10px 20px rgba(0,0,0,0.03); display: flex; flex-direction: column; gap: 24px; transition: transform var(--transition-normal);" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
-                    <div style="background-color: rgba(145,0,0,0.06); width: 64px; height: 64px; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
-                        <i data-lucide="paint-roller" style="color: var(--accent); width: 28px; height: 28px;"></i>
-                    </div>
-                    <h2 style="font-size: 1.6rem; line-height: 1.3; margin: 0;">Flooring & Painting</h2>
-                    <ul style="color: var(--text-secondary); line-height: 2; padding-left: 20px; font-size: 1.1rem; margin: 0;">
-                        <li>Installation and replacement of floors</li>
-                        <li>Interior painting</li>
-                        <li>Exterior painting</li>
-                        <li>Other wall finishes</li>
-                    </ul>
-                </div>
-
-                <!-- Card 5 -->
-                <div class="reveal" id="scif-construction" style="background: #ffffff; border-radius: 20px; padding: 48px; box-shadow: 0 30px 60px rgba(0,0,0,0.06), 0 10px 20px rgba(0,0,0,0.03); display: flex; flex-direction: column; gap: 24px; transition: transform var(--transition-normal);" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
-                    <div style="background-color: rgba(145,0,0,0.06); width: 64px; height: 64px; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
-                        <i data-lucide="shield" style="color: var(--accent); width: 28px; height: 28px;"></i>
-                    </div>
-                    <h2 style="font-size: 1.6rem; line-height: 1.3; margin: 0;">SCIF Construction</h2>
-                    <ul style="color: var(--text-secondary); line-height: 2; padding-left: 20px; font-size: 1.1rem; margin: 0;">
-                        <li>Secure buildouts</li>
-                        <li>Accreditation</li>
-                        <li>Sensitive Compartmented Information Facilities (SCIF)</li>
-                    </ul>
-                </div>
-
-                <!-- Card 6 -->
-                <div class="reveal" id="preconstruction" style="background: #ffffff; border-radius: 20px; padding: 48px; box-shadow: 0 30px 60px rgba(0,0,0,0.06), 0 10px 20px rgba(0,0,0,0.03); display: flex; flex-direction: column; gap: 24px; transition: transform var(--transition-normal);" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
-                    <div style="background-color: rgba(145,0,0,0.06); width: 64px; height: 64px; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
-                        <i data-lucide="calculator" style="color: var(--accent); width: 28px; height: 28px;"></i>
-                    </div>
-                    <h2 style="font-size: 1.6rem; line-height: 1.3; margin: 0;">Preconstruction & Capital Planning</h2>
-                    <ul style="color: var(--text-secondary); line-height: 2; padding-left: 20px; font-size: 1.1rem; margin: 0;">
-                        <li>Capital expenditure planning</li>
-                        <li>Project budgeting</li>
-                        <li>Project scoping</li>
-                    </ul>
-                </div>
-
-                <!-- Card 7 -->
-                <div class="reveal" id="permitting" style="background: #ffffff; border-radius: 20px; padding: 48px; box-shadow: 0 30px 60px rgba(0,0,0,0.06), 0 10px 20px rgba(0,0,0,0.03); display: flex; flex-direction: column; gap: 24px; transition: transform var(--transition-normal);" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
-                    <div style="background-color: rgba(145,0,0,0.06); width: 64px; height: 64px; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
-                        <i data-lucide="file-check" style="color: var(--accent); width: 28px; height: 28px;"></i>
-                    </div>
-                    <h2 style="font-size: 1.6rem; line-height: 1.3; margin: 0;">Permitting & Approvals</h2>
-                    <ul style="color: var(--text-secondary); line-height: 2; padding-left: 20px; font-size: 1.1rem; margin: 0;">
-                        <li>Navigating the permitting process</li>
-                        <li>Working directly with owners for approvals</li>
-                    </ul>
-                </div>
-
-                <!-- Card 8 -->
-                <div class="reveal" id="tenant-services" style="background: #ffffff; border-radius: 20px; padding: 48px; box-shadow: 0 30px 60px rgba(0,0,0,0.06), 0 10px 20px rgba(0,0,0,0.03); display: flex; flex-direction: column; gap: 24px; transition: transform var(--transition-normal);" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
-                    <div style="background-color: rgba(145,0,0,0.06); width: 64px; height: 64px; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
-                        <i data-lucide="wrench" style="color: var(--accent); width: 28px; height: 28px;"></i>
-                    </div>
-                    <h2 style="font-size: 1.6rem; line-height: 1.3; margin: 0;">Tenant Services</h2>
-                    <ul style="color: var(--text-secondary); line-height: 2; padding-left: 20px; font-size: 1.1rem; margin: 0;">
-                        <li>Ongoing maintenance</li>
-                        <li>Facilities support</li>
-                        <li>Occupied buildings support</li>
-                    </ul>
-                </div>
-
-                <!-- Card 9 -->
-                <div class="reveal" id="punch-list" style="background: #ffffff; border-radius: 20px; padding: 48px; box-shadow: 0 30px 60px rgba(0,0,0,0.06), 0 10px 20px rgba(0,0,0,0.03); display: flex; flex-direction: column; gap: 24px; transition: transform var(--transition-normal);" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
-                    <div style="background-color: rgba(145,0,0,0.06); width: 64px; height: 64px; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
-                        <i data-lucide="check-square" style="color: var(--accent); width: 28px; height: 28px;"></i>
-                    </div>
-                    <h2 style="font-size: 1.6rem; line-height: 1.3; margin: 0;">Punch-List & Closeout</h2>
-                    <ul style="color: var(--text-secondary); line-height: 2; padding-left: 20px; font-size: 1.1rem; margin: 0;">
-                        <li>Final completion</li>
-                        <li>Closeout for new construction projects</li>
-                    </ul>
-                </div>
-
+            <div class="reveal" style="text-align: center; margin-bottom: var(--spacing-3xl);">
+                <h2 style="margin-bottom: var(--spacing-sm);">How We Work</h2>
+                <div style="width: 60px; height: 4px; background-color: var(--accent); margin: 0 auto;"></div>
             </div>
+
+            <!-- Phase 1: Preconstruction -->
+            <div class="phase-card reveal" id="preconstruction">
+                <div class="phase-header">
+                    <div class="phase-number">1</div>
+                    <h2 style="margin: 0; font-size: 1.8rem;">Preconstruction & Capital Planning</h2>
+                </div>
+                <div class="phase-content-grid">
+                    <div>
+                        <p style="color: var(--text-secondary); font-size: 1.15rem; line-height: 1.7;">
+                            We guide owners through capital expenditure planning, budgeting, and project scoping early on, so your project starts with a realistic budget and timeline.
+                        </p>
+                    </div>
+                    <div>
+                        <img src="images/hero-1-office-fitout-1024.webp" alt="Preconstruction planning and scoping" class="phase-img">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Phase 2: Permitting -->
+            <div class="phase-card reveal" id="permitting">
+                <div class="phase-header">
+                    <div class="phase-number">2</div>
+                    <h2 style="margin: 0; font-size: 1.8rem;">Permitting & Approvals</h2>
+                </div>
+                <div class="phase-content-grid reverse">
+                    <div>
+                        <p style="color: var(--text-secondary); font-size: 1.15rem; line-height: 1.7;">
+                            We manage the permitting process on your behalf, working directly with local jurisdictions to keep approvals moving and your project on schedule.
+                        </p>
+                    </div>
+                    <div>
+                        <img src="images/hero-3-occupied-1024.webp" alt="Permitting and approvals process" class="phase-img">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Phase 3: Construction (Includes the 5 core construction services) -->
+            <div class="phase-card reveal" style="border-left-color: var(--text-primary);">
+                <div class="phase-header">
+                    <div class="phase-number" style="background-color: var(--text-primary);">3</div>
+                    <h2 style="margin: 0; font-size: 1.8rem;">Construction Execution</h2>
+                </div>
+                <p style="color: var(--text-secondary); font-size: 1.15rem; line-height: 1.7; margin-bottom: 0;">
+                    Our core construction phase is where our teams execute on the plan, specializing in five distinct areas of commercial interior builds:
+                </p>
+
+                <div class="construction-grid">
+                    <div class="construction-card" id="tenant-improvements">
+                        <img src="images/proj1_tysons_after.jpg" alt="Completed tenant improvement office fit-out" style="width: 100%; height: 200px; object-fit: cover; border-radius: var(--radius-sm);">
+                        <h3 style="font-size: 1.3rem; margin-top: var(--spacing-sm);">Tenant Improvements & Fit-Outs</h3>
+                        <p style="color: var(--text-secondary); font-size: 1rem; line-height: 1.6;">We handle build-outs and renovations for both occupied and leasing-ready spaces, including white-box and spec suite construction, so your space is ready for tenants to move in and start working.</p>
+                    </div>
+
+                    <div class="construction-card" id="scif-construction">
+                        <img src="images/proj10_scif_after.jpg" alt="SCIF secure facility construction" style="width: 100%; height: 200px; object-fit: cover; border-radius: var(--radius-sm);">
+                        <h3 style="font-size: 1.3rem; margin-top: var(--spacing-sm);">SCIF Construction</h3>
+                        <p style="color: var(--text-secondary); font-size: 1rem; line-height: 1.6;">We build secure compartmented information facilities to ICD/ICS 705 standards, supporting your accreditation process from the ground up.</p>
+                    </div>
+
+                    <div class="construction-card" id="building-renovations">
+                        <img src="images/hero-2-lobby-1024.webp" alt="Lobby and building renovation" style="width: 100%; height: 200px; object-fit: cover; border-radius: var(--radius-sm);">
+                        <h3 style="font-size: 1.3rem; margin-top: var(--spacing-sm);">Building Renovations & Capital Improvements</h3>
+                        <p style="color: var(--text-secondary); font-size: 1rem; line-height: 1.6;">From full interior overhauls to exterior upgrades and amenity space renovations, we help owners modernize their buildings and protect long-term asset value.</p>
+                    </div>
+
+                    <div class="construction-card" id="demolition">
+                        <img src="images/proj11_gov_before_1.jpg" alt="Commercial demolition services" style="width: 100%; height: 200px; object-fit: cover; border-radius: var(--radius-sm);">
+                        <h3 style="font-size: 1.3rem; margin-top: var(--spacing-sm);">Demolition</h3>
+                        <p style="color: var(--text-secondary); font-size: 1rem; line-height: 1.6;">We provide selective and full-scale demolition services, safely clearing space for your next renovation or build-out while protecting occupied areas around the work zone.</p>
+                    </div>
+
+                    <div class="construction-card" id="flooring-painting">
+                        <img src="images/proj12_painting_after.jpg" alt="Commercial flooring and painting" style="width: 100%; height: 200px; object-fit: cover; border-radius: var(--radius-sm);">
+                        <h3 style="font-size: 1.3rem; margin-top: var(--spacing-sm);">Flooring & Painting</h3>
+                        <p style="color: var(--text-secondary); font-size: 1rem; line-height: 1.6;">Our team installs and replaces flooring, and handles interior and exterior painting and wall finishes, giving your space a fresh, finished look with minimal disruption.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Phase 4: Closeout -->
+            <div class="phase-card reveal" id="punch-list">
+                <div class="phase-header">
+                    <div class="phase-number">4</div>
+                    <h2 style="margin: 0; font-size: 1.8rem;">Punch-List & Closeout</h2>
+                </div>
+                <div class="phase-content-grid reverse">
+                    <div>
+                        <p style="color: var(--text-secondary); font-size: 1.15rem; line-height: 1.7;">
+                            We provide punch-list and closeout services for projects built by other contractors, inspecting completed work and resolving outstanding items so your project reaches true completion.
+                        </p>
+                    </div>
+                    <div>
+                        <img src="images/proj8_restroom_after.jpg" alt="Final punch-list and closeout" class="phase-img">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Phase 5: Tenant Services -->
+            <div class="phase-card reveal" id="tenant-services">
+                <div class="phase-header">
+                    <div class="phase-number">5</div>
+                    <h2 style="margin: 0; font-size: 1.8rem;">Ongoing Tenant Services</h2>
+                </div>
+                <div class="phase-content-grid">
+                    <div>
+                        <p style="color: var(--text-secondary); font-size: 1.15rem; line-height: 1.7;">
+                            Beyond construction, we provide ongoing maintenance and facilities support for occupied buildings, so your space stays in top condition long after move-in.
+                        </p>
+                    </div>
+                    <div>
+                        <img src="images/hero-4-flooring-paint-1024.webp" alt="Ongoing tenant services and maintenance" class="phase-img">
+                    </div>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: var(--spacing-3xl);">
+                <a href="contact.html" class="btn btn-primary" style="font-size: 1.2rem; padding: 16px 40px;">Request a Quote</a>
+            </div>
+
         </div>
     </section>
 
