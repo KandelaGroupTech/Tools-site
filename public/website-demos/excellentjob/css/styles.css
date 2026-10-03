@@ -629,7 +629,7 @@ img {
   h2 { font-size: 1.8rem !important; }
   
   .section { 
-    padding-top: var(--spacing-2xl) !important; 
+    padding-top: var(--spacing-2xl); 
     padding-bottom: var(--spacing-2xl) !important; 
   }
   
