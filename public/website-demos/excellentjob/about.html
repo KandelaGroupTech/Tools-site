@@ -162,20 +162,39 @@
     </section>
 
     <!-- Footer -->
-    <footer class="footer">
-        <!-- Reusing identical footer code -->
+        <footer class="footer">
         <div class="container">
-            <div class="footer-grid">
+            <div class="footer-grid" style="grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: var(--spacing-xl);">
                 <div class="footer-col">
                     <a href="index.html" class="logo" style="margin-bottom: var(--spacing-md);">
-                        <img src="images/logo.jpg" alt="Journey Office Builders" style="height: 100px; width: auto; border-radius: 8px;">
+                        <img src="images/logo.jpg" alt="Journey Office Builders" style="height: 90px; width: auto; border-radius: 8px;">
                     </a>
-                    <p style="color: var(--text-muted); margin-bottom: var(--spacing-md);">Journey Office Builders is a tenant improvement general contractor serving property managers, building owners, architects and tenants across Washington DC, Northern Virginia and Maryland. Turn-key construction, renovation and ongoing tenant services since 1989.</p>
-                    <div style="margin-top: var(--spacing-xl); padding: var(--spacing-lg); background-color: rgba(255,255,255,0.05); border-radius: var(--radius-md); border: 1px solid rgba(255,255,255,0.1);">
-                        <h4 style="color: #ffffff; margin-bottom: 12px; font-size: 0.95rem; text-transform: uppercase; letter-spacing: 1px; display: flex; align-items: center; gap: 8px;">
-                            <i data-lucide="shield-check" style="width: 18px; color: var(--accent);"></i> Official Licenses
+                    <p style="color: var(--text-muted); margin-bottom: 0; font-size: 0.95rem;">Journey Office Builders is a tenant improvement general contractor serving property managers, building owners, architects and tenants across Washington DC, Northern Virginia and Maryland. Turn-key construction, renovation and ongoing tenant services since 1989.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul class="footer-links">
+                        <li style="display: flex; gap: 8px;"><i data-lucide="map-pin" style="width: 20px; color: var(--accent);"></i> <span style="font-size: 0.95rem;">8455-Y Tyco Road, Vienna, VA 22182</span></li>
+                        <li style="display: flex; gap: 8px;"><i data-lucide="phone" style="width: 20px; color: var(--accent);"></i> <a href="tel:7037484600" style="color: inherit; text-decoration: none; font-size: 0.95rem;">703-748-4600</a></li>
+                        <li style="display: flex; gap: 8px;"><i data-lucide="mail" style="width: 20px; color: var(--accent);"></i> <a href="mailto:info@excellentjob.com" style="color: inherit; text-decoration: none; font-size: 0.95rem;">info@excellentjob.com</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col" style="display: flex; flex-direction: column; gap: var(--spacing-lg);">
+                    <div style="padding: var(--spacing-md); background-color: rgba(255,255,255,0.05); border-radius: var(--radius-md); border: 1px solid rgba(255,255,255,0.1);">
+                        <h4 style="color: #ffffff; margin-bottom: 12px; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; display: flex; align-items: center; gap: 8px;">
+                            <i data-lucide="shield-check" style="width: 16px; color: var(--accent);"></i> Official Licenses
                         </h4>
-                        <ul style="list-style: none; padding: 0; margin: 0; font-size: 0.95rem; color: #f3f4f6;">
+                        <ul style="list-style: none; padding: 0; margin: 0; font-size: 0.9rem; color: #f3f4f6;">
                             <li style="margin-bottom: 6px; display: flex; justify-content: space-between;">
                                 <span style="color: #9ca3af;">VA Class A</span>
                                 <strong>#2705020320</strong>
@@ -190,28 +209,9 @@
                             </li>
                         </ul>
                     </div>
-                </div>
-                <div class="footer-col">
-                    <h4>Quick Links</h4>
-                    <ul class="footer-links">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="services.html">Services</a></li>
-                        <li><a href="projects.html">Projects</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Contact</h4>
-                    <ul class="footer-links">
-                        <li style="display: flex; gap: 8px;"><i data-lucide="map-pin" style="width: 20px; color: var(--accent);"></i> 8455-Y Tyco Road, Vienna, VA 22182</li>
-                        <li style="display: flex; gap: 8px;"><i data-lucide="phone" style="width: 20px; color: var(--accent);"></i> <a href="tel:7037484600" style="color: inherit; text-decoration: none;">703-748-4600</a></li>
-                        <li style="display: flex; gap: 8px;"><i data-lucide="mail" style="width: 20px; color: var(--accent);"></i> <a href="mailto:info@excellentjob.com" style="color: inherit; text-decoration: none;">info@excellentjob.com</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-col" style="display: flex; align-items: flex-start; justify-content: center;">
-                    <a href="https://selectgcr.com/our-services/customer-assistance-program/sam-registration-and-renewal/" target="_blank">
-                        <img src="images/SelectGCR_SAM_Certified_Logo.png" alt="SAM Certified" style="height: 160px; width: auto; max-width: 100%; transition: transform 0.2s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'" />
+                    
+                    <a href="https://selectgcr.com/our-services/customer-assistance-program/sam-registration-and-renewal/" target="_blank" style="align-self: flex-start;">
+                        <img src="images/SelectGCR_SAM_Certified_Logo.png" alt="SAM Certified" style="height: 100px; width: auto; max-width: 100%; transition: transform 0.2s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'" />
                     </a>
                 </div>
             </div>
