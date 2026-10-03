@@ -101,6 +101,29 @@
         dot.addEventListener('click', () => goToSlide(idx));
     });
 
+    
+    // Touch/Swipe Support
+    let touchStartX = 0;
+    let touchEndX = 0;
+    
+    carousel.addEventListener('touchstart', e => {
+        touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+    
+    carousel.addEventListener('touchend', e => {
+        touchEndX = e.changedTouches[0].screenX;
+        handleSwipe();
+    }, { passive: true });
+    
+    function handleSwipe() {
+        const threshold = 50; // min distance in px to be considered a swipe
+        if (touchEndX < touchStartX - threshold) {
+            nextSlide(); // swipe left
+        } else if (touchEndX > touchStartX + threshold) {
+            prevSlide(); // swipe right
+        }
+    }
+
     // Keyboard Navigation
     carousel.addEventListener('keydown', (e) => {
         if (e.key === 'ArrowLeft') {
