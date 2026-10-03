@@ -334,6 +334,17 @@
                 .client-logo:hover img {
                     filter: grayscale(0%) opacity(100%);
                 }
+            
+                @media (prefers-reduced-motion: reduce) {
+                    .marquee-content {
+                        animation: none;
+                        flex-wrap: wrap;
+                        justify-content: center;
+                    }
+                    .client-logo[aria-hidden="true"] {
+                        display: none;
+                    }
+                }
             </style>
             <div class="marquee-content">
                 <div class="client-logo"><img src="images/logos/Cannon_Hill.png?v=2" alt="Cannon Hill Capital Partners"></div>
@@ -347,16 +358,16 @@
                 <div class="client-logo"><img src="images/logos/Steuart_Industrial_Management.png" alt="Steuart Industrial Management"></div>
                 <div class="client-logo"><img src="images/logos/Tysons_Corner_Center.png" alt="Tysons Corner Center"></div>
                 <!-- Duplicate for seamless scroll -->
-                <div class="client-logo"><img src="images/logos/Cannon_Hill.png?v=2" alt="Cannon Hill Capital Partners"></div>
-                <div class="client-logo"><img src="images/logos/Carr_Properties.png" alt="Carr Properties"></div>
-                <div class="client-logo"><img src="images/logos/CBRE.png" alt="CBRE"></div>
-                <div class="client-logo"><img src="images/logos/Cushman_and_Wakefield.png" alt="Cushman & Wakefield"></div>
-                <div class="client-logo"><img src="images/logos/Jones_Lang_LaSalle.png" alt="Jones Lang LaSalle"></div>
-                <div class="client-logo"><img src="images/logos/Lincoln_Property_Company.png?v=3" alt="Lincoln Property Company"></div>
-                <div class="client-logo"><img src="images/logos/Monument_Realty.png?v=2" alt="Monument Realty"></div>
-                <div class="client-logo"><img src="images/logos/Prologis.png" alt="Prologis"></div>
-                <div class="client-logo"><img src="images/logos/Steuart_Industrial_Management.png" alt="Steuart Industrial Management"></div>
-                <div class="client-logo"><img src="images/logos/Tysons_Corner_Center.png" alt="Tysons Corner Center"></div>
+                <div class="client-logo" aria-hidden="true"><img src="images/logos/Cannon_Hill.png?v=2" alt="Cannon Hill Capital Partners"></div>
+                <div class="client-logo" aria-hidden="true"><img src="images/logos/Carr_Properties.png" alt="Carr Properties"></div>
+                <div class="client-logo" aria-hidden="true"><img src="images/logos/CBRE.png" alt="CBRE"></div>
+                <div class="client-logo" aria-hidden="true"><img src="images/logos/Cushman_and_Wakefield.png" alt="Cushman & Wakefield"></div>
+                <div class="client-logo" aria-hidden="true"><img src="images/logos/Jones_Lang_LaSalle.png" alt="Jones Lang LaSalle"></div>
+                <div class="client-logo" aria-hidden="true"><img src="images/logos/Lincoln_Property_Company.png?v=3" alt="Lincoln Property Company"></div>
+                <div class="client-logo" aria-hidden="true"><img src="images/logos/Monument_Realty.png?v=2" alt="Monument Realty"></div>
+                <div class="client-logo" aria-hidden="true"><img src="images/logos/Prologis.png" alt="Prologis"></div>
+                <div class="client-logo" aria-hidden="true"><img src="images/logos/Steuart_Industrial_Management.png" alt="Steuart Industrial Management"></div>
+                <div class="client-logo" aria-hidden="true"><img src="images/logos/Tysons_Corner_Center.png" alt="Tysons Corner Center"></div>
             </div>
         </div>
     </section>
