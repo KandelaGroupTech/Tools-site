@@ -675,3 +675,14 @@ img {
     width: fit-content !important;
   }
 }
+
+@media (max-width: 768px) {
+  /* Fix white-on-white text in mobile menu on homepage */
+  .header-container > .nav-links.active a {
+    color: var(--text-primary) !important;
+  }
+  .header-container > .nav-links.active a.active {
+    color: var(--accent) !important;
+    background: rgba(145, 0, 0, 0.08) !important;
+  }
+}
