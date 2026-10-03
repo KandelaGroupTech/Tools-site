@@ -664,3 +664,14 @@ img {
     background: rgba(255, 255, 255, 0.98) !important;
   }
 }
+
+@media (max-width: 768px) {
+  .header-container > .nav-links.active {
+    align-items: flex-start !important; /* Prevent the a tags from stretching full width */
+    gap: 4px; /* Add slight gap between links */
+  }
+  .nav-links a {
+    padding: 12px 24px !important; /* Restore horizontal padding so the pill wraps the text */
+    width: fit-content !important;
+  }
+}
