@@ -45,6 +45,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 const step = finalValue / (duration / 16); // 60fps
                 let current = 0;
                 
+                // Reset to 0 before animating so it animates up from 0
+                target.innerText = '0';
+                
                 const updateCounter = () => {
                     current += step;
                     if (current < finalValue) {
