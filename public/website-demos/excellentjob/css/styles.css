@@ -316,7 +316,7 @@ img {
 
 .footer-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr));
   gap: var(--spacing-2xl);
   margin-bottom: var(--spacing-2xl);
 }
@@ -579,4 +579,39 @@ img {
 @media (min-width: 768px) {
     .contact-grid { grid-template-columns: 1fr 1fr; }
     .form-row { grid-template-columns: 1fr 1fr; }
+}
+
+
+/* Mobile Base Optimizations */
+@media (max-width: 768px) {
+  html { font-size: 15px; }
+  h1 { font-size: 2.2rem !important; }
+  h2 { font-size: 1.8rem !important; }
+  
+  .section { 
+    padding-top: var(--spacing-2xl) !important; 
+    padding-bottom: var(--spacing-2xl) !important; 
+  }
+  
+  .hero-content {
+    padding-top: 100px !important;
+  }
+  
+  .phase-card, .project-card, .glass { 
+    padding: var(--spacing-lg) !important; 
+  }
+  
+  .phase-content-grid {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xl);
+  }
+  
+  .about-grid, .contact-grid {
+    gap: var(--spacing-xl) !important;
+  }
+  
+  .split-slider {
+    height: 250px !important; /* Smaller images on mobile for before/after */
+  }
 }
