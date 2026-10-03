@@ -276,15 +276,19 @@
                     display: flex;
                     animation: marquee 20s linear infinite;
                 }
+
                 .client-logo {
                     display: flex;
                     align-items: center;
                     justify-content: center;
                     padding: 0 var(--spacing-2xl);
+                    width: 200px; /* Fixed container width for consistent spacing */
                 }
                 .client-logo img {
-                    height: 50px;
+                    max-height: 50px;
+                    max-width: 150px;
                     width: auto;
+                    height: auto;
                     filter: grayscale(100%) opacity(60%);
                     transition: filter var(--transition-fast), opacity var(--transition-fast);
                     object-fit: contain;
