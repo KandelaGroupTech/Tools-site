@@ -1,0 +1,439 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-04T19:22:52+00:00",
+  "title": "Design System: Journey Office Builders",
+  "extensions": {
+    "colorMeta": {
+      "maroon": {
+        "role": "primary",
+        "displayName": "Logo Maroon",
+        "canonical": "oklch(37.9% 0.144 13.3)",
+        "tonalRamp": [
+          "oklch(15% 0.117 13.3)",
+          "oklch(26% 0.130 13.3)",
+          "oklch(37% 0.143 13.3)",
+          "oklch(48% 0.132 13.3)",
+          "oklch(60% 0.117 13.3)",
+          "oklch(71% 0.104 13.3)",
+          "oklch(83% 0.090 13.3)",
+          "oklch(95% 0.075 13.3)"
+        ]
+      },
+      "maroon-deep": {
+        "role": "primary",
+        "displayName": "Deep Maroon",
+        "canonical": "oklch(30.8% 0.116 11.7)",
+        "tonalRamp": [
+          "oklch(15% 0.101 11.7)",
+          "oklch(26% 0.111 11.7)",
+          "oklch(37% 0.110 11.7)",
+          "oklch(48% 0.099 11.7)",
+          "oklch(60% 0.088 11.7)",
+          "oklch(71% 0.077 11.7)",
+          "oklch(83% 0.066 11.7)",
+          "oklch(95% 0.054 11.7)"
+        ]
+      },
+      "maroon-tint": {
+        "role": "primary",
+        "displayName": "Maroon Tint",
+        "canonical": "oklch(87.4% 0.048 1.8)",
+        "tonalRamp": [
+          "oklch(15% 0.019 1.8)",
+          "oklch(26% 0.023 1.8)",
+          "oklch(37% 0.028 1.8)",
+          "oklch(48% 0.032 1.8)",
+          "oklch(60% 0.037 1.8)",
+          "oklch(71% 0.041 1.8)",
+          "oklch(83% 0.046 1.8)",
+          "oklch(95% 0.045 1.8)"
+        ]
+      },
+      "black": {
+        "role": "secondary",
+        "displayName": "Skyline Black",
+        "canonical": "oklch(21.5% 0.004 48.5)",
+        "tonalRamp": [
+          "oklch(15% 0.004 48.5)",
+          "oklch(26% 0.004 48.5)",
+          "oklch(37% 0.003 48.5)",
+          "oklch(48% 0.003 48.5)",
+          "oklch(60% 0.003 48.5)",
+          "oklch(71% 0.002 48.5)",
+          "oklch(83% 0.002 48.5)",
+          "oklch(95% 0.002 48.5)"
+        ]
+      },
+      "black-tint": {
+        "role": "secondary",
+        "displayName": "Black Tint",
+        "canonical": "oklch(82.1% 0.01 62.6)",
+        "tonalRamp": [
+          "oklch(15% 0.004 62.6)",
+          "oklch(26% 0.005 62.6)",
+          "oklch(37% 0.006 62.6)",
+          "oklch(48% 0.007 62.6)",
+          "oklch(60% 0.008 62.6)",
+          "oklch(71% 0.009 62.6)",
+          "oklch(83% 0.010 62.6)",
+          "oklch(95% 0.009 62.6)"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Warm Ink",
+        "canonical": "oklch(25.0% 0.004 48.6)",
+        "tonalRamp": [
+          "oklch(15% 0.004 48.6)",
+          "oklch(26% 0.004 48.6)",
+          "oklch(37% 0.004 48.6)",
+          "oklch(48% 0.003 48.6)",
+          "oklch(60% 0.003 48.6)",
+          "oklch(71% 0.002 48.6)",
+          "oklch(83% 0.002 48.6)",
+          "oklch(95% 0.002 48.6)"
+        ]
+      },
+      "ink-2": {
+        "role": "neutral",
+        "displayName": "Ink 2",
+        "canonical": "oklch(39.7% 0.006 48.6)",
+        "tonalRamp": [
+          "oklch(15% 0.005 48.6)",
+          "oklch(26% 0.005 48.6)",
+          "oklch(37% 0.006 48.6)",
+          "oklch(48% 0.006 48.6)",
+          "oklch(60% 0.005 48.6)",
+          "oklch(71% 0.004 48.6)",
+          "oklch(83% 0.004 48.6)",
+          "oklch(95% 0.003 48.6)"
+        ]
+      },
+      "ink-soft": {
+        "role": "neutral",
+        "displayName": "Ink Soft",
+        "canonical": "oklch(51.4% 0.009 61.3)",
+        "tonalRamp": [
+          "oklch(15% 0.006 61.3)",
+          "oklch(26% 0.007 61.3)",
+          "oklch(37% 0.008 61.3)",
+          "oklch(48% 0.009 61.3)",
+          "oklch(60% 0.008 61.3)",
+          "oklch(71% 0.008 61.3)",
+          "oklch(83% 0.007 61.3)",
+          "oklch(95% 0.006 61.3)"
+        ]
+      },
+      "wall": {
+        "role": "neutral",
+        "displayName": "Primer Wall",
+        "canonical": "oklch(96.6% 0.003 128.5)",
+        "tonalRamp": [
+          "oklch(15% 0.001 128.5)",
+          "oklch(26% 0.001 128.5)",
+          "oklch(37% 0.002 128.5)",
+          "oklch(48% 0.002 128.5)",
+          "oklch(60% 0.002 128.5)",
+          "oklch(71% 0.002 128.5)",
+          "oklch(83% 0.003 128.5)",
+          "oklch(95% 0.003 128.5)"
+        ]
+      },
+      "wall-2": {
+        "role": "neutral",
+        "displayName": "Wall 2",
+        "canonical": "oklch(92.9% 0.005 134.9)",
+        "tonalRamp": [
+          "oklch(15% 0.002 134.9)",
+          "oklch(26% 0.002 134.9)",
+          "oklch(37% 0.003 134.9)",
+          "oklch(48% 0.003 134.9)",
+          "oklch(60% 0.004 134.9)",
+          "oklch(71% 0.004 134.9)",
+          "oklch(83% 0.005 134.9)",
+          "oklch(95% 0.005 134.9)"
+        ]
+      },
+      "seam": {
+        "role": "neutral",
+        "displayName": "Seam Grey",
+        "canonical": "oklch(84.1% 0.007 145.5)",
+        "tonalRamp": [
+          "oklch(15% 0.003 145.5)",
+          "oklch(26% 0.004 145.5)",
+          "oklch(37% 0.004 145.5)",
+          "oklch(48% 0.005 145.5)",
+          "oklch(60% 0.006 145.5)",
+          "oklch(71% 0.006 145.5)",
+          "oklch(83% 0.007 145.5)",
+          "oklch(95% 0.006 145.5)"
+        ]
+      },
+      "white": {
+        "role": "neutral",
+        "displayName": "White",
+        "canonical": "oklch(100.0% 0.0 0.0)",
+        "tonalRamp": [
+          "oklch(15% 0.000 0.0)",
+          "oklch(26% 0.000 0.0)",
+          "oklch(37% 0.000 0.0)",
+          "oklch(48% 0.000 0.0)",
+          "oklch(60% 0.000 0.0)",
+          "oklch(71% 0.000 0.0)",
+          "oklch(83% 0.000 0.0)",
+          "oklch(95% 0.000 0.0)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display Sign",
+        "purpose": "Home hero promise, one sign line per span."
+      },
+      "headline": {
+        "displayName": "Headline Sign",
+        "purpose": "Section headings and inner page titles."
+      },
+      "title": {
+        "displayName": "Title Sign",
+        "purpose": "Project captions, scope rows, nameplates, service headings."
+      },
+      "lede": {
+        "displayName": "Lede",
+        "purpose": "The sentence under a headline, max 44ch."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Reading text at a 68ch measure."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Plate headings, roles, scope group names, before and after tags, form labels."
+      },
+      "plate": {
+        "displayName": "Plate",
+        "purpose": "Button and action-link text."
+      }
+    },
+    "shadows": [
+      {
+        "name": "window-recess",
+        "value": "inset 0 10px 24px rgba(0,0,0,.45), 0 18px 40px -18px rgba(0,0,0,.55)",
+        "purpose": "The framed viewing window cut through the hero seam."
+      },
+      {
+        "name": "window-rim",
+        "value": "inset 0 0 0 1px rgba(255,255,255,.08), inset 0 14px 22px -10px rgba(0,0,0,.6)",
+        "purpose": "Inner rim of the viewing window."
+      },
+      {
+        "name": "pull-post",
+        "value": "-10px 0 18px -8px rgba(0,0,0,.5), 10px 0 18px -8px rgba(0,0,0,.5)",
+        "purpose": "Both sides of the maroon post on the wall pull-back."
+      },
+      {
+        "name": "pull-grip",
+        "value": "0 10px 24px -6px rgba(0,0,0,.55)",
+        "purpose": "Drag handle on the pull-back post."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-out",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "The only easing: exponential ease-out for everything that slides."
+      },
+      {
+        "name": "window-track",
+        "value": "1100ms",
+        "purpose": "Viewing window slide; autoplay advances every 5200ms."
+      },
+      {
+        "name": "pull-settle",
+        "value": "900ms",
+        "purpose": "First-view settle of the home pull-back from 88% to 50%."
+      },
+      {
+        "name": "menu-drop",
+        "value": "260ms",
+        "purpose": "Mobile nav sheet slides 8px down into place."
+      },
+      {
+        "name": "plate-state",
+        "value": "160ms",
+        "purpose": "Plate background, color and border state change."
+      },
+      {
+        "name": "arrow-nudge",
+        "value": "220ms",
+        "purpose": "Arrow icons shift 4px right on hover of plates and scope rows."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "0.01ms",
+        "purpose": "All transitions and animations collapse under prefers-reduced-motion; autoplay and the pull intro are skipped."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "wide",
+        "value": "1080px"
+      },
+      {
+        "name": "medium",
+        "value": "960px"
+      },
+      {
+        "name": "mobile",
+        "value": "860px"
+      },
+      {
+        "name": "projects",
+        "value": "760px"
+      },
+      {
+        "name": "small",
+        "value": "600px"
+      },
+      {
+        "name": "footer-single",
+        "value": "560px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "White Plate",
+      "kind": "button",
+      "refersTo": "plate-white",
+      "description": "Primary action on maroon or black panels (Request a quote).",
+      "html": "<div class=\"ds-dark\"><a class=\"ds-plate ds-plate-white\" href=\"#\">Request a quote <svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.25\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 12h14\"/><path d=\"m12 5 7 7-7 7\"/></svg></a></div>",
+      "css": ":host{--wall:#f3f4f2;--wall-2:#e6e8e5;--seam:#c8ccc8;--ink:#232120;--ink-2:#4a4644;--ink-soft:#6b6662;--maroon:#7c0a2b;--maroon-deep:#5c0620;--maroon-tint:#f2c9d3;--black:#1b1918;--black-tint:#c9c3be;--white:#fff;--display:\"Archivo\",\"Arial Narrow\",sans-serif;--text:\"Archivo\",system-ui,sans-serif;--ease-out:cubic-bezier(0.16,1,0.3,1);} .ds-plate{display:inline-flex;align-items:center;justify-content:space-between;gap:.6rem;min-height:52px;padding:.85rem 1.4rem;font-family:var(--display);font-variation-settings:\"wdth\" 75;font-weight:800;font-size:1.0625rem;letter-spacing:.04em;text-transform:uppercase;text-decoration:none;border:2px solid currentColor;border-radius:0;cursor:pointer;transition:background-color 160ms var(--ease-out),color 160ms var(--ease-out),border-color 160ms var(--ease-out);} .ds-plate svg{width:1.15em;height:1.15em;transition:transform 220ms var(--ease-out);} .ds-plate:hover svg{transform:translateX(4px);} .ds-plate:focus-visible{outline:3px solid var(--maroon);outline-offset:3px;} .ds-dark{background:var(--black);padding:24px;} .ds-plate-white{background:var(--white);color:var(--ink);border-color:var(--white);} .ds-plate-white:hover{background:var(--maroon-tint);border-color:var(--maroon-tint);} .ds-dark .ds-plate:focus-visible{outline-color:var(--white);}"
+    },
+    {
+      "name": "Ink Plate",
+      "kind": "button",
+      "refersTo": "plate-ink",
+      "description": "Primary action on the light wall; hover turns maroon.",
+      "html": "<a class=\"ds-plate ds-plate-ink\" href=\"#\">Every project, before and after <svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.25\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 12h14\"/><path d=\"m12 5 7 7-7 7\"/></svg></a>",
+      "css": ":host{--wall:#f3f4f2;--wall-2:#e6e8e5;--seam:#c8ccc8;--ink:#232120;--ink-2:#4a4644;--ink-soft:#6b6662;--maroon:#7c0a2b;--maroon-deep:#5c0620;--maroon-tint:#f2c9d3;--black:#1b1918;--black-tint:#c9c3be;--white:#fff;--display:\"Archivo\",\"Arial Narrow\",sans-serif;--text:\"Archivo\",system-ui,sans-serif;--ease-out:cubic-bezier(0.16,1,0.3,1);} .ds-plate{display:inline-flex;align-items:center;justify-content:space-between;gap:.6rem;min-height:52px;padding:.85rem 1.4rem;font-family:var(--display);font-variation-settings:\"wdth\" 75;font-weight:800;font-size:1.0625rem;letter-spacing:.04em;text-transform:uppercase;text-decoration:none;border:2px solid currentColor;border-radius:0;cursor:pointer;transition:background-color 160ms var(--ease-out),color 160ms var(--ease-out),border-color 160ms var(--ease-out);} .ds-plate svg{width:1.15em;height:1.15em;transition:transform 220ms var(--ease-out);} .ds-plate:hover svg{transform:translateX(4px);} .ds-plate:focus-visible{outline:3px solid var(--maroon);outline-offset:3px;} .ds-plate-ink{background:var(--ink);color:var(--white);border-color:var(--ink);} .ds-plate-ink:hover{background:var(--maroon);border-color:var(--maroon);}"
+    },
+    {
+      "name": "Maroon Plate",
+      "kind": "button",
+      "refersTo": "plate-maroon",
+      "description": "Maroon action plate; hover deepens.",
+      "html": "<a class=\"ds-plate ds-plate-maroon\" href=\"#\">Send request <svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.25\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 12h14\"/><path d=\"m12 5 7 7-7 7\"/></svg></a>",
+      "css": ":host{--wall:#f3f4f2;--wall-2:#e6e8e5;--seam:#c8ccc8;--ink:#232120;--ink-2:#4a4644;--ink-soft:#6b6662;--maroon:#7c0a2b;--maroon-deep:#5c0620;--maroon-tint:#f2c9d3;--black:#1b1918;--black-tint:#c9c3be;--white:#fff;--display:\"Archivo\",\"Arial Narrow\",sans-serif;--text:\"Archivo\",system-ui,sans-serif;--ease-out:cubic-bezier(0.16,1,0.3,1);} .ds-plate{display:inline-flex;align-items:center;justify-content:space-between;gap:.6rem;min-height:52px;padding:.85rem 1.4rem;font-family:var(--display);font-variation-settings:\"wdth\" 75;font-weight:800;font-size:1.0625rem;letter-spacing:.04em;text-transform:uppercase;text-decoration:none;border:2px solid currentColor;border-radius:0;cursor:pointer;transition:background-color 160ms var(--ease-out),color 160ms var(--ease-out),border-color 160ms var(--ease-out);} .ds-plate svg{width:1.15em;height:1.15em;transition:transform 220ms var(--ease-out);} .ds-plate:hover svg{transform:translateX(4px);} .ds-plate:focus-visible{outline:3px solid var(--maroon);outline-offset:3px;} .ds-plate-maroon{background:var(--maroon);color:var(--white);border-color:var(--maroon);} .ds-plate-maroon:hover{background:var(--maroon-deep);border-color:var(--maroon-deep);}"
+    },
+    {
+      "name": "Ghost Plate",
+      "kind": "button",
+      "refersTo": "plate-ghost",
+      "description": "Secondary action on dark panels: outline only, faint white wash on hover.",
+      "html": "<div class=\"ds-dark\"><a class=\"ds-plate ds-plate-ghost\" href=\"#\">See finished work <svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.25\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 12h14\"/><path d=\"m12 5 7 7-7 7\"/></svg></a></div>",
+      "css": ":host{--wall:#f3f4f2;--wall-2:#e6e8e5;--seam:#c8ccc8;--ink:#232120;--ink-2:#4a4644;--ink-soft:#6b6662;--maroon:#7c0a2b;--maroon-deep:#5c0620;--maroon-tint:#f2c9d3;--black:#1b1918;--black-tint:#c9c3be;--white:#fff;--display:\"Archivo\",\"Arial Narrow\",sans-serif;--text:\"Archivo\",system-ui,sans-serif;--ease-out:cubic-bezier(0.16,1,0.3,1);} .ds-plate{display:inline-flex;align-items:center;justify-content:space-between;gap:.6rem;min-height:52px;padding:.85rem 1.4rem;font-family:var(--display);font-variation-settings:\"wdth\" 75;font-weight:800;font-size:1.0625rem;letter-spacing:.04em;text-transform:uppercase;text-decoration:none;border:2px solid currentColor;border-radius:0;cursor:pointer;transition:background-color 160ms var(--ease-out),color 160ms var(--ease-out),border-color 160ms var(--ease-out);} .ds-plate svg{width:1.15em;height:1.15em;transition:transform 220ms var(--ease-out);} .ds-plate:hover svg{transform:translateX(4px);} .ds-plate:focus-visible{outline:3px solid var(--maroon);outline-offset:3px;} .ds-dark{background:var(--black);padding:24px;} .ds-plate-ghost{background:transparent;color:var(--white);} .ds-plate-ghost:hover{background:rgba(255,255,255,.12);} .ds-dark .ds-plate:focus-visible{outline-color:var(--white);}"
+    },
+    {
+      "name": "Header Sign Band",
+      "kind": "nav",
+      "refersTo": "nav-plate",
+      "description": "White sticky band with wayfinding nav plates and the ink call block.",
+      "html": "<header class=\"ds-header\"><span class=\"ds-brand\">JOB</span><nav class=\"ds-nav\"><a href=\"#\" aria-current=\"page\">Home</a><a href=\"#\">About</a><a href=\"#\">Services</a><a href=\"#\">Projects</a><a href=\"#\">Contact</a></nav><a class=\"ds-call\" href=\"#\"><svg viewBox=\"0 0 24 24\" width=\"22\" height=\"22\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.25\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z\"/></svg>703-748-4600</a></header>",
+      "css": ":host{--wall:#f3f4f2;--wall-2:#e6e8e5;--seam:#c8ccc8;--ink:#232120;--ink-2:#4a4644;--ink-soft:#6b6662;--maroon:#7c0a2b;--maroon-deep:#5c0620;--maroon-tint:#f2c9d3;--black:#1b1918;--black-tint:#c9c3be;--white:#fff;--display:\"Archivo\",\"Arial Narrow\",sans-serif;--text:\"Archivo\",system-ui,sans-serif;--ease-out:cubic-bezier(0.16,1,0.3,1);} .ds-header{display:flex;align-items:stretch;justify-content:space-between;height:76px;background:var(--white);border-bottom:3px solid var(--ink);padding-left:24px;} .ds-brand{display:flex;align-items:center;font-family:var(--display);font-variation-settings:\"wdth\" 62;font-weight:900;font-size:2rem;color:var(--ink);} .ds-nav{display:flex;align-items:center;gap:4px;padding-right:1rem;margin-left:auto;} .ds-nav a{display:flex;align-items:center;height:44px;padding:0 1rem;background:var(--wall);color:var(--ink-2);font-family:var(--display);font-variation-settings:\"wdth\" 75;font-weight:700;font-size:.95rem;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;} .ds-nav a:hover{background:var(--ink);color:var(--white);} .ds-nav a[aria-current=page]{background:var(--maroon);color:var(--white);} .ds-nav a:focus-visible,.ds-call:focus-visible{outline:3px solid var(--maroon);outline-offset:3px;} .ds-call{display:flex;align-items:center;gap:.6rem;padding:0 24px 0 1.5rem;background:var(--ink);color:var(--white);text-decoration:none;font-family:var(--display);font-variation-settings:\"wdth\" 62;font-weight:800;font-size:1.6rem;font-variant-numeric:tabular-nums;} .ds-call svg{color:var(--maroon-tint);} .ds-call:hover{background:var(--maroon);}"
+    },
+    {
+      "name": "Field",
+      "kind": "input",
+      "refersTo": "field",
+      "description": "Form field: wall fill, ink bottom border, white fill and full ink border on focus.",
+      "html": "<label class=\"ds-field\"><span>Company</span><input type=\"text\" placeholder=\"Property management firm\"></label>",
+      "css": ":host{--wall:#f3f4f2;--wall-2:#e6e8e5;--seam:#c8ccc8;--ink:#232120;--ink-2:#4a4644;--ink-soft:#6b6662;--maroon:#7c0a2b;--maroon-deep:#5c0620;--maroon-tint:#f2c9d3;--black:#1b1918;--black-tint:#c9c3be;--white:#fff;--display:\"Archivo\",\"Arial Narrow\",sans-serif;--text:\"Archivo\",system-ui,sans-serif;--ease-out:cubic-bezier(0.16,1,0.3,1);} .ds-field{display:flex;flex-direction:column;gap:.4rem;max-width:360px;} .ds-field span{font-family:var(--display);font-variation-settings:\"wdth\" 75;font-weight:700;font-size:.875rem;letter-spacing:.06em;text-transform:uppercase;color:var(--ink);} .ds-field input{font-family:var(--text);font-size:1rem;color:var(--ink);background:var(--wall);border:2px solid var(--wall-2);border-bottom-color:var(--ink);border-radius:0;padding:.8rem .9rem;min-height:52px;caret-color:var(--maroon);transition:border-color 150ms,background-color 150ms;} .ds-field input::placeholder{color:var(--ink-soft);} .ds-field input:hover{border-color:var(--seam);border-bottom-color:var(--ink);} .ds-field input:focus{outline:none;background:var(--white);border-color:var(--ink);}"
+    },
+    {
+      "name": "Hoarding Panel",
+      "kind": "card",
+      "refersTo": "maroon",
+      "description": "Full-bleed maroon panel with printed board seams, fastener dots and a condensed sign headline.",
+      "html": "<div class=\"ds-panel\"><h2>Answered within the hour.</h2><p>Quoted in 24 to 48 hours. Invoiced at the estimate.</p></div>",
+      "css": ":host{--wall:#f3f4f2;--wall-2:#e6e8e5;--seam:#c8ccc8;--ink:#232120;--ink-2:#4a4644;--ink-soft:#6b6662;--maroon:#7c0a2b;--maroon-deep:#5c0620;--maroon-tint:#f2c9d3;--black:#1b1918;--black-tint:#c9c3be;--white:#fff;--display:\"Archivo\",\"Arial Narrow\",sans-serif;--text:\"Archivo\",system-ui,sans-serif;--ease-out:cubic-bezier(0.16,1,0.3,1);} .ds-panel{position:relative;background-color:var(--maroon);background-image:linear-gradient(90deg,rgba(0,0,0,.3) 0 2px,transparent 2px);background-size:220px 100%;color:var(--white);padding:48px 40px;} .ds-panel::after{content:\"\";position:absolute;inset:14px;pointer-events:none;background:radial-gradient(circle,rgba(255,255,255,.32) 0 2.5px,transparent 3px) left top/8px 8px no-repeat,radial-gradient(circle,rgba(255,255,255,.32) 0 2.5px,transparent 3px) right top/8px 8px no-repeat,radial-gradient(circle,rgba(255,255,255,.32) 0 2.5px,transparent 3px) left bottom/8px 8px no-repeat,radial-gradient(circle,rgba(255,255,255,.32) 0 2.5px,transparent 3px) right bottom/8px 8px no-repeat;} .ds-panel h2{margin:0 0 1rem;font-family:var(--display);font-variation-settings:\"wdth\" 62;font-weight:800;text-transform:uppercase;line-height:.9;font-size:3rem;} .ds-panel p{margin:0;color:var(--maroon-tint);font-family:var(--text);font-size:1.2rem;line-height:1.55;}"
+    },
+    {
+      "name": "Nameplate",
+      "kind": "custom",
+      "refersTo": "nameplate",
+      "description": "Ink plate carrying a person's name in condensed caps and a maroon-tint role label.",
+      "html": "<div class=\"ds-nameplate\"><h3>Richard Asala</h3><p>President</p></div>",
+      "css": ":host{--wall:#f3f4f2;--wall-2:#e6e8e5;--seam:#c8ccc8;--ink:#232120;--ink-2:#4a4644;--ink-soft:#6b6662;--maroon:#7c0a2b;--maroon-deep:#5c0620;--maroon-tint:#f2c9d3;--black:#1b1918;--black-tint:#c9c3be;--white:#fff;--display:\"Archivo\",\"Arial Narrow\",sans-serif;--text:\"Archivo\",system-ui,sans-serif;--ease-out:cubic-bezier(0.16,1,0.3,1);} .ds-nameplate{display:inline-block;background:var(--ink);color:var(--white);padding:1.25rem 1.4rem 1.1rem;} .ds-nameplate h3{margin:0;font-family:var(--display);font-variation-settings:\"wdth\" 62;font-weight:800;text-transform:uppercase;line-height:.9;font-size:2.4rem;} .ds-nameplate p{margin:.6rem 0 0;color:var(--maroon-tint);font-family:var(--display);font-variation-settings:\"wdth\" 75;font-weight:700;font-size:.8125rem;letter-spacing:.08em;text-transform:uppercase;}"
+    },
+    {
+      "name": "Fact Strip",
+      "kind": "custom",
+      "refersTo": "fact-strip",
+      "description": "Ink band between seam rules with condensed uppercase facts in hairline-divided cells.",
+      "html": "<ul class=\"ds-facts\"><li>Since 1989</li><li>500+ projects completed</li><li>Bonded &amp; insured</li><li>Preferred vendor in 40+ buildings</li></ul>",
+      "css": ":host{--wall:#f3f4f2;--wall-2:#e6e8e5;--seam:#c8ccc8;--ink:#232120;--ink-2:#4a4644;--ink-soft:#6b6662;--maroon:#7c0a2b;--maroon-deep:#5c0620;--maroon-tint:#f2c9d3;--black:#1b1918;--black-tint:#c9c3be;--white:#fff;--display:\"Archivo\",\"Arial Narrow\",sans-serif;--text:\"Archivo\",system-ui,sans-serif;--ease-out:cubic-bezier(0.16,1,0.3,1);} .ds-facts{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));background:var(--ink);color:var(--white);border-block:3px solid var(--seam);} .ds-facts li{padding:1.4rem 1.25rem;font-family:var(--display);font-variation-settings:\"wdth\" 62;font-weight:800;text-transform:uppercase;font-size:1.6rem;line-height:1;font-variant-numeric:tabular-nums lining-nums;} .ds-facts li+li{border-left:1px solid rgba(255,255,255,.2);}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Hoarding Wall",
+    "overview": "The site is the branded partition a contractor stands up on an occupied floor: printed vinyl panels in logo maroon and skyline black, fastened to a cool primer-white wall, carrying site signage in giant condensed capitals. Every page is a run of full-bleed panels that meet at thin visible seams. Information that would be a card or a badge elsewhere is a plate screwed to the wall: a permit plate, a nameplate, a wayfinding plate for navigation, a fact strip printed across the boards. Finished work is only ever seen through a cut in the wall, either the framed viewing window or the pull-back panel that slides aside to reveal the after photo.\n\nThe density is signage density: few words, set very large, with normal-width reading text underneath at a comfortable measure. Color is committed rather than accented. Maroon and black are surfaces, not highlights, and the light wall ground exists so those panels read as panels. Corners are square everywhere; depth belongs only to the openings cut through the wall.\n\nMotion follows a single grammar: things slide on a horizontal track with an exponential ease-out (the window track, the pull-back settle, the mobile menu drop). Reduced motion collapses all of it.",
+    "keyCharacteristics": [
+      "Full-bleed maroon and black panels on a cool off-white wall, separated by 3px seams in seam grey.",
+      "Extra-condensed heavy Archivo (width 62, weight 800) in uppercase for all headings, phone numbers and facts; normal-width Archivo for reading.",
+      "Square corners, 2px plate borders, no card shadows.",
+      "Fastener dots at panel corners and printed 4 ft board seams across wide maroon panels.",
+      "Photography framed by thick ink borders, as if seen through an opening in the hoarding.",
+      "The phone number is set as display type wherever it appears."
+    ],
+    "rules": [
+      {
+        "name": "The Panels Not Accents Rule",
+        "body": "Maroon and black are applied as full panels with white type on them. Do not reduce them to thin accent lines, tinted icons or colored text on the wall, except for the single maroon year numeral and step numbers on light ground.",
+        "section": "colors"
+      },
+      {
+        "name": "The Seam Rule",
+        "body": "Adjacent panels never touch and never get a border. They sit in a grid with a 3px gap over a seam-grey background, so the seam is the wall showing through.",
+        "section": "colors"
+      },
+      {
+        "name": "The Tint Pairing Rule",
+        "body": "Secondary text on a colored panel uses that panel's own tint (maroon-tint on maroon, black-tint on black), never a translucent white.",
+        "section": "colors"
+      },
+      {
+        "name": "The Signage Rule",
+        "body": "Every heading, phone number, step number and fact is condensed Archivo (width 62, weight 800 or 900) in uppercase with 0.9 line height. Reading text is never condensed.",
+        "section": "typography"
+      },
+      {
+        "name": "The Phone Is Display Type Rule",
+        "body": "The phone number is set as a sign wherever it appears: header call band, hero call panel, page-head side panel, closing panel.",
+        "section": "typography"
+      },
+      {
+        "name": "The Only Openings Cast Shadows Rule",
+        "body": "A shadow is allowed only on the viewing window and the pull-back post and grip. Anything fastened to the wall stays flat.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do build sections as full-bleed maroon (#7c0a2b), black (#1b1918) or wall panels, and put adjacent panels in a grid with a 3px gap over seam grey.",
+      "Do set headings, phone numbers and facts in Archivo at width 62, weight 800, uppercase, line height 0.9.",
+      "Do use the panel's own tint for secondary text on colored panels (maroon-tint on maroon, black-tint on black).",
+      "Do make actions plates: square, 2px bordered, 52px minimum height, width-75 uppercase.",
+      "Do frame photography in thick ink borders (8px to 10px) so it reads as seen through the wall.",
+      "Do animate only by sliding on a horizontal track with cubic-bezier(0.16, 1, 0.3, 1), and collapse it under reduced motion.",
+      "Do keep the phone and quote plates in the first mobile viewport."
+    ],
+    "donts": [
+      "Don't round any corner; the system radius is 0px.",
+      "Don't add shadows to panels, plates, tiles or cards; shadows belong only to the viewing window and the pull-back.",
+      "Don't condense reading text or set body copy in uppercase.",
+      "Don't use maroon or black as thin accent lines or tinted icons on the wall where a full panel is meant.",
+      "Don't introduce a darkened photo hero with a centered headline, counting stat animations or icon cards; finished work is shown through the window or the pull-back.",
+      "Don't alter the logo or its maroon and black."
+    ]
+  }
+}
