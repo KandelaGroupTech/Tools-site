@@ -11,6 +11,13 @@ const websites = [
     status: 'In Development'
   },
   {
+    id: 'excellentjob-redesign',
+    name: 'ExcellentJOB Website: Redesign Test',
+    description: 'A full 5-page redesign test of the ExcellentJOB website ("Hoarding Wall" direction), for comparison with the current design.',
+    url: '/website-demos/excellentjob-redesign/index.html',
+    status: 'In Development'
+  },
+  {
     id: 'job-estimates',
     name: 'JOB Estimate Review Dashboard',
     description: 'A private, hosted web dashboard that mirrors an Excel estimate workbook, backed by Airtable.',
