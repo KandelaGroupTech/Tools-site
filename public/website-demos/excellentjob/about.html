@@ -139,34 +139,73 @@
                 <div style="width: 60px; height: 4px; background-color: var(--accent); margin: 0 auto;"></div>
             </div>
 
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: var(--spacing-2xl);">
+            <style>
+                .leadership-card {
+                    display: grid;
+                    grid-template-columns: 300px 1fr;
+                    gap: var(--spacing-2xl);
+                    align-items: start;
+                    text-align: left;
+                }
+                .leadership-header h3 {
+                    margin-bottom: 4px;
+                    font-size: 1.8rem;
+                }
+                .leadership-header p {
+                    color: var(--accent);
+                    font-weight: 500;
+                    margin-bottom: 0;
+                    font-size: 1.1rem;
+                }
+                @media (max-width: 768px) {
+                    .leadership-card {
+                        grid-template-columns: 1fr;
+                        gap: var(--spacing-md);
+                    }
+                    .leadership-header h3, .leadership-header p {
+                        text-align: center;
+                    }
+                }
+            </style>
+            
+            <div style="display: flex; flex-direction: column; gap: var(--spacing-2xl);">
                 <!-- Team Member 1 -->
-                <div class="glass reveal" style="padding: var(--spacing-xl); border-radius: var(--radius-lg);">
-                    
-                    <h3 style="text-align: center; margin-bottom: 4px;">Richard Asala</h3>
-                    <p style="text-align: center; color: var(--accent); font-weight: 500; margin-bottom: var(--spacing-md);">President</p>
-                    <p style="color: var(--text-secondary); margin-bottom: 1rem;">Richard brings a strategic, operations-first approach to every project at Journey Office Builders. With a background spanning finance and management consulting, he has extensive experience building scalable systems and processes for growing middle-market businesses, including the financial planning, budgeting, and operational discipline needed to scale a company sustainably.</p>
-                    <p style="color: var(--text-secondary); margin-bottom: 1rem;">He applies that same rigor directly to how JOB plans, estimates, and delivers projects for clients, with a focus on predictable timelines and tight cost control.</p>
-                    <p style="color: var(--text-secondary);">Richard holds a degree in Electrical Engineering from the Thayer School of Engineering at Dartmouth College and an MBA from the Tuck School of Business, giving him both the analytical and the hands-on problem-solving skills to navigate complex builds alongside his team.</p>
+                <div class="glass reveal leadership-card" style="padding: var(--spacing-xl); border-radius: var(--radius-lg);">
+                    <div class="leadership-header">
+                        <h3>Richard Asala</h3>
+                        <p>President</p>
+                    </div>
+                    <div class="leadership-bio">
+                        <p style="color: var(--text-secondary); margin-bottom: 1rem;">Richard brings a strategic, operations-first approach to every project at Journey Office Builders. With a background spanning finance and management consulting, he has extensive experience building scalable systems and processes for growing middle-market businesses, including the financial planning, budgeting, and operational discipline needed to scale a company sustainably.</p>
+                        <p style="color: var(--text-secondary); margin-bottom: 1rem;">He applies that same rigor directly to how JOB plans, estimates, and delivers projects for clients, with a focus on predictable timelines and tight cost control.</p>
+                        <p style="color: var(--text-secondary); margin-bottom: 0;">Richard holds a degree in Electrical Engineering from the Thayer School of Engineering at Dartmouth College and an MBA from the Tuck School of Business, giving him both the analytical and the hands-on problem-solving skills to navigate complex builds alongside his team.</p>
+                    </div>
                 </div>
 
                 <!-- Team Member 2 -->
-                <div class="glass reveal" style="padding: var(--spacing-xl); border-radius: var(--radius-lg);">
-                    
-                    <h3 style="text-align: center; margin-bottom: 4px;">Werner Parrilla</h3>
-                    <p style="text-align: center; color: var(--accent); font-weight: 500; margin-bottom: var(--spacing-md);">VP of Operations</p>
-                    <p style="color: var(--text-secondary); margin-bottom: 1rem;">Werner brings experience in every facet of construction to his leadership of the building efforts at JOB. His career began with a subcontractor performing sitework and concrete foundations, then progressed through years with an international general contractor managing ground-up construction of office and multifamily assets, as well as full-building tenant buildouts. Prior to joining JOB, he served as a construction manager for a local developer, providing oversight on a highly complex adaptive reuse project that transformed a historic bank into a museum and event space.</p>
-                    <p style="color: var(--text-secondary); margin-bottom: 1rem;">Werner holds a Master's in Real Estate Development from Georgetown University and dual Bachelor's degrees in Civil Engineering and Economics from Bucknell University. He draws on both his education and his hands-on experience to deliver turnkey solutions.</p>
-                    <p style="color: var(--text-secondary);">This combination of technical, financial, and real estate expertise lets him see projects from every angle and deliver measurable impact to his clients' bottom line.</p>
+                <div class="glass reveal leadership-card" style="padding: var(--spacing-xl); border-radius: var(--radius-lg);">
+                    <div class="leadership-header">
+                        <h3>Werner Parrilla</h3>
+                        <p>VP of Operations</p>
+                    </div>
+                    <div class="leadership-bio">
+                        <p style="color: var(--text-secondary); margin-bottom: 1rem;">Werner brings experience in every facet of construction to his leadership of the building efforts at JOB. His career began with a subcontractor performing sitework and concrete foundations, then progressed through years with an international general contractor managing ground-up construction of office and multifamily assets, as well as full-building tenant buildouts. Prior to joining JOB, he served as a construction manager for a local developer, providing oversight on a highly complex adaptive reuse project that transformed a historic bank into a museum and event space.</p>
+                        <p style="color: var(--text-secondary); margin-bottom: 1rem;">Werner holds a Master's in Real Estate Development from Georgetown University and dual Bachelor's degrees in Civil Engineering and Economics from Bucknell University. He draws on both his education and his hands-on experience to deliver turnkey solutions.</p>
+                        <p style="color: var(--text-secondary); margin-bottom: 0;">This combination of technical, financial, and real estate expertise lets him see projects from every angle and deliver measurable impact to his clients' bottom line.</p>
+                    </div>
                 </div>
             
                 <!-- Team Member 3 -->
-                <div class="glass reveal" style="padding: var(--spacing-xl); border-radius: var(--radius-lg);">
-                    <h3 style="text-align: center; margin-bottom: 4px;">Scott Johnson</h3>
-                    <p style="text-align: center; color: var(--accent); font-weight: 500; margin-bottom: var(--spacing-md);">VP Construction Services</p>
-                    <p style="color: var(--text-secondary); margin-bottom: 1rem;">With 33 years of experience in the commercial construction and facilities industry, Scott oversees all construction services across the firm. His profound understanding of building systems allows him to anticipate and resolve complex site challenges before they impact the schedule.</p>
-                    <p style="color: var(--text-secondary); margin-bottom: 1rem;">Prior to JOB, Scott spent fifteen years as a Senior Chief Engineer for CBRE, managing capital improvements for major commercial portfolios. This background gives him an invaluable perspective on what clients truly need from a general contractor: minimal disruption and flawless delivery.</p>
-                    <p style="color: var(--text-secondary);">Scott holds a degree in Mechanical Engineering, providing the technical foundation to navigate intricate MEP scopes and complex occupied-space renovations. His hands-on leadership is a cornerstone of the firm's reputation for unwavering reliability.</p>
+                <div class="glass reveal leadership-card" style="padding: var(--spacing-xl); border-radius: var(--radius-lg);">
+                    <div class="leadership-header">
+                        <h3>Scott Johnson</h3>
+                        <p>VP Construction Services</p>
+                    </div>
+                    <div class="leadership-bio">
+                        <p style="color: var(--text-secondary); margin-bottom: 1rem;">With 33 years of experience in the commercial construction and facilities industry, Scott oversees all construction services across the firm. His profound understanding of building systems allows him to anticipate and resolve complex site challenges before they impact the schedule.</p>
+                        <p style="color: var(--text-secondary); margin-bottom: 1rem;">Prior to JOB, Scott spent fifteen years as a Senior Chief Engineer for CBRE, managing capital improvements for major commercial portfolios. This background gives him an invaluable perspective on what clients truly need from a general contractor: minimal disruption and flawless delivery.</p>
+                        <p style="color: var(--text-secondary); margin-bottom: 0;">Scott holds a degree in Mechanical Engineering, providing the technical foundation to navigate intricate MEP scopes and complex occupied-space renovations. His hands-on leadership is a cornerstone of the firm's reputation for unwavering reliability.</p>
+                    </div>
                 </div>
             </div>
         </div>
