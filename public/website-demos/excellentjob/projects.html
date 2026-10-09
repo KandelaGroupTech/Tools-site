@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 
 <html lang="en">
 <head>
@@ -32,7 +32,8 @@
 <!-- Android / PWA manifest -->
 <link href="site.webmanifest" rel="manifest"/>
 <!-- iOS PWA behavior -->
-<meta content="yes" name="apple-mobile-web-app-capable"/>
+<meta name="mobile-web-app-capable" content="yes">
+    <meta content="yes" name="apple-mobile-web-app-capable"/>
 <meta content="JOB" name="apple-mobile-web-app-title"/>
 <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"/>
 <!-- Theme color for browser chrome / Android task switcher -->
@@ -84,7 +85,7 @@
 <a class="logo" href="index.html">
 <img alt="Journey Office Builders" src="images/logo.jpg" style="height: 86px; width: auto;"/>
 </a>
-<button class="mobile-menu-btn"><i data-lucide="menu"></i></button>
+<button class="mobile-menu-btn" aria-label="Toggle navigation menu"><i data-lucide="menu"></i></button>
 <nav class="nav-links">
 <a href="index.html">Home</a>
 <a href="about.html">About</a>
@@ -245,3 +246,4 @@
 <script src="js/projects-renderer.js"></script>
 </body>
 </html>
+

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -95,6 +95,7 @@
     <link rel="manifest" href="site.webmanifest">
 
     <!-- iOS PWA behavior -->
+    <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-title" content="JOB">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -149,7 +150,7 @@
             <a href="index.html" class="logo">
                 <img src="images/logo.jpg" alt="Journey Office Builders" style="height: 86px; width: auto;">
             </a>
-            <button class="mobile-menu-btn"><i data-lucide="menu"></i></button>
+            <button class="mobile-menu-btn" aria-label="Toggle navigation menu"><i data-lucide="menu"></i></button>
             <nav class="nav-links">
                 <a href="index.html">Home</a>
                 <a href="about.html">About</a>
@@ -263,7 +264,7 @@
                         
                         <div class="form-group" style="margin-top: var(--spacing-sm);">
                             <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.5;">
-                                By submitting this form, you agree to our <a href="#" style="color: var(--text-primary); text-decoration: underline;">Privacy Policy</a>. We guarantee a response within one business day.
+                                We respect your privacy. All project information submitted is kept strictly confidential. We guarantee a response within one business day.
                             </p>
                         </div>
                         <button type="submit" id="submit-btn" class="btn btn-primary" style="width: 100%;">Submit Request</button>
@@ -523,3 +524,4 @@
     </script>
 </body>
 </html>
+

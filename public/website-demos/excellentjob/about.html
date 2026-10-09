@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -35,6 +35,7 @@
     <link rel="manifest" href="site.webmanifest">
 
     <!-- iOS PWA behavior -->
+    <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-title" content="JOB">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -89,7 +90,7 @@
             <a href="index.html" class="logo">
                 <img src="images/logo.jpg" alt="Journey Office Builders" style="height: 86px; width: auto;">
             </a>
-            <button class="mobile-menu-btn"><i data-lucide="menu"></i></button>
+            <button class="mobile-menu-btn" aria-label="Toggle navigation menu"><i data-lucide="menu"></i></button>
             <nav class="nav-links">
                 <a href="index.html">Home</a>
                 <a href="about.html" class="active">About</a>
@@ -223,7 +224,7 @@
                 <div class="glass reveal" style="padding: var(--spacing-2xl); border-radius: var(--radius-lg);">
                     <i data-lucide="zap" style="width: 48px; height: 48px; color: var(--accent); margin-bottom: var(--spacing-md);"></i>
                     <h3 style="margin-bottom: var(--spacing-sm);">Responsiveness</h3>
-                    <p style="color: var(--text-secondary); line-height: 1.7;">Property managers hire JOB for peace of mind, not just construction. JOB's standard of practice is to acknowledge a request within the hour, quote within 24–48 hours, and deliver invoices that match the estimate with no surprises.</p>
+                    <p style="color: var(--text-secondary); line-height: 1.7;">Property managers hire JOB for peace of mind, not just construction. JOB's standard of practice is to acknowledge a request within the hour, quote within 24â€“48 hours, and deliver invoices that match the estimate with no surprises.</p>
                 </div>
                 <div class="glass reveal" style="padding: var(--spacing-2xl); border-radius: var(--radius-lg);">
                     <i data-lucide="building" style="width: 48px; height: 48px; color: var(--accent); margin-bottom: var(--spacing-md);"></i>
@@ -308,3 +309,4 @@
     </script>
 </body>
 </html>
+
