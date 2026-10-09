@@ -43,6 +43,24 @@
             outline: none;
             border-color: var(--accent);
         }
+        .form-control.is-invalid {
+            border-color: #dc2626 !important;
+            background-color: rgba(220, 38, 38, 0.03);
+            box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.15);
+        }
+        .form-control.is-valid {
+            border-color: #16a34a !important;
+        }
+        .field-error-msg {
+            display: none;
+            color: #dc2626;
+            font-size: 0.85rem;
+            margin-top: 0.35rem;
+            font-weight: 500;
+        }
+        .field-error-msg.active {
+            display: block;
+        }
         .contact-info-card {
             display: flex;
             align-items: flex-start;
@@ -183,8 +201,9 @@
                             <input type="email" id="email" name="email" class="form-control" required>
                         </div>
                         <div class="form-group">
-                            <label for="phone">Phone Number</label>
-                            <input type="tel" id="phone" name="phone" class="form-control">
+                            <label for="phone">Phone Number <span style="color: var(--accent);">*</span></label>
+                            <input type="tel" id="phone" name="phone" class="form-control" placeholder="(703) 748-4600" maxlength="14" required autocomplete="tel">
+                            <div id="phone-error-msg" class="field-error-msg">Please enter a complete 10-digit phone number.</div>
                         </div>
                         
                         <!-- Anti-spam Honeypot -->
@@ -377,6 +396,62 @@
         // Initialize Lucide icons
         lucide.createIcons();
         
+        // Phone live formatting & validation
+        const phoneInput = document.getElementById('phone');
+        const phoneError = document.getElementById('phone-error-msg');
+
+        function formatPhoneNumber(val) {
+            if (!val) return '';
+            let digits = val.replace(/\D/g, '');
+            // Strip leading 1 if 11 digits (US country code)
+            if (digits.length === 11 && digits.startsWith('1')) {
+                digits = digits.slice(1);
+            }
+            digits = digits.slice(0, 10);
+            if (digits.length === 0) return '';
+            if (digits.length <= 3) return '(' + digits;
+            if (digits.length <= 6) return '(' + digits.slice(0, 3) + ') ' + digits.slice(3);
+            return '(' + digits.slice(0, 3) + ') ' + digits.slice(3, 6) + '-' + digits.slice(6);
+        }
+
+        function validatePhone(showError = false) {
+            const digits = phoneInput.value.replace(/\D/g, '');
+            const isValid = digits.length === 10;
+            if (isValid) {
+                phoneInput.classList.remove('is-invalid');
+                phoneInput.classList.add('is-valid');
+                if (phoneError) phoneError.classList.remove('active');
+                phoneInput.setCustomValidity('');
+                return true;
+            } else {
+                phoneInput.classList.remove('is-valid');
+                if (showError) {
+                    phoneInput.classList.add('is-invalid');
+                    if (phoneError) phoneError.classList.add('active');
+                }
+                phoneInput.setCustomValidity('Please enter a complete 10-digit phone number.');
+                return false;
+            }
+        }
+
+        phoneInput.addEventListener('input', () => {
+            phoneInput.value = formatPhoneNumber(phoneInput.value);
+            const digits = phoneInput.value.replace(/\D/g, '');
+            if (digits.length === 10) {
+                validatePhone(false);
+            } else if (phoneInput.classList.contains('is-invalid')) {
+                // If it was previously invalid, keep error until 10 digits reached
+                validatePhone(true);
+            }
+        });
+
+        phoneInput.addEventListener('blur', () => {
+            // Validate on blur if user typed anything or if required
+            if (phoneInput.value.trim().length > 0 || phoneInput.hasAttribute('required')) {
+                validatePhone(true);
+            }
+        });
+
         // Form handling via Web3Forms AJAX endpoint
         const contactForm = document.getElementById('contact-form');
         const submitBtn = document.getElementById('submit-btn');
@@ -386,6 +461,12 @@
         contactForm.addEventListener('submit', async (e) => {
             e.preventDefault();
 
+            // Validate phone number has all 10 digits
+            if (!validatePhone(true)) {
+                phoneInput.focus();
+                return;
+            }
+
             // Check honeypots
             const honeypot = contactForm.querySelector('[name="_honey"]');
             const botcheck = contactForm.querySelector('[name="botcheck"]');
@@ -393,6 +474,7 @@
                 // Silently drop bot submission
                 successMsg.style.display = 'block';
                 contactForm.reset();
+                phoneInput.classList.remove('is-valid', 'is-invalid');
                 return;
             }
 
@@ -421,6 +503,7 @@
                 if (response.status === 200 && result.success) {
                     successMsg.style.display = 'block';
                     contactForm.reset();
+                    phoneInput.classList.remove('is-valid', 'is-invalid');
                     submitBtn.style.display = 'none';
                     setTimeout(() => {
                         submitBtn.style.display = 'block';
