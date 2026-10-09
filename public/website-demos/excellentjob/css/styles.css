@@ -494,6 +494,7 @@ img {
     height: 100%;
     object-fit: cover;
     display: block;
+    filter: brightness(1.08) contrast(1.03);
 }
 .carousel-btn {
     position: absolute;
