@@ -15,8 +15,8 @@
   --text-secondary: #4b5563;
   --text-muted: #9ca3af;
   
-  --accent: #910000;
-  --accent-hover: #750000;
+  --accent: #7d0b2c;
+  --accent-hover: #630822;
   
   /* Typography */
   --font-heading: 'Outfit', system-ui, sans-serif;
@@ -601,7 +601,7 @@ img {
     transition: all 0.2s ease;
 }
 .nav-links a.active {
-    background: rgba(145, 0, 0, 0.08);
+    background: rgba(125, 11, 44, 0.08);
 }
 
 /* Home Page specific nav styling over dark carousel */
@@ -724,7 +724,7 @@ img {
   }
   .header-container > .nav-links.active a.active {
     color: var(--accent) !important;
-    background: rgba(145, 0, 0, 0.08) !important;
+    background: rgba(125, 11, 44, 0.08) !important;
   }
 }
 
@@ -751,7 +751,7 @@ img {
   .header-container > .nav-links.active a { color: var(--text-primary) !important; }
   .header-container > .nav-links.active a.active {
     color: var(--accent) !important;
-    background: rgba(145, 0, 0, 0.08) !important;
+    background: rgba(125, 11, 44, 0.08) !important;
   }
   .header.scrolled { background: rgba(255, 255, 255, 0.98) !important; }
 }
