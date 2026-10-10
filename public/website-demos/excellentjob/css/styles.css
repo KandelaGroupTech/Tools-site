@@ -204,16 +204,16 @@ img {
 }
 
 .header-logo {
-  height: clamp(80px, 8vw, 115px);
+  height: 48px;
   width: auto;
   transition: height 0.3s cubic-bezier(0.4, 0, 0.2, 1), filter 0.3s ease;
   display: block;
-  filter: drop-shadow(0 2px 10px rgba(0, 0, 0, 0.5));
 }
 
-.header.scrolled .header-logo {
-  height: 48px;
-  filter: none;
+/* Homepage Hero Nav: 2.5x larger on landing */
+.hero-nav:not(.scrolled) .header-logo {
+  height: clamp(80px, 8vw, 115px);
+  filter: drop-shadow(0 2px 10px rgba(0, 0, 0, 0.5));
 }
 
 .logo-icon {
@@ -672,10 +672,10 @@ img {
   }
   
   .header-logo {
-    height: clamp(52px, 14vw, 72px) !important;
-  }
-  .header.scrolled .header-logo {
     height: 40px !important;
+  }
+  .hero-nav:not(.scrolled) .header-logo {
+    height: clamp(52px, 14vw, 72px) !important;
   }
   
   .phase-card, .project-card, .service-card, .glass { 
