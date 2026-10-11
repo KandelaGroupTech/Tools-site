@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { auth } from './lib/firebase';
-import { onAuthStateChanged, type User } from 'firebase/auth';
+import { onAuthStateChanged } from 'firebase/auth';
 import LandingPage from './pages/LandingPage';
 import GamesHub from './tools/games/GamesHub';
 import TwoBirdsMenu from './tools/twobirds/TwoBirdsMenu';
@@ -10,12 +10,10 @@ import SpeechCoach from './tools/speech-coach/SpeechCoach';
 import SpeechCoachSession from './tools/speech-coach/SpeechCoachSession';
 
 const App: React.FC = () => {
-  const [user, setUser] = useState<User | null>(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, (u: User | null) => {
-      setUser(u);
+    const unsubscribe = onAuthStateChanged(auth, () => {
       setLoading(false);
     });
     return () => unsubscribe();
@@ -28,15 +26,6 @@ const App: React.FC = () => {
       </div>
     );
   }
-
-  // Placeholder component for protected tools
-  const ProtectedRoute = ({ children }: { children: React.ReactNode }) => {
-    if (!user) {
-      // For now, redirect to Kandela Home login or just a local placeholder
-      return <Navigate to="/login" />;
-    }
-    return <>{children}</>;
-  };
 
   return (
     <BrowserRouter>
