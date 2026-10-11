@@ -16,7 +16,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Outfit:wght@600;700&display=swap" rel="stylesheet">
     <!-- Icons -->
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://unpkg.com/lucide@1.55.0/dist/umd/lucide.min.js" defer></script>
     <link rel="preload" as="image" href="images/hero-1-office-fitout-2400.webp" type="image/webp">
     <!-- Styles -->
     <link rel="stylesheet" href="css/styles.css">
@@ -89,7 +89,7 @@
     <header class="header hero-nav">
         <div class="container header-container">
             <a href="index.html" class="logo">
-                <img src="images/logo-transparent.png" alt="Journey Office Builders" class="header-logo">
+                <img src="images/logo-header.webp" alt="Journey Office Builders" class="header-logo">
             </a>
             <button class="mobile-menu-btn" aria-label="Toggle navigation menu"><i data-lucide="menu"></i></button>
             <nav class="nav-links">
@@ -447,7 +447,7 @@
             <div class="footer-grid" style="grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr)); gap: var(--spacing-xl);">
                 <div class="footer-col">
                     <a href="index.html" class="logo" style="margin-bottom: var(--spacing-md);">
-                        <img src="images/logo.jpg" alt="Journey Office Builders" style="height: 90px; width: auto; border-radius: 8px;">
+                        <img src="images/logo-footer.webp" alt="Journey Office Builders" style="height: 90px; width: auto; border-radius: 8px;">
                     </a>
                     <p style="color: var(--text-muted); margin-bottom: 0; font-size: 0.95rem;">Journey Office Builders is a tenant improvement general contractor serving property managers, building owners, architects and tenants across Washington DC, Northern Virginia and Maryland. Turn-key construction, renovation and ongoing tenant services since 1989.</p>
                 </div>
@@ -521,8 +521,9 @@
     <script src="js/main.js"></script>
     <script src="js/interactive-bg.js"></script>
     <script>
-        // Initialize Lucide icons
-        lucide.createIcons();
+        document.addEventListener('DOMContentLoaded', function () {
+            if (window.lucide) lucide.createIcons();
+        });
     </script>
 <script src="js/hero-carousel.js"></script>
 </body>

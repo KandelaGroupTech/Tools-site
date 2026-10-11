@@ -3,8 +3,14 @@
   "trailingSlash": false,
   "redirects": [
     {
-      "source": "/website-demos/excellentjob/:match*",
-      "destination": "https://www.excellentjob.com/:match*",
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "excellentjob.com"
+        }
+      ],
+      "destination": "https://www.excellentjob.com/:path*",
       "permanent": true
     },
     {
@@ -16,6 +22,51 @@
       "source": "/index",
       "destination": "/",
       "permanent": true
+    },
+    {
+      "source": "/about.html",
+      "destination": "/about",
+      "permanent": true
+    },
+    {
+      "source": "/services.html",
+      "destination": "/services",
+      "permanent": true
+    },
+    {
+      "source": "/projects.html",
+      "destination": "/projects",
+      "permanent": true
+    },
+    {
+      "source": "/contact.html",
+      "destination": "/contact",
+      "permanent": true
+    },
+    {
+      "source": "/website-demos/excellentjob/:path*",
+      "destination": "https://www.excellentjob.com/:path*",
+      "permanent": true
+    }
+  ],
+  "headers": [
+    {
+      "source": "/robots.txt",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "text/plain; charset=utf-8"
+        }
+      ]
+    },
+    {
+      "source": "/llms.txt",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "text/plain; charset=utf-8"
+        }
+      ]
     }
   ]
 }
