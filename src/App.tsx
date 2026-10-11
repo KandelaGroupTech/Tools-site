@@ -50,14 +50,6 @@ const App: React.FC = () => {
         <Route path="/speech-coach" element={<SpeechCoach />} />
         <Route path="/speech-coach/session" element={<SpeechCoachSession />} />
 
-        {/* Protected Tools */}
-        <Route path="/cim-analyzer" element={<ProtectedRoute><div>CIM Analyzer (WIP)</div></ProtectedRoute>} />
-        <Route path="/security-monitor" element={<ProtectedRoute><div>Security Monitor (WIP)</div></ProtectedRoute>} />
-        <Route path="/deal-scorecard" element={<ProtectedRoute><div>Deal Scorecard (WIP)</div></ProtectedRoute>} />
-        <Route path="/meeting-summarizer" element={<ProtectedRoute><div>Meeting Summarizer (WIP)</div></ProtectedRoute>} />
-        <Route path="/market-pulse" element={<ProtectedRoute><div>Market Pulse (WIP)</div></ProtectedRoute>} />
-        <Route path="/qrcode-studio" element={<ProtectedRoute><div>QR Code Studio (WIP)</div></ProtectedRoute>} />
-
         {/* Auth routes */}
         <Route path="/login" element={
           <div className="min-h-screen bg-slate-50 flex items-center justify-center">
