@@ -1,4 +1,51 @@
 {
+  "headers": [
+    {
+      "source": "/website-demos/excellentjob",
+      "has": [
+        {
+          "type": "host",
+          "value": "tools.thekandelagroup.com"
+        }
+      ],
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex"
+        }
+      ]
+    },
+    {
+      "source": "/website-demos/excellentjob/",
+      "has": [
+        {
+          "type": "host",
+          "value": "tools.thekandelagroup.com"
+        }
+      ],
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex"
+        }
+      ]
+    },
+    {
+      "source": "/website-demos/excellentjob/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "tools.thekandelagroup.com"
+        }
+      ],
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex"
+        }
+      ]
+    }
+  ],
   "rewrites": [
     { 
       "source": "/website-demos/excellentzohocrm", 
