@@ -30,6 +30,13 @@ const websites = [
     description: 'The team CRM application integrated with Zoho.',
     url: '/website-demos/excellentzohocrm',
     status: 'Live'
+  },
+  {
+    id: 'job-materials-library',
+    name: 'JOB Materials Library',
+    description: 'A catalog of materials JOB uses in building to serve as reference for internal pricing and for client choices.',
+    url: 'https://materialslibrary.vercel.app',
+    status: 'In Development'
   }
 ];
 
