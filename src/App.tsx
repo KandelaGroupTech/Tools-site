@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { auth } from './lib/firebase';
 import { onAuthStateChanged } from 'firebase/auth';
 import LandingPage from './pages/LandingPage';
+import JobPortal from './pages/JobPortal';
 import GamesHub from './tools/games/GamesHub';
 import TwoBirdsMenu from './tools/twobirds/TwoBirdsMenu';
 import WebsiteDemo from './tools/website-demo/WebsiteDemo';
@@ -27,11 +28,21 @@ const App: React.FC = () => {
     );
   }
 
+  const isJobDomain = typeof window !== 'undefined' && (
+    window.location.hostname === 'portal.excellentjob.com' ||
+    window.location.hostname.includes('excellentjob')
+  );
+
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<LandingPage />} />
+        {/* If visited from portal.excellentjob.com, root renders the JOB Portal */}
+        <Route path="/" element={isJobDomain ? <JobPortal /> : <LandingPage />} />
         
+        {/* Dedicated direct routes */}
+        <Route path="/job" element={<JobPortal />} />
+        <Route path="/portal" element={<JobPortal />} />
+
         {/* Public Tools */}
         <Route path="/games" element={<GamesHub />} />
         <Route path="/two-birds-menu" element={<TwoBirdsMenu />} />
