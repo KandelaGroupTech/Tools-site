@@ -46,7 +46,7 @@ export default async function handler(req, res) {
         return res.status(403).json({ error: 'Email not verified' });
     }
     
-    if (ALLOWED_EMAIL && decodedToken.email !== ALLOWED_EMAIL && !decodedToken.email.endsWith('@excellentjob.com')) {
+    if (decodedToken.org_id !== 'org_3Jbdb08bbG3dgwTJmsmS6uaKh2b' && ALLOWED_EMAIL && decodedToken.email !== ALLOWED_EMAIL && !decodedToken.email.endsWith('@excellentjob.com')) {
         return res.status(403).json({ error: 'Unauthorized email' });
     }
 
