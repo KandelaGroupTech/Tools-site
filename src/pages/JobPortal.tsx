@@ -1,6 +1,6 @@
 import { useUser, useAuth, SignIn } from '@clerk/clerk-react';
 import { UserButton } from '@clerk/clerk-react';
-import { Calculator, Users, Layers, Globe, ExternalLink, ArrowRight, ShieldAlert } from 'lucide-react';
+import { Calculator, Users, Layers, ExternalLink, ArrowRight, ShieldAlert } from 'lucide-react';
 
 const REQUIRED_ORG_ID = 'org_3Jbdb08bbG3dgwTJmsmS6uaKh2b';
 
@@ -36,17 +36,6 @@ const jobTools = [
     icon: Layers,
     iconColor: 'text-amber-600',
     iconBg: 'bg-amber-50',
-    primary: false
-  },
-  {
-    id: 'excellentjob-website',
-    name: 'ExcellentJOB Website Preview',
-    description: 'The new Journey Office Builders corporate website currently under staging and development.',
-    url: '/website-demos/excellentjob/index.html',
-    status: 'IN DEVELOPMENT',
-    icon: Globe,
-    iconColor: 'text-purple-600',
-    iconBg: 'bg-purple-50',
     primary: false
   }
 ];
