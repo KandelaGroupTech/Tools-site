@@ -142,42 +142,43 @@ export default function JobPortal() {
             const isLive = tool.status === 'LIVE';
 
             return (
-              <div 
+              <a
                 key={tool.id} 
-                className="bg-white/90 backdrop-blur-sm rounded-2xl shadow-xs border border-slate-200/80 p-6 flex flex-col justify-between hover:shadow-lg hover:border-slate-300 transition-all group"
+                href={tool.url}
+                className="bg-gradient-to-br from-[#9b1536] via-[#850f2c] to-[#6e0a23] rounded-2xl shadow-lg shadow-red-950/15 border border-red-900/30 p-6 flex flex-col justify-between hover:shadow-2xl hover:shadow-red-950/30 hover:-translate-y-1 transition-all duration-300 group text-left cursor-pointer"
               >
                 <div>
                   <div className="flex items-center justify-between mb-5">
-                    <div className={`w-11 h-11 rounded-xl ${tool.iconBg} flex items-center justify-center`}>
-                      <IconComponent className={`w-5 h-5 ${tool.iconColor}`} />
+                    <div className="w-11 h-11 rounded-xl bg-white/15 border border-white/20 flex items-center justify-center backdrop-blur-xs text-white group-hover:bg-white/25 transition-colors">
+                      <IconComponent className="w-5 h-5 text-white" />
                     </div>
-                    <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-[11px] font-bold uppercase tracking-wide ${
-                      isLive ? 'bg-emerald-50 text-emerald-700 border border-emerald-200/60' : 'bg-amber-50 text-amber-700 border border-amber-200/60'
+                    <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-[11px] font-bold uppercase tracking-wide border backdrop-blur-xs ${
+                      isLive 
+                        ? 'bg-emerald-500/20 text-emerald-200 border-emerald-400/30' 
+                        : 'bg-amber-500/20 text-amber-200 border-amber-400/30'
                     }`}>
+                      <span className={`w-1.5 h-1.5 rounded-full mr-1.5 ${isLive ? 'bg-emerald-400 animate-pulse' : 'bg-amber-400'}`}></span>
                       {tool.status}
                     </span>
                   </div>
 
-                  <h3 className="text-lg font-bold text-slate-900 group-hover:text-red-900 transition-colors">
+                  <h3 className="text-xl font-bold text-white group-hover:text-red-100 transition-colors tracking-tight">
                     {tool.name}
                   </h3>
-                  <p className="mt-2 text-sm text-slate-500 leading-relaxed">
+                  <p className="mt-2.5 text-sm text-white/85 leading-relaxed font-normal">
                     {tool.description}
                   </p>
                 </div>
 
-                <div className="pt-6 mt-4 border-t border-slate-100 flex items-center justify-between">
-                  <a
-                    href={tool.url}
-                    className="inline-flex items-center text-sm font-semibold text-slate-700 group-hover:text-red-700 transition-colors"
-                  >
-                    Open Tool <ArrowRight className="w-4 h-4 ml-1.5 transition-transform group-hover:translate-x-1" />
-                  </a>
+                <div className="pt-6 mt-5 border-t border-white/15 flex items-center justify-between text-white">
+                  <span className="inline-flex items-center text-sm font-semibold text-white group-hover:text-red-100 transition-colors">
+                    Open Tool <ArrowRight className="w-4 h-4 ml-1.5 transition-transform group-hover:translate-x-1.5" />
+                  </span>
                   {tool.url.startsWith('http') && (
-                    <ExternalLink className="w-3.5 h-3.5 text-slate-400" />
+                    <ExternalLink className="w-3.5 h-3.5 text-white/70" />
                   )}
                 </div>
-              </div>
+              </a>
             );
           })}
         </div>
