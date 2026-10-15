@@ -21,7 +21,7 @@ const jobTools = [
     id: 'excellentzohocrm',
     name: 'Excellent CRM',
     description: 'The team CRM application integrated with Zoho for client pipeline tracking, contact records, and active deals.',
-    url: '/website-demos/excellentzohocrm',
+    url: '/website-demos/excellentzohocrm/dashboard',
     status: 'LIVE',
     icon: Users,
     iconColor: 'text-blue-600',
