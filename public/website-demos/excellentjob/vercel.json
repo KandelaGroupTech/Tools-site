@@ -47,6 +47,16 @@
       "source": "/website-demos/excellentjob/:path*",
       "destination": "https://www.excellentjob.com/:path*",
       "permanent": true
+    },
+    {
+      "source": "/website-demos/excellentzohocrm/:path*",
+      "destination": "https://portal.excellentjob.com/website-demos/excellentzohocrm/:path*",
+      "permanent": false
+    },
+    {
+      "source": "/website-demos/excellentestimator/:path*",
+      "destination": "https://portal.excellentjob.com/website-demos/excellentestimator/:path*",
+      "permanent": false
     }
   ],
   "headers": [
