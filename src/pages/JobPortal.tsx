@@ -1,6 +1,7 @@
 import { useUser, useAuth, SignIn } from '@clerk/clerk-react';
 import { UserButton } from '@clerk/clerk-react';
 import { Calculator, Users, Layers, ExternalLink, ArrowRight, ShieldAlert } from 'lucide-react';
+import InteractiveBg from '../components/InteractiveBg';
 
 const REQUIRED_ORG_ID = 'org_3Jbdb08bbG3dgwTJmsmS6uaKh2b';
 
@@ -46,22 +47,28 @@ export default function JobPortal() {
 
   if (!isLoaded) {
     return (
-      <div className="min-h-screen bg-slate-50 flex flex-col items-center justify-center p-4">
-        <img src="/website-demos/excellentestimator/JOB-logo.png" alt="JOB Logo" className="w-36 mb-4 animate-pulse" />
-        <div className="text-slate-500 font-sans text-sm">Loading JOB Portal...</div>
+      <div className="min-h-screen bg-white relative flex flex-col items-center justify-center p-4">
+        <InteractiveBg />
+        <div className="relative z-10 flex flex-col items-center">
+          <img src="/website-demos/excellentestimator/JOB-logo.png" alt="JOB Logo" className="w-36 mb-4 animate-pulse" />
+          <div className="text-slate-500 font-sans text-sm">Loading JOB Portal...</div>
+        </div>
       </div>
     );
   }
 
   if (!isSignedIn) {
     return (
-      <div className="min-h-screen bg-slate-50 flex flex-col items-center justify-center p-4">
-        <div className="mb-6 flex flex-col items-center text-center max-w-sm">
-          <img src="/website-demos/excellentestimator/JOB-logo.png" alt="JOB Logo" className="w-40 mb-3" />
-          <h1 className="text-2xl font-semibold text-slate-900 tracking-tight">JOB Internal Tools Portal</h1>
-          <p className="text-slate-500 text-sm mt-1">Sign in with your Journey Office Builders credentials</p>
+      <div className="min-h-screen bg-white relative flex flex-col items-center justify-center p-4">
+        <InteractiveBg />
+        <div className="relative z-10 flex flex-col items-center">
+          <div className="mb-6 flex flex-col items-center text-center max-w-sm">
+            <img src="/website-demos/excellentestimator/JOB-logo.png" alt="JOB Logo" className="w-40 mb-3" />
+            <h1 className="text-2xl font-semibold text-slate-900 tracking-tight">JOB Internal Tools Portal</h1>
+            <p className="text-slate-500 text-sm mt-1">Sign in with your Journey Office Builders credentials</p>
+          </div>
+          <SignIn routing="hash" />
         </div>
-        <SignIn routing="hash" />
       </div>
     );
   }
@@ -72,8 +79,9 @@ export default function JobPortal() {
 
   if (!isMember) {
     return (
-      <div className="min-h-screen bg-slate-50 flex flex-col items-center justify-center p-4">
-        <div className="bg-white p-8 rounded-2xl shadow-sm border border-red-200 max-w-md w-full text-center">
+      <div className="min-h-screen bg-white relative flex flex-col items-center justify-center p-4">
+        <InteractiveBg />
+        <div className="relative z-10 bg-white/95 backdrop-blur-md p-8 rounded-2xl shadow-sm border border-red-200 max-w-md w-full text-center">
           <ShieldAlert className="w-12 h-12 text-red-600 mx-auto mb-3" />
           <h2 className="text-xl font-semibold text-slate-900 mb-2">Access Restricted</h2>
           <p className="text-slate-600 text-sm mb-6 leading-relaxed">
@@ -91,9 +99,11 @@ export default function JobPortal() {
   }
 
   return (
-    <div className="min-h-screen bg-slate-50 flex flex-col font-sans">
+    <div className="min-h-screen bg-white relative flex flex-col font-sans">
+      <InteractiveBg />
+
       {/* Top Header */}
-      <header className="bg-white border-b border-slate-200 sticky top-0 z-20">
+      <header className="bg-white/85 backdrop-blur-md border-b border-slate-200/80 sticky top-0 z-20">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
           <div className="flex items-center space-x-3">
             <div className="h-9 w-9 bg-white border border-slate-100 rounded-lg flex items-center justify-center shadow-xs p-1">
@@ -115,7 +125,7 @@ export default function JobPortal() {
       </header>
 
       {/* Hero Section */}
-      <main className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-16 flex-1 w-full">
+      <main className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-16 flex-1 w-full">
         <div className="text-center max-w-2xl mx-auto mb-12 sm:mb-16">
           <h1 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
             Internal tools, built for speed.
@@ -134,7 +144,7 @@ export default function JobPortal() {
             return (
               <div 
                 key={tool.id} 
-                className="bg-white rounded-2xl shadow-xs border border-slate-200/80 p-6 flex flex-col justify-between hover:shadow-md hover:border-slate-300 transition-all group"
+                className="bg-white/90 backdrop-blur-sm rounded-2xl shadow-xs border border-slate-200/80 p-6 flex flex-col justify-between hover:shadow-lg hover:border-slate-300 transition-all group"
               >
                 <div>
                   <div className="flex items-center justify-between mb-5">
@@ -174,7 +184,7 @@ export default function JobPortal() {
       </main>
 
       {/* Footer */}
-      <footer className="border-t border-slate-200 bg-white py-6">
+      <footer className="relative z-10 border-t border-slate-200/80 bg-white/80 backdrop-blur-sm py-6">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-xs text-slate-400">
           © {new Date().getFullYear()} Journey Office Builders LLC. Confidential & Internal Use Only.
         </div>
