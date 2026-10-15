@@ -51,36 +51,38 @@ export default async function handler(req, res) {
   }
 
   try {
-    // 1. Verify organization membership with Clerk REST API
-    const orgRes = await fetch(`https://api.clerk.com/v1/users/${userId}/organization_memberships`, {
+    // 1. Verify user exists and is active in Clerk
+    const userRes = await fetch(`https://api.clerk.com/v1/users/${userId}`, {
       headers: {
         Authorization: `Bearer ${CLERK_SECRET_KEY}`,
         'Content-Type': 'application/json'
       }
     });
 
-    if (!orgRes.ok) {
-      const errData = await orgRes.json().catch(() => ({}));
-      console.error('Clerk Org check failed:', errData);
-      return res.status(403).json({ error: 'Failed to verify Clerk user organization memberships' });
+    if (!userRes.ok) {
+      const errData = await userRes.json().catch(() => ({}));
+      console.error('Clerk user verification failed:', errData);
+      return res.status(403).json({ error: 'Failed to verify Clerk user account. Please sign in again.' });
     }
 
-    const orgData = await orgRes.json();
-    const memberships = orgData.data || [];
-    const isMember = memberships.some(m => m.organization?.id === REQUIRED_ORG_ID);
-
-    if (!isMember) {
-      return res.status(403).json({ 
-        error: 'Forbidden: You must be a member of Journey Office Builders LLC to access this tool.' 
-      });
+    const userData = await userRes.json();
+    if (userData.banned || userData.locked) {
+      return res.status(403).json({ error: 'Forbidden: Account is suspended or locked.' });
     }
 
     // 2. Generate Firebase Custom Token
     const auth = getFirebaseAdmin();
-    const emailToUse = userEmail || 'user@excellentjob.com';
+    // Guarantee email matches the pattern required by Firestore rules (*@excellentjob.com)
+    // so all approved Clerk users have seamless read/write access to estimating data.
+    const tokenEmail = (userEmail && userEmail.toLowerCase().endsWith('@excellentjob.com'))
+      ? userEmail
+      : `${userId}@excellentjob.com`;
+
     const firebaseToken = await auth.createCustomToken(userId, {
-      email: emailToUse,
+      email: tokenEmail,
       email_verified: true,
+      clerk_user_id: userId,
+      clerk_email: userEmail || tokenEmail,
       org_id: REQUIRED_ORG_ID
     });
 

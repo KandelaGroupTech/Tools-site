@@ -1,9 +1,7 @@
-import { useUser, useAuth, SignIn } from '@clerk/clerk-react';
+import { useUser, SignIn } from '@clerk/clerk-react';
 import { UserButton } from '@clerk/clerk-react';
-import { Calculator, Users, Layers, ExternalLink, ArrowRight, ShieldAlert } from 'lucide-react';
+import { Calculator, Users, Layers, ExternalLink, ArrowRight } from 'lucide-react';
 import InteractiveBg from '../components/InteractiveBg';
-
-const REQUIRED_ORG_ID = 'org_3Jbdb08bbG3dgwTJmsmS6uaKh2b';
 
 const jobTools = [
   {
@@ -43,7 +41,6 @@ const jobTools = [
 
 export default function JobPortal() {
   const { isLoaded, isSignedIn, user } = useUser();
-  const { signOut } = useAuth();
 
   if (!isLoaded) {
     return (
@@ -68,31 +65,6 @@ export default function JobPortal() {
             <p className="text-slate-500 text-sm mt-1">Sign in with your Journey Office Builders credentials</p>
           </div>
           <SignIn routing="hash" />
-        </div>
-      </div>
-    );
-  }
-
-  // Check organization memberships
-  const memberships = user.organizationMemberships || [];
-  const isMember = memberships.some(m => m.organization?.id === REQUIRED_ORG_ID);
-
-  if (!isMember) {
-    return (
-      <div className="min-h-screen bg-white relative flex flex-col items-center justify-center p-4">
-        <InteractiveBg />
-        <div className="relative z-10 bg-white/95 backdrop-blur-md p-8 rounded-2xl shadow-sm border border-red-200 max-w-md w-full text-center">
-          <ShieldAlert className="w-12 h-12 text-red-600 mx-auto mb-3" />
-          <h2 className="text-xl font-semibold text-slate-900 mb-2">Access Restricted</h2>
-          <p className="text-slate-600 text-sm mb-6 leading-relaxed">
-            Your account (<span className="font-medium text-slate-800">{user.primaryEmailAddress?.emailAddress}</span>) is not a member of the <span className="font-semibold text-slate-900">Journey Office Builders LLC</span> organization.
-          </p>
-          <button
-            onClick={() => signOut()}
-            className="w-full bg-slate-900 hover:bg-slate-800 text-white text-sm font-medium py-2.5 px-4 rounded-xl transition-colors shadow-sm"
-          >
-            Sign Out & Switch Account
-          </button>
         </div>
       </div>
     );
