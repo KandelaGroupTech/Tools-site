@@ -75,8 +75,45 @@ export default async function handler(req, res) {
     // Guarantee email matches the pattern required by Firestore rules (*@excellentjob.com)
     // so all approved Clerk users have seamless read/write access to estimating data.
     const tokenEmail = (userEmail && userEmail.toLowerCase().endsWith('@excellentjob.com'))
-      ? userEmail
-      : `${userId}@excellentjob.com`;
+      ? userEmail.toLowerCase()
+      : `${userId.toLowerCase()}@excellentjob.com`;
+
+    // Ensure Firebase Auth user record exists with verified @excellentjob.com email
+    try {
+      await auth.updateUser(userId, {
+        email: tokenEmail,
+        emailVerified: true
+      });
+    } catch (err) {
+      if (err.code === 'auth/user-not-found') {
+        try {
+          await auth.createUser({
+            uid: userId,
+            email: tokenEmail,
+            emailVerified: true
+          });
+        } catch (createErr) {
+          if (createErr.code === 'auth/email-already-exists') {
+            const fallbackEmail = `${userId.toLowerCase()}@excellentjob.com`;
+            await auth.createUser({
+              uid: userId,
+              email: fallbackEmail,
+              emailVerified: true
+            }).catch(e => console.warn('Fallback createUser error:', e));
+          } else {
+            console.warn('Failed to createUser in Firebase Auth:', createErr);
+          }
+        }
+      } else if (err.code === 'auth/email-already-exists') {
+        const fallbackEmail = `${userId.toLowerCase()}@excellentjob.com`;
+        await auth.updateUser(userId, {
+          email: fallbackEmail,
+          emailVerified: true
+        }).catch(e => console.warn('Fallback updateUser error:', e));
+      } else {
+        console.warn('Failed to updateUser in Firebase Auth:', err);
+      }
+    }
 
     const firebaseToken = await auth.createCustomToken(userId, {
       email: tokenEmail,
