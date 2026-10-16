@@ -70,6 +70,10 @@ export default async function handler(req, res) {
       return res.status(403).json({ error: 'Forbidden: Account is suspended or locked.' });
     }
 
+    // Verified primary email straight from Clerk (not from the client-supplied body)
+    const primaryEmailObj = (userData.email_addresses || []).find(e => e.id === userData.primary_email_address_id);
+    const verifiedClerkEmail = (primaryEmailObj?.email_address || '').toLowerCase();
+
     // 2. Generate Firebase Custom Token
     const auth = getFirebaseAdmin();
     // Guarantee email matches the pattern required by Firestore rules (*@excellentjob.com)
@@ -119,7 +123,7 @@ export default async function handler(req, res) {
       email: tokenEmail,
       email_verified: true,
       clerk_user_id: userId,
-      clerk_email: userEmail || tokenEmail,
+      clerk_email: verifiedClerkEmail || tokenEmail,
       org_id: REQUIRED_ORG_ID
     });
 
