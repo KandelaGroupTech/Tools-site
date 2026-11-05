@@ -78,6 +78,99 @@
             color: var(--accent);
             flex-shrink: 0;
         }
+        #faq,
+        #contact-form {
+            scroll-margin-top: 110px;
+        }
+        .faq-intro {
+            max-width: 760px;
+            margin: 0 auto var(--spacing-2xl);
+            text-align: center;
+        }
+        .faq-intro p {
+            font-size: 1.05rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-top: var(--spacing-md);
+        }
+        .faq-accordion {
+            max-width: 900px;
+            margin-inline: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+        .faq-item {
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-sm);
+            scroll-margin-top: 110px;
+            overflow: hidden;
+        }
+        .faq-item[open] {
+            border-color: rgba(125, 11, 44, 0.35);
+            box-shadow: var(--shadow-md);
+        }
+        .faq-item summary {
+            list-style: none;
+            cursor: pointer;
+            padding: 1.15rem 3rem 1.15rem 1.35rem;
+            position: relative;
+        }
+        .faq-item summary::-webkit-details-marker {
+            display: none;
+        }
+        .faq-item summary h3 {
+            margin: 0;
+            font-size: 1.08rem;
+            font-weight: 600;
+            line-height: 1.35;
+            color: var(--text-primary);
+        }
+        .faq-item summary::after {
+            content: "";
+            position: absolute;
+            right: 1.3rem;
+            top: 50%;
+            width: 10px;
+            height: 10px;
+            border-right: 2px solid #7D0B2C;
+            border-bottom: 2px solid #7D0B2C;
+            transform: translateY(-70%) rotate(45deg);
+            transition: transform var(--transition-fast);
+        }
+        .faq-item[open] summary::after {
+            transform: translateY(-30%) rotate(225deg);
+        }
+        .faq-item summary:hover h3 {
+            color: var(--accent);
+        }
+        .faq-item summary:focus-visible {
+            outline: 2px solid #7D0B2C;
+            outline-offset: -2px;
+        }
+        .faq-answer {
+            padding: 0 1.35rem 1.25rem;
+            border-top: 1px solid var(--border);
+        }
+        .faq-answer p {
+            color: var(--text-secondary);
+            line-height: 1.75;
+            margin: var(--spacing-md) 0 0;
+        }
+        .faq-answer ul {
+            margin: var(--spacing-md) 0 0 1.15rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+        .faq-answer li {
+            margin-bottom: 0.45rem;
+        }
+        .faq-related {
+            margin: var(--spacing-md) 0 0;
+            font-size: 0.95rem;
+        }
     </style>
 
     <!-- Standard favicon -->
@@ -138,7 +231,143 @@
                 }
         ],
         "foundingDate": "1989",
-        "priceRange": "$$$"
+        "priceRange": "$$$",
+        "openingHoursSpecification": [
+                {
+                        "@type": "OpeningHoursSpecification",
+                        "dayOfWeek": [
+                                "Monday",
+                                "Tuesday",
+                                "Wednesday",
+                                "Thursday",
+                                "Friday"
+                        ],
+                        "opens": "08:00",
+                        "closes": "16:30"
+                }
+        ]
+}
+    </script>
+    <script type="application/ld+json" id="faq-jsonld">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "url": "https://www.excellentjob.com/contact#faq",
+  "name": "Journey Office Builders FAQ",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Who is Journey Office Builders?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Journey Office Builders LLC (JOB) is a tenant improvement general contractor based at 8455-Y Tyco Road, Vienna, VA 22182. The company has served property managers, building owners, architects, and tenants in Washington, DC, Northern Virginia, and Maryland since 1989.\n\nThe work is commercial interior construction: tenant improvements and office fit-outs, white-box and spec suites, building renovations and capital improvements, SCIF construction, demolition, commercial flooring, painting and wall finishes, preconstruction and capital planning, permitting, punch-list and closeout, and ongoing tenant services. Our practice is built for occupied commercial buildings. Our standard is to deliver tenant improvements right the first time.\n\nJOB has been in business for 35-plus years and has completed 500-plus projects. The company was founded in 1989 by Mike Miravi. The legal name is Journey Office Builders LLC, JOB for short. Phone 703-748-4600. Email info@excellentjob.com."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What areas does Journey Office Builders serve?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We serve Washington, DC, Northern Virginia, and Maryland from our Vienna, Virginia headquarters. We hold licenses in Virginia, the District of Columbia, and Maryland, and that is the market we bid.\n\nOur projects include Washington, DC; Northern Virginia communities including Vienna, McLean, Arlington, Alexandria, Herndon, Falls Church, Dulles, Sterling, and Woodbridge; and Maryland locations including Chevy Chase, Silver Spring, and Rockville. We work across Class A office, retail, industrial, and secure government facilities in the DMV."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is a commercial tenant improvement (TI) or office fit-out?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A commercial tenant improvement (TI), also called an office fit-out, is the interior construction that prepares a leased or vacant commercial space for a tenant to occupy and work. At JOB that includes build-outs and renovations of occupied suites and of leasing-ready space, including white-box and spec suite construction.\n\nScope follows the drawings. It can include partitions, finishes, commercial flooring, paint and wall finishes, selective demolition, and coordination of the trades required to complete the space. Lobbies, corridors, amenity spaces, and other capital improvements are handled as building renovations, separate from the tenant's suite. The client is usually the property manager, owner, architect, or tenant who needs the space delivered inside an operating building."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does Journey Office Builders work in occupied buildings?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Occupied commercial buildings are the center of the practice, not a special case. JOB's work is built around active, tenant-occupied buildings rather than ground-up construction. That takes disciplined scheduling, site control that protects people still working in the building, and direct coordination with building management and tenants.\n\nSelective demolition is planned so occupied areas around the work zone stay protected. Flooring and painting are scheduled to limit disruption to operations. JOB holds preferred and approved vendor status in more than 40 buildings across leading institutional property-management portfolios in the region. That status is how much of the repeat tenant-service work is assigned. For an urgent tenant-service request, call 703-748-4600 and press 1."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does Journey Office Builders build SCIFs in Washington, DC, Northern Virginia, and Maryland?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Journey Office Builders builds Sensitive Compartmented Information Facilities (SCIFs) in the same Washington, DC, Northern Virginia, and Maryland market as its office and building work, including secure government facilities. SCIF construction is performed to ICD/ICS 705 standards, and the construction team supports the owner's accreditation process from the start of the build.\n\nA SCIF is not a standard office fit-out. ICD 705 sets the physical and technical security requirements the construction has to meet. Accreditation stays the facility owner's process. JOB is SAM registered. Our federal identifiers are UEI KCKWP7QAF157 and CAGE 8V9X6. Classification, accreditation roles, and construction scope are confirmed in the quote for that facility. We do not publish a count of SCIF projects."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does Journey Office Builders handle permits in DC, Virginia, and Maryland?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Permitting and approvals are a defined service. JOB manages the permitting process for the owner and works directly with the local jurisdiction so approvals stay tied to the project schedule. We are licensed to contract this work in all three jurisdictions: Virginia Class A #2705020320, Washington, DC #71102579, and Maryland #15356747.\n\nPermit review time is set by the jurisdiction. The District of Columbia, Virginia counties and cities, and Maryland counties do not share one review calendar. JOB does not guarantee a permit issuance date. The quote for a project should name the jurisdiction and the schedule assumption for review."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long does a typical office tenant improvement take?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We do not publish a guaranteed duration for an office tenant improvement. On the quote request form, clients describe the window they need as ASAP, 1-3 months, 3-6 months, or 6+ months. Those are request categories, not a promise that a job will finish inside them.\n\nWhat moves a project from one window to another:\n\n- Scope. Replacing commercial flooring, repainting, or selective demolition in one suite is a shorter job than a full office fit-out with new partitions, MEP coordination, and a white-box or spec suite.\n\n- Occupied buildings. Work beside tenants is sequenced around access windows, protection of adjacent suites, and building rules. Calendar time is often longer than crew time.\n\n- Permits. Review in DC, Virginia, or Maryland sits on the critical path and is not controlled by the contractor.\n\n- Design and materials. Incomplete drawings, long-lead finishes, and after-hours work rules change the schedule even when the area looks similar.\n\nThe duration that matters is the one stated in the quote for that address and scope. We acknowledge a request within the hour and return a quote within 24-48 hours, so the schedule is tied to the actual building."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do quotes, timelines, and invoicing work?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We acknowledge a request within the hour, quote within 24-48 hours, and issue invoices that match the estimate, with no surprises. We keep project information confidential and respond within one business day.\n\nA useful request includes the building address, whether the space is occupied, the project type, any drawings or a written scope, and the timeline the building needs. Timeline choices on the form are ASAP, 1-3 months, 3-6 months, and 6+ months. Preconstruction and capital planning are available when an owner needs a budget and a scope before a full construction price. Invoices are written to match the estimate."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What licenses does Journey Office Builders hold?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Journey Office Builders LLC is fully licensed and insured. Our licenses are:\n\n- Virginia Class A: #2705020320\n\n- Washington, DC: #71102579\n\n- Maryland: #15356747\n\nOur federal registration is UEI KCKWP7QAF157 and CAGE code 8V9X6. We are SAM certified. We do not list insurance limits here. Ask for the current certificate of insurance with the bid invitation."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Who are typical Journey Office Builders clients?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Typical clients are property managers, building owners, architects, and commercial tenants. Some examples include Cushman & Wakefield, CBRE, Cannon Hill Capital Partners, Carr Properties, and Jones Lang LaSalle. JOB also holds preferred and approved vendor status in more than 40 buildings in leading institutional portfolios."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does Journey Office Builders offer ongoing tenant and facilities services?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Beyond a construction project, JOB provides ongoing maintenance and facilities support for occupied buildings so the space stays in condition after move-in. We offer tenant services alongside our construction work, and the quote form includes tenant services as a project type.\n\nUrgent tenant-service requests go to 703-748-4600, press 1. Preferred and approved vendor status in more than 40 buildings is how a large share of that repeat work is routed, including priority for emergency response."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I request a quote from Journey Office Builders?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Call 703-748-4600, email info@excellentjob.com, or submit the form above. The office is 8455-Y Tyco Road, Vienna, VA 22182. The form asks for name, email, phone, and role (property manager, building owner, architect, tenant, or other), plus the building address, desired timeline, project type, and a message.\n\nProject types on the form are tenant improvements and fit-outs, building renovations and capital improvements, demolition, flooring, painting and wall finishes, SCIF construction, preconstruction and capital planning, permitting and approvals, tenant services, and punch-list and closeout. We acknowledge a request within the hour and quote within 24-48 hours. We respond within one business day. If the form does not send, call 703-748-4600 or email info@excellentjob.com."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What commercial interior work does JOB do besides a full office fit-out?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Construction execution covers six areas: tenant improvements and fit-outs, including white-box and spec suites; SCIF construction to ICD/ICS 705; building renovations and capital improvements, from interior overhauls to exterior upgrades and amenity spaces; selective and full-scale demolition; commercial flooring, including modular carpet tile, luxury vinyl tile (LVT), VCT, and concrete finishes; and painting and wall finishes, including interior and exterior commercial painting, wall coverings, and specialty architectural finishes.\n\nAround that work, JOB provides preconstruction and capital planning, permitting and approvals, punch-list and closeout (including closeout of projects built by other contractors), and ongoing tenant services. We work in Class A office, retail, industrial, and secure government facilities."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Who leads Journey Office Builders?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Richard Asala is President. He runs planning, estimating, and delivery with an operations focus on predictable timelines and cost control. Werner Parrilla is Vice President of Operations and Business Development. His background includes subcontractor sitework, ground-up office and multifamily construction, full-building tenant build-outs, and construction management for a local developer.\n\nScott Johnson is Vice President of Construction Services. He has 33 years in commercial construction and facilities, oversees construction services across the firm, and previously spent fifteen years as a Senior Chief Engineer for CBRE, managing capital improvements for commercial portfolios. The company was founded in 1989 by Mike Miravi, who ran operations with Scott Johnson for decades."
+      }
+    }
+  ]
 }
     </script>
 </head>
@@ -156,7 +385,6 @@
                 <a href="about.html">About</a>
                 <a href="services.html">Services</a>
                 <a href="projects.html">Projects</a>
-                <a href="faq.html">FAQ</a>
                 <a href="contact.html" class="active">Contact Us</a>
             </nav>
             <div class="nav-cta">
@@ -170,7 +398,7 @@
         <div class="container reveal">
             <h1 style="margin-bottom: var(--spacing-sm);">Contact Us</h1>
             <p style="font-size: 1.25rem; color: var(--text-secondary); max-width: 600px; margin-inline: auto;">We're ready to discuss your next project.</p>
-            <p style="font-size: 1.05rem; color: var(--text-secondary); max-width: 640px; margin: var(--spacing-md) auto 0; line-height: 1.6;">How quotes, permits, and schedules work is on the <a href="faq.html">FAQ</a>. Start a project with the form below or call <a href="tel:7037484600">703-748-4600</a>.</p>
+            <p style="font-size: 1.05rem; color: var(--text-secondary); max-width: 640px; margin: var(--spacing-md) auto 0; line-height: 1.6;">How quotes, permits, and schedules work is in the <a href="#faq">FAQ below</a>. Start a project with the form or call <a href="tel:7037484600">703-748-4600</a>.</p>
         </div>
     </section>
 
@@ -308,7 +536,14 @@
                         </div>
                     </div>
 
-                    
+                    <div class="contact-info-card">
+                        <div class="contact-info-icon"><i data-lucide="clock"></i></div>
+                        <div>
+                            <h3 style="margin-bottom: 4px; font-size: 1.1rem;">Office Hours</h3>
+                            <p style="color: var(--text-secondary);">Monday–Friday, 8 AM–4:30 PM<br>Saturday and Sunday: Closed</p>
+                        </div>
+                    </div>
+
                     <div class="contact-info-card">
                         <div class="contact-info-icon"><i data-lucide="clock"></i></div>
                         <div>
@@ -332,6 +567,154 @@
         </div>
     </section>
 
+    <!-- FAQ: below the quote form -->
+    <section class="section" id="faq" aria-labelledby="faq-heading" style="background-color: var(--bg-secondary); border-top: 1px solid var(--border);">
+        <div class="container">
+            <div class="faq-intro reveal">
+                <h2 id="faq-heading">Frequently Asked Questions</h2>
+                <p>Direct answers for property managers, building owners, architects, and tenants evaluating a commercial tenant-improvement, SCIF, or tenant-services contractor in Washington, DC, Northern Virginia, or Maryland.</p>
+            </div>
+            <div class="faq-accordion">
+                <details class="faq-item" id="who-is-journey-office-builders" name="job-faq">
+                    <summary><h3>Who is Journey Office Builders?</h3></summary>
+                    <div class="faq-answer">
+                        <p>Journey Office Builders LLC (JOB) is a tenant improvement general contractor based at 8455-Y Tyco Road, Vienna, VA 22182. The company has served property managers, building owners, architects, and tenants in Washington, DC, Northern Virginia, and Maryland since 1989.</p>
+                        <p>The work is commercial interior construction: tenant improvements and office fit-outs, white-box and spec suites, building renovations and capital improvements, SCIF construction, demolition, commercial flooring, painting and wall finishes, preconstruction and capital planning, permitting, punch-list and closeout, and ongoing tenant services. Our practice is built for occupied commercial buildings. Our standard is to deliver tenant improvements right the first time.</p>
+                        <p>JOB has been in business for 35-plus years and has completed 500-plus projects. The company was founded in 1989 by Mike Miravi. The legal name is Journey Office Builders LLC, JOB for short. Phone 703-748-4600. Email <a href="mailto:info@excellentjob.com">info@excellentjob.com</a>.</p>
+                        <p class="faq-related"><a href="about.html">About Journey Office Builders</a></p>
+                    </div>
+                </details>
+
+                <details class="faq-item" id="service-area" name="job-faq">
+                    <summary><h3>What areas does Journey Office Builders serve?</h3></summary>
+                    <div class="faq-answer">
+                        <p>We serve Washington, DC, Northern Virginia, and Maryland from our Vienna, Virginia headquarters. We hold licenses in Virginia, the District of Columbia, and Maryland, and that is the market we bid.</p>
+                        <p>Our projects include Washington, DC; Northern Virginia communities including Vienna, McLean, Arlington, Alexandria, Herndon, Falls Church, Dulles, Sterling, and Woodbridge; and Maryland locations including Chevy Chase, Silver Spring, and Rockville. We work across Class A office, retail, industrial, and secure government facilities in the DMV.</p>
+                        <p class="faq-related"><a href="projects.html">Selected projects</a></p>
+                    </div>
+                </details>
+
+                <details class="faq-item" id="what-is-tenant-improvement" name="job-faq">
+                    <summary><h3>What is a commercial tenant improvement (TI) or office fit-out?</h3></summary>
+                    <div class="faq-answer">
+                        <p>A commercial tenant improvement (TI), also called an office fit-out, is the interior construction that prepares a leased or vacant commercial space for a tenant to occupy and work. At JOB that includes build-outs and renovations of occupied suites and of leasing-ready space, including white-box and spec suite construction.</p>
+                        <p>Scope follows the drawings. It can include partitions, finishes, commercial flooring, paint and wall finishes, selective demolition, and coordination of the trades required to complete the space. Lobbies, corridors, amenity spaces, and other capital improvements are handled as building renovations, separate from the tenant's suite. The client is usually the property manager, owner, architect, or tenant who needs the space delivered inside an operating building.</p>
+                        <p class="faq-related"><a href="services.html#tenant-improvements">Tenant improvements and fit-outs</a></p>
+                    </div>
+                </details>
+
+                <details class="faq-item" id="occupied-buildings" name="job-faq">
+                    <summary><h3>Does Journey Office Builders work in occupied buildings?</h3></summary>
+                    <div class="faq-answer">
+                        <p>Yes. Occupied commercial buildings are the center of the practice, not a special case. JOB's work is built around active, tenant-occupied buildings rather than ground-up construction. That takes disciplined scheduling, site control that protects people still working in the building, and direct coordination with building management and tenants.</p>
+                        <p>Selective demolition is planned so occupied areas around the work zone stay protected. Flooring and painting are scheduled to limit disruption to operations. JOB holds preferred and approved vendor status in more than 40 buildings across leading institutional property-management portfolios in the region. That status is how much of the repeat tenant-service work is assigned. For an urgent tenant-service request, call 703-748-4600 and press 1.</p>
+                        <p class="faq-related"><a href="about.html">Occupied-space expertise</a></p>
+                    </div>
+                </details>
+
+                <details class="faq-item" id="scif-construction" name="job-faq">
+                    <summary><h3>Does Journey Office Builders build SCIFs in Washington, DC, Northern Virginia, and Maryland?</h3></summary>
+                    <div class="faq-answer">
+                        <p>Yes. Journey Office Builders builds Sensitive Compartmented Information Facilities (SCIFs) in the same Washington, DC, Northern Virginia, and Maryland market as its office and building work, including secure government facilities. SCIF construction is performed to ICD/ICS 705 standards, and the construction team supports the owner's accreditation process from the start of the build.</p>
+                        <p>A SCIF is not a standard office fit-out. ICD 705 sets the physical and technical security requirements the construction has to meet. Accreditation stays the facility owner's process. JOB is SAM registered. Our federal identifiers are UEI KCKWP7QAF157 and CAGE 8V9X6. Classification, accreditation roles, and construction scope are confirmed in the quote for that facility. We do not publish a count of SCIF projects.</p>
+                        <p class="faq-related"><a href="services.html#scif-construction">SCIF construction</a></p>
+                    </div>
+                </details>
+
+                <details class="faq-item" id="permits" name="job-faq">
+                    <summary><h3>Does Journey Office Builders handle permits in DC, Virginia, and Maryland?</h3></summary>
+                    <div class="faq-answer">
+                        <p>Yes. Permitting and approvals are a defined service. JOB manages the permitting process for the owner and works directly with the local jurisdiction so approvals stay tied to the project schedule. We are licensed to contract this work in all three jurisdictions: Virginia Class A #2705020320, Washington, DC #71102579, and Maryland #15356747.</p>
+                        <p>Permit review time is set by the jurisdiction. The District of Columbia, Virginia counties and cities, and Maryland counties do not share one review calendar. JOB does not guarantee a permit issuance date. The quote for a project should name the jurisdiction and the schedule assumption for review.</p>
+                        <p class="faq-related"><a href="services.html#permitting">Permitting and approvals</a></p>
+                    </div>
+                </details>
+
+                <details class="faq-item" id="timelines" name="job-faq">
+                    <summary><h3>How long does a typical office tenant improvement take?</h3></summary>
+                    <div class="faq-answer">
+                        <p>We do not publish a guaranteed duration for an office tenant improvement. On the quote request form, clients describe the window they need as ASAP, 1-3 months, 3-6 months, or 6+ months. Those are request categories, not a promise that a job will finish inside them.</p>
+                        <p>What moves a project from one window to another:</p>
+                        <ul>
+                            <li>Scope. Replacing commercial flooring, repainting, or selective demolition in one suite is a shorter job than a full office fit-out with new partitions, MEP coordination, and a white-box or spec suite.</li>
+                            <li>Occupied buildings. Work beside tenants is sequenced around access windows, protection of adjacent suites, and building rules. Calendar time is often longer than crew time.</li>
+                            <li>Permits. Review in DC, Virginia, or Maryland sits on the critical path and is not controlled by the contractor.</li>
+                            <li>Design and materials. Incomplete drawings, long-lead finishes, and after-hours work rules change the schedule even when the area looks similar.</li>
+                        </ul>
+                        <p>The duration that matters is the one stated in the quote for that address and scope. We acknowledge a request within the hour and return a quote within 24-48 hours, so the schedule is tied to the actual building.</p>
+                        <p class="faq-related"><a href="#contact-form">Request a quote</a></p>
+                    </div>
+                </details>
+
+                <details class="faq-item" id="quotes-and-invoicing" name="job-faq">
+                    <summary><h3>How do quotes, timelines, and invoicing work?</h3></summary>
+                    <div class="faq-answer">
+                        <p>We acknowledge a request within the hour, quote within 24-48 hours, and issue invoices that match the estimate, with no surprises. We keep project information confidential and respond within one business day.</p>
+                        <p>A useful request includes the building address, whether the space is occupied, the project type, any drawings or a written scope, and the timeline the building needs. Timeline choices on the form are ASAP, 1-3 months, 3-6 months, and 6+ months. Preconstruction and capital planning are available when an owner needs a budget and a scope before a full construction price. Invoices are written to match the estimate.</p>
+                        <p class="faq-related"><a href="about.html">Responsiveness</a> · <a href="#contact-form">Contact</a></p>
+                    </div>
+                </details>
+
+                <details class="faq-item" id="licenses" name="job-faq">
+                    <summary><h3>What licenses does Journey Office Builders hold?</h3></summary>
+                    <div class="faq-answer">
+                        <p>Journey Office Builders LLC is fully licensed and insured. Our licenses are:</p>
+                        <ul>
+                            <li>Virginia Class A: #2705020320</li>
+                            <li>Washington, DC: #71102579</li>
+                            <li>Maryland: #15356747</li>
+                        </ul>
+                        <p>Our federal registration is UEI KCKWP7QAF157 and CAGE code 8V9X6. We are SAM certified. We do not list insurance limits here. Ask for the current certificate of insurance with the bid invitation.</p>
+                    </div>
+                </details>
+
+                <details class="faq-item" id="clients" name="job-faq">
+                    <summary><h3>Who are typical Journey Office Builders clients?</h3></summary>
+                    <div class="faq-answer">
+                        <p>Typical clients are property managers, building owners, architects, and commercial tenants. Some examples include Cushman &amp; Wakefield, CBRE, Cannon Hill Capital Partners, Carr Properties, and Jones Lang LaSalle. JOB also holds preferred and approved vendor status in more than 40 buildings in leading institutional portfolios.</p>
+                        <p class="faq-related"><a href="index.html">Client comments on the home page</a></p>
+                    </div>
+                </details>
+
+                <details class="faq-item" id="tenant-services" name="job-faq">
+                    <summary><h3>Does Journey Office Builders offer ongoing tenant and facilities services?</h3></summary>
+                    <div class="faq-answer">
+                        <p>Yes. Beyond a construction project, JOB provides ongoing maintenance and facilities support for occupied buildings so the space stays in condition after move-in. We offer tenant services alongside our construction work, and the quote form includes tenant services as a project type.</p>
+                        <p>Urgent tenant-service requests go to 703-748-4600, press 1. Preferred and approved vendor status in more than 40 buildings is how a large share of that repeat work is routed, including priority for emergency response.</p>
+                        <p class="faq-related"><a href="services.html#tenant-services">Ongoing tenant services</a></p>
+                    </div>
+                </details>
+
+                <details class="faq-item" id="request-a-quote" name="job-faq">
+                    <summary><h3>How do I request a quote from Journey Office Builders?</h3></summary>
+                    <div class="faq-answer">
+                        <p>Call 703-748-4600, email <a href="mailto:info@excellentjob.com">info@excellentjob.com</a>, or submit the form above. The office is 8455-Y Tyco Road, Vienna, VA 22182. The form asks for name, email, phone, and role (property manager, building owner, architect, tenant, or other), plus the building address, desired timeline, project type, and a message.</p>
+                        <p>Project types on the form are tenant improvements and fit-outs, building renovations and capital improvements, demolition, flooring, painting and wall finishes, SCIF construction, preconstruction and capital planning, permitting and approvals, tenant services, and punch-list and closeout. We acknowledge a request within the hour and quote within 24-48 hours. We respond within one business day. If the form does not send, call 703-748-4600 or email <a href="mailto:info@excellentjob.com">info@excellentjob.com</a>.</p>
+                        <p class="faq-related"><a href="#contact-form">Contact form</a></p>
+                    </div>
+                </details>
+
+                <details class="faq-item" id="other-services" name="job-faq">
+                    <summary><h3>What commercial interior work does JOB do besides a full office fit-out?</h3></summary>
+                    <div class="faq-answer">
+                        <p>Construction execution covers six areas: tenant improvements and fit-outs, including white-box and spec suites; SCIF construction to ICD/ICS 705; building renovations and capital improvements, from interior overhauls to exterior upgrades and amenity spaces; selective and full-scale demolition; commercial flooring, including modular carpet tile, luxury vinyl tile (LVT), VCT, and concrete finishes; and painting and wall finishes, including interior and exterior commercial painting, wall coverings, and specialty architectural finishes.</p>
+                        <p>Around that work, JOB provides preconstruction and capital planning, permitting and approvals, punch-list and closeout (including closeout of projects built by other contractors), and ongoing tenant services. We work in Class A office, retail, industrial, and secure government facilities.</p>
+                        <p class="faq-related"><a href="services.html">All services</a></p>
+                    </div>
+                </details>
+
+                <details class="faq-item" id="leadership" name="job-faq">
+                    <summary><h3>Who leads Journey Office Builders?</h3></summary>
+                    <div class="faq-answer">
+                        <p>Richard Asala is President. He runs planning, estimating, and delivery with an operations focus on predictable timelines and cost control. Werner Parrilla is Vice President of Operations and Business Development. His background includes subcontractor sitework, ground-up office and multifamily construction, full-building tenant build-outs, and construction management for a local developer.</p>
+                        <p>Scott Johnson is Vice President of Construction Services. He has 33 years in commercial construction and facilities, oversees construction services across the firm, and previously spent fifteen years as a Senior Chief Engineer for CBRE, managing capital improvements for commercial portfolios. The company was founded in 1989 by Mike Miravi, who ran operations with Scott Johnson for decades.</p>
+                        <p class="faq-related"><a href="about.html">Leadership</a></p>
+                    </div>
+                </details>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer -->
         <footer class="footer">
         <div class="container">
@@ -349,7 +732,7 @@
                         <li><a href="about.html">About Us</a></li>
                         <li><a href="services.html">Services</a></li>
                         <li><a href="projects.html">Projects</a></li>
-                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="contact.html#faq">FAQ</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
@@ -413,9 +796,20 @@
     <script src="js/main.js"></script>
     <script src="js/interactive-bg.js"></script>
     <script>
+        function openFaqFromHash() {
+            var hash = window.location.hash;
+            if (!hash || hash === '#') return;
+            var target = document.getElementById(decodeURIComponent(hash.slice(1)));
+            if (!target) return;
+            var details = target.tagName === 'DETAILS' ? target : (target.closest ? target.closest('details') : null);
+            if (details) details.open = true;
+        }
+
         document.addEventListener('DOMContentLoaded', function () {
             if (window.lucide) lucide.createIcons();
+            openFaqFromHash();
         });
+        window.addEventListener('hashchange', openFaqFromHash);
         
         // Phone live formatting & validation
         const phoneInput = document.getElementById('phone');

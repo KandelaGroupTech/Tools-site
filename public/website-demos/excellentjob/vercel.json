@@ -44,6 +44,16 @@
       "permanent": true
     },
     {
+      "source": "/faq.html",
+      "destination": "/contact",
+      "permanent": true
+    },
+    {
+      "source": "/faq",
+      "destination": "/contact",
+      "permanent": true
+    },
+    {
       "source": "/website-demos/excellentjob/:path*",
       "destination": "https://www.excellentjob.com/:path*",
       "permanent": true
