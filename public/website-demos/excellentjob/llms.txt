@@ -15,3 +15,4 @@
 - [Services](https://www.excellentjob.com/services): service descriptions by phase
 - [Projects](https://www.excellentjob.com/projects): selected projects
 - [Contact](https://www.excellentjob.com/contact): request a quote
+- [FAQ](https://tools.thekandelagroup.com/website-demos/excellentjob/faq.html): buyer questions on tenant improvements, occupied buildings, SCIF construction, DC/Virginia/Maryland permits, licenses, quotes, and timelines
